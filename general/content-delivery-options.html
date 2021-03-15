@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="zh-TW">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">管理雲播出頻道<strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">概述：雲播出</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">管理玩家<strong> + </strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">添加縮略圖搜索</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">設定播放器覆蓋</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">在谷歌分析中審查玩家活動</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">現在趨勢報告參考</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">建立舊式內嵌設定檔</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">內嵌設定檔的最佳作法</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">標準內嵌設定檔 (DD 與 CAE) </a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">標準內嵌設定檔 (舊式) </a></li>
                   
                 
                   
@@ -883,7 +922,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="Introduction">簡介</h2>
     <p>建立 Video Cloud 帳戶後，首先要決定的事情之一，就是您計劃如何傳遞影片檔案。Video Cloud 提供多種優點和限制的選擇。您選擇的傳送方式取決於您希望影片檔案受到的保護程度、接觸觀眾的方式、您偏好的上傳方式、您的視訊資產是否已儲存在另一個 CDN (內容傳遞網路或內容發佈網路) 等等。</p>
-    <p>本主題中所述的內容傳遞選項僅適用於 Video Cloud 企業發行者。視訊雲端專業版和快速出版商必須使用布萊特灣作為其 CDN。</p>
+    <p>本主題中所述的內容傳遞選項僅適用於 Video Cloud 企業發行者。Video Cloud Enterprise和Express發布者必須使用Brightcove作為其CDN。</p>
     <p>在本主題中，您將學習：</p>
     <ul>
       <li><a href="#what">什麼是CDN？</a></li>
@@ -899,7 +938,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="what">什麼是 CDN？</h2>
     <p>出版商使用 CDN 將其媒體廣泛地分發給線上觀眾。<a target="_blank" href="http://en.wikipedia.org/wiki/Content_Delivery_Network">維基百科</a>將CDN定義為：</p>
     <p><em>內容交付網絡或內容分發網絡（CDN）是跨Internet聯網在一起的計算機系統，它們透明地協作以最頻繁地交付內容，以提高最終用戶的性能，可伸縮性和成本效率。</em></p>
-    <p>有許多市售的 CDN。如果您是視訊雲端專業版或快速發行者，Brightcove 就是您的 CDN 解決方案。如果您是Video Cloud Enterprise發布商，則可以選擇使用Brightcove CDN或更高版本交付內容<a href="#cdns">Video Cloud支持的任何CDN</a>。</p>
+    <p>有許多市售的 CDN。如果您是Video Cloud Enterprise或Express發布商，Brightcove是您的CDN解決方案。如果您是Video Cloud Enterprise發布商，則可以選擇使用Brightcove CDN或更高版本交付內容<a href="#cdns">Video Cloud支持的任何CDN</a>。</p>
   </section>
   <section class="bcls-section">
     <h2 id="without">我可以在沒有 CDN 的情況下傳遞我的內容嗎？</h2>
@@ -909,25 +948,13 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="types">我的媒體內容是如何傳遞的？</h2>
     <p>內容傳遞機制有數種類型：</p>
     <ul>
-      <li><a href="#pd">漸進式下載</a></li>
       <li><a href="#fms">流媒體</a></li>
+      <li><a href="#pd">漸進式下載</a></li>
     </ul>
-    <section id="pd" class="bcls-subsection">
-      <h3>漸進式下載 (也稱為 PD)</h3>
-      <p>當您使用漸進式下載傳送內容時，檔案會透過 HTTP 要求從標準 Web 伺服器提供，就像一般網頁或任何其他可下載的文件一樣。播放視訊時，視訊檔案會下載至檢視器的電腦或裝置，並儲存在暫存目錄中。當檔案已下載足夠的電腦/裝置時，影片將開始播放。如果觀眾想要快轉或跳到視頻的其他部分，他/她只能這樣做，如果該部分的視頻已經下載並存儲。與串流視訊相比，漸進式下載實際上只有一個一致的好處 — 您不需要串流伺服器即可傳遞視訊。漸進式下載視頻可以從任何一般的 Web 服務器提供。</p>
-      <p>漸進式下載對於業餘愛好者或流量要求低的網站來說很好，不要介意他們的內容是否緩存在觀眾的計算機/設備上，如果您只需要傳遞較短的長度視頻（10 分鐘以下）。需要進階功能和控制視訊傳遞的發佈商，以及/或需要向較大觀眾顯示視訊的人 (數百位或以上同步觀眾)、需要追蹤和報告使用情形或觀看影片的統計資料，或是想要提供最佳互動式播放體驗的發佈商，將需要串流他們的視頻。串流傳遞的頻寬也比漸進式傳遞更少，因為實際上只有觀看的視訊部分才會傳遞。</p>
-      <p>漸進式下載要點：</p>
-      <ul>
-        <li>搜尋與導覽功能有限</li>
-        <li>觀眾可以存取並重新使用內容</li>
-        <li>無法有效利用視訊雲端的動態傳遞功能</li>
-        <li>安全性較低，內容可以很容易地複製</li>
-        <li>下載影片的所有部分，而不僅僅是觀看的部分，所以會使用更多頻寬</li>
-      </ul>
-    </section>
     <section id="fms" class="bcls-subsection">
       <h3>串流 (也稱為 HLS 或短跑)</h3>
-      <p>另一方面，串流視訊是透過串流伺服器傳送，而不會將檔案下載至檢視器的電腦/裝置。一旦觀眾按下播放，視頻將開始播放。如果用戶決定轉發或跳到視頻的其他部分，他/她可以立即這樣做，視頻將繼續從該點開始播放。串流媒體的其中一個優點是，頻寬僅用於觀眾觀看過的影片，因為只有影片的觀看部分已傳遞。沒有任何東西保留在客戶端; 一切都在服務器端。</p>
+      <p>流視頻是通過流服務器傳遞的，而文件從未下載到查看器的計算機/設備。一旦觀眾按下播放，視頻將開始播放。如果用戶決定轉發或跳到視頻的其他部分，他/她可以立即這樣做，視頻將繼續從該點開始播放。串流媒體的其中一個優點是，頻寬僅用於觀眾觀看過的影片，因為只有影片的觀看部分已傳遞。沒有任何東西保留在客戶端; 一切都在服務器端。</p>
+      <aside class="bcls-aside bcls-aside--information language-editable">請注意，在HTML5視頻播放器時代，所有現代設備和瀏覽器都支持流傳輸，並且會在可用時使用流傳輸（而不是逐步下載）。這是一件好事，因為如果您不觀看整個視頻，它可以更好地管理緩衝並節省帶寬。</aside>
       <p>在您想要或需要執行以下操作的情況下，串流非常有用：</p>
       <ul>
         <li>傳送長檔案 (10 分鐘以上) 或高位元速率檔案 (高解析度)</li>
@@ -939,7 +966,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <p>蘋果 iOS 裝置只支援蘋果 HTTP 直播串流 (HLS) 和 HTTP (漸進式下載) 來傳送視訊檔案。您必須確保您的視訊有一或多個可用的 HLS 轉譯。應用程式商店規則要求使用 Apple HTTP 即時串流來處理長形式視訊內容 (大於 5 MB 或 10 分鐘)。</p>
       <p>串流關鍵點：</p>
       <ul>
-        <li>透過臨時視訊連結保護影片內容</li>
+        <li>通過臨時視頻鏈接保護視頻內容</li>
         <li>推進視頻是可能的</li>
         <li>有效利用視訊雲端的動態傳遞功能</li>
         <li>讓您以更少的頻寬提供更多蒸汽</li>
@@ -947,12 +974,26 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </ul>
       <p>實際上，您很少會意識到內容是否已經串流或漸進式下載，除非您尋找上述的某些辨別功能。</p>
     </section>
-    <section id="images" class="bcls-subsection">
-      <h3>如何傳送影像資產？</h3>
-      <p>無論您是否使用串流或漸進式下載的視訊內容，傳遞給 Video Cloud 播放器中使用者的影像 (例如縮圖和視訊靜止影像) 都會透過 HTTP 下載傳送給使用者。</p>
-    </section>
+  <section id="pd" class="bcls-subsection">
+    <h3>漸進式下載 (也稱為 PD)</h3>
+    <aside class="bcls-aside bcls-aside--information language-editable">僅舊版本的瀏覽器或設備仍需要逐步下載。現在，它的主要用途是提供可由用戶下載和保存的演繹版本。</aside>
+    <p>當您使用漸進式下載傳送內容時，檔案會透過 HTTP 要求從標準 Web 伺服器提供，就像一般網頁或任何其他可下載的文件一樣。播放視訊時，視訊檔案會下載至檢視器的電腦或裝置，並儲存在暫存目錄中。當檔案已下載足夠的電腦/裝置時，影片將開始播放。如果觀眾想要快轉或跳到視頻的其他部分，他/她只能這樣做，如果該部分的視頻已經下載並存儲。與串流視訊相比，漸進式下載實際上只有一個一致的好處 — 您不需要串流伺服器即可傳遞視訊。漸進式下載視頻可以從任何一般的 Web 服務器提供。</p>
+    <p>漸進式下載對於業餘愛好者或流量要求低的網站來說很好，不要介意他們的內容是否緩存在觀眾的計算機/設備上，如果您只需要傳遞較短的長度視頻（10 分鐘以下）。需要進階功能和控制視訊傳遞的發佈商，以及/或需要向較大觀眾顯示視訊的人 (數百位或以上同步觀眾)、需要追蹤和報告使用情形或觀看影片的統計資料，或是想要提供最佳互動式播放體驗的發佈商，將需要串流他們的視頻。串流傳遞的頻寬也比漸進式傳遞更少，因為實際上只有觀看的視訊部分才會傳遞。</p>
+    <p>漸進式下載要點：</p>
+    <ul>
+      <li>搜尋與導覽功能有限</li>
+      <li>觀眾可以存取並重新使用內容</li>
+      <li>無法有效利用視訊雲端的動態傳遞功能</li>
+      <li>安全性較低，內容可以很容易地複製</li>
+      <li>下載影片的所有部分，而不僅僅是觀看的部分，所以會使用更多頻寬</li>
+    </ul>
   </section>
-  <section class="bcls-section">
+  <section id="images" class="bcls-subsection">
+    <h3>如何傳送影像資產？</h3>
+    <p>無論您是否使用串流或漸進式下載的視訊內容，傳遞給 Video Cloud 播放器中使用者的影像 (例如縮圖和視訊靜止影像) 都會透過 HTTP 下載傳送給使用者。</p>
+  </section>
+</section>
+<section class="bcls-section">
     <h2 id="compare">比較內容傳遞：光線託管的視訊資產與 BYO 與遠端資產</h2>
     <p>視訊雲端支援一些基本的 CDN 設定，視您的 CDN 供應商和設定而定。選擇是：</p>
     <ul>
@@ -1035,7 +1076,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  頁面最後更新於2021年1月11日
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1097,7 +1145,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1108,8 +1156,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

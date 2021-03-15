@@ -1,12 +1,12 @@
 ﻿<!doctype html>
-<html lang="zh-TW">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="在本主題中，您將學習如何獲取嵌入代碼以在Brightcove Player中播放Cloud Playout頻道。嵌入代碼可以放在任何網頁中。">
   
-  <title>建立舊式內嵌設定檔</title>
+  <title>生成通道嵌入代碼</title>
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -129,9 +137,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       
       
       
-      <li class="breadcrumb-item"><a href="/admin/">管理帳戶</a></li>
+      <li class="breadcrumb-item"><a href="/cloud-playout/">雲播出</a></li>
       
-      <li class="breadcrumb-item active" aria-current="page">建立舊式內嵌設定檔</li>
+      <li class="breadcrumb-item active" aria-current="page">生成通道嵌入代碼</li>
     </ol>
   </nav>
 </header>
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">管理雲播出頻道<strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">概述：雲播出</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">管理玩家<strong> + </strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">添加縮略圖搜索</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">設定播放器覆蓋</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">在谷歌分析中審查玩家活動</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">現在趨勢報告參考</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">建立舊式內嵌設定檔</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">內嵌設定檔的最佳作法</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">標準內嵌設定檔 (DD 與 CAE) </a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">標準內嵌設定檔 (舊式) </a></li>
                   
                 
                   
@@ -877,78 +916,47 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     
 
 
+<h1>生成通道嵌入代碼</h1>
 <article class="bcls-article">
-  <h1>建立舊式內嵌設定檔</h1>
-  <summary>本主題概述瞭如何創建用於傳統轉碼的自定義攝取配置文件。</summary>
+  <summary>在本主題中，您將學習如何獲取嵌入代碼以在Brightcove Player中播放Cloud Playout頻道。嵌入代碼可以放在任何網頁中。</summary>
   <section class="bcls-section">
-    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="4413807549001">&nbsp;</div>
-    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
-    <p>提取配置文件管理頁面可用於創建新的舊式提取配置文件。內嵌設定檔是使用 JSON 定義的。創建新的舊版配置文件時，查看<a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">舊版轉碼的標準提取配置文件</a>記錄並找到與您所需類似的配置文件。然後，在Studio中，您可以輕鬆地複製配置文件，然後使用所做的更改對其進行編輯。</p>
-    <p >注意：有關創建使用DRM的提取配置文件的信息，請參見<a href="https://general.support.brightcove.com/general/mpeg-dash-video.html">MPEG-DASH視頻</a>開發人員文檔。</p>
-    <p >注意：每個輪廓最多可以建立 25 個轉譯。&nbsp;海報和縮略圖圖像最多計為25。&nbsp;</p>
-    <p>要創建新的舊版提取配置文件，請執行以下操作：</p>
-    <ol class="bcls-tasklist-restart">
-      <li>點擊工作室標題中的<strong>管理</strong>鏈接。</li>
-      <li>按一下「<strong>嵌入設定檔</strong>」連結。</li>
-      <li>找到要復制的舊配置文件。按一下設定檔名稱以開啟設定檔編輯器。</li>
-      <li>請點擊<strong>個人資料重複</strong>。設定檔編輯器將會開啟新的設定檔。</li>
-      <li>捲動至設定檔的頂端。編輯元<code translate="No"><strong>name</strong></code>素，為設定檔提供有意義的名稱。這個名字將視頻雲工作室內顯示。</li>
-      <li>編輯元<code translate="No"><strong>description</strong></code>素，為設定檔提供有意義的描述。
-        <figure class="bcls-figure"><img alt="" src="/assets/images/admin/node18503-edit-profile-name.png"/></figure>
+    <h2 id="publish">產生雲端播放頻道的內嵌程式碼</h2>
+    <p>若要產生雲端播放頻道的內嵌程式碼，您將使用即時模組。有關使用實時模塊的完整詳細信息，請參見<a href="https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html">使用實時模塊創建和管理實時事件</a>。</p>
+    <p>有兩種類型的內嵌程式碼可供選擇：</p>
+    <ul>
+      <li><strong>標準</strong> -iframe 嵌入代碼。建議在大多數情況下使用。這種類型將播放器放在 &lt; iframe &gt; 標籤內。</li>
+      <li><strong>進階</strong> -頁內嵌程式碼。允許播放器直接存在於 HTML 頁面中，而不是在 iframe 中。這可讓開發人員輕鬆存取播放程式以及相關屬性和活動的優點。</li>
+    </ul>
+    <p>您也可以取得已發佈播放程式的 URL。這對於在瀏覽器中檢視事件非常有用。</p>
+    <p>如果要產生即時事件的內嵌程式碼，請依照下列步驟執行：</p>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>開啟即時模組。</li>
+      <li>找出頻道要串流的即時事件。通常，該事件將位於<strong>支持</strong>標籤，並命名為<strong>渠道</strong>除非您選擇要在創建頻道時流式傳輸的特定事件。</li>
+      <li>點擊事件名稱以打開<strong>控制室</strong>頁。</li>
+      <li>請點擊<strong>發布和嵌入&gt;播放器配置</strong>在左側導航欄中。
+        <aside class="bcls-aside bcls-aside--information">注意：如果將通道配置為啟用服務器端廣告（SSAI），則Brightcove Player版本6.18.3及更高版本<strong>必須</strong>使用。只有 6.18.3 版及以上的玩家才會出現在下拉列表中。</aside>
       </li>
-      <li>視需要編輯轉譯資訊。海報和縮略圖的默認大小位於配置文件的末尾。</li>
-      <li>按一下「<strong>儲存</strong>」。</li>
+      <li>按一下<strong>播放程式 URL </strong>可在瀏覽器中預覽事件，或複製要使用的適當內嵌程式碼。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/cloud-playout/playout-embed-code.png"/></figure>
+      </li>
     </ol>
-    <div class="BCL-subsection">
-      <h3>在配置文件中添加水印</h3>
-      <p>可以通過添加<code translate="No">watermarks</code>每個元素<code translate="No">rendition</code>：</p>
-      <pre>
-       水印”：[{{y“：-20，” x“：-10，” width“：“ 20％”，“ url”：“ http://www.mysite.com/companylogo.png”}]
-       </pre>
-      <p>的<code translate="No">watermarks</code>元素具有以下參數。</p>
-      <table class="bcls-table">
-        <thead class="bcls-table__head">
-          <tr>
-            <th width="13%">參數</th>
-            <th width="14%">類型</th>
-            <th width="73%">描述</th>
-          </tr>
-        </thead>
-        <tbody class="bcls-table__body">
-          <tr>
-            <td ><code translate="No">url</code></td>
-            <td >串</td>
-            <td >水印圖片的網址</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">width</code></td>
-            <td >串</td>
-            <td >以像素為單位的寬度或框架寬度的百分比；例如20或10％</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">height</code></td>
-            <td >串</td>
-            <td >以像素為單位的高度或框架寬度的百分比；例如20或10％</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">x</code></td>
-            <td >串</td>
-            <td >從圖像的左邊緣到中心的距離，以像素或幀寬度的百分比表示；例如20％或10％（使用負值（如-10）相對於右邊緣放置水印）</td>
-          </tr>
-          <tr>
-            <td ><code translate="No">y</code></td>
-            <td >串</td>
-            <td >如果圖像是像素或幀高的百分比，則從上邊緣到中心的距離；例如20％或10％（使用負值（如-10）相對於底部邊緣放置水印）</td>
-          </tr>
-        </tbody>
-      </table>
-      &nbsp;
-      <p>帶有水印的樣本配置文件如下所示：</p>
-      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node18503-watermark.png"/></figure>
-    </div>
+    <p>如果程序是使用<strong>廣告插入</strong>選項設置為<strong>上</strong>，發布選項將包括<strong>選擇廣告配置</strong>下拉菜單中可以選擇要使用的廣告配置。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="報告切換器" src="/assets/images/cloud-playout/playout-embed-code-ads.png"/></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">相關主題</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">概述：雲播出</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">啟用服務器端廣告（SSAI）</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">概述：EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API參考</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">通道API參考</a></li>
+    </ul>
   </section>
 </article>
-
 <!-- complete bootstrap layout -->
     </div>
     <div class="col-sm-2 right-side-bar">
@@ -963,7 +971,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  頁面最後更新於2021年2月1日
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1025,7 +1040,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1036,8 +1051,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

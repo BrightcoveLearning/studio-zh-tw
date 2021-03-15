@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="zh-TW">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">管理雲播出頻道<strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">概述：雲播出</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">管理玩家<strong> + </strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">添加縮略圖搜索</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">設定播放器覆蓋</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">在谷歌分析中審查玩家活動</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">現在趨勢報告參考</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">建立舊式內嵌設定檔</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">內嵌設定檔的最佳作法</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">標準內嵌設定檔 (DD 與 CAE) </a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">標準內嵌設定檔 (舊式) </a></li>
                   
                 
                   
@@ -891,7 +930,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <p>頁面的內文將顯示以下內容：</p>
     <ul>
       <li>影片縮圖和持續時間</li>
-      <li>動態傳送指示器-只有在帳戶已啟用動態傳送時才會出現
+      <li>動態投放指標 
         <ul>
           <li><img alt="" src="/assets/images/media/node14464-dd-icon.png"/> -表示已啟用視頻<a href="/general/overview-dynamic-delivery.html">動態投放</a>（視頻是使用動態投放攝取配置文件攝取的）</li>
           <li><img alt="" src="/assets/images/media/node14464-dd-icon-grey.png"/> -表示未為視頻啟用動態投放（視頻是使用舊版提取配置文件提取的）</li>
@@ -904,12 +943,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li>參考識別碼</li>
       <li>狀態
         <ul>
-          <li><img alt="" src="/assets/images/media/node14464-green-check.png"/> -表示視頻處於活動狀態</li>
-          <li><img alt="" src="/assets/images/media/node14464-red-x.png"/> -表示視頻處於非活動狀態（無法播放）</li>
+          <li><img alt="" src="/assets/images/media/icon-green-eye.png"/> -表示視頻處於活動狀態</li>
+          <li><img alt="" src="/assets/images/media/icon-red-eye.png"/> -表示視頻處於非活動狀態（無法播放）</li>
         </ul>
       </li>
     </ul>
-    <p>影片縮圖會指出影片是否已分享到帳戶中，或是分享給其他帳戶。在以下範例中，Brown 鵜鶘影片會分享給另一個帳號，而「馬離開圍場」的影片也被分享到此帳戶中。</p>
+    <p>影片縮圖會指出影片是否已分享到帳戶中，或是分享給其他帳戶。在下面的示例中，第一個視頻被共享到另一個帳戶，第二個視頻被共享到該帳戶。</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node14464-sharing.png"/></figure>
     <p>視訊縮圖也會透過新增 360 度徽章來指出標示為 360 度視訊的視訊。有關使用360度視頻的更多信息，請參閱<a href="/general/working-360deg-videos.html">處理360°視頻</a>。</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node14464-360-video.png"/></figure>
@@ -943,7 +982,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node14464-confirm-delete.png"/></figure>
     <p>如果影片已新增至任何手動播放清單，就會顯示出來。</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node14464-delete-error.png"/></figure>
-    <p>若要查看影片所在的手動播放清單，請按一下影片標題以開啟視訊屬性。視訊資訊屬性會顯示已新增視訊的手動播放清單。</p>
+    <p>若要查看影片所在的手動播放清單，請按一下影片標題以開啟視訊屬性。這<strong>分類</strong>屬性將顯示已添加視頻的手動播放列表。</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node14464-manual-playlist.png"/></figure>
   </section>
   <section class="bcls-section">
@@ -962,10 +1001,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <h2 id="publish2">發布視頻和播放列表</h2>
     <p>視頻可以發布到不同的目的地：</p>
     <ul>
-      <li><a href="/publish/publishing-videos-and-playlists-media-module.html"><strong>網絡播放器</strong></a> -提供視頻的網址或生成可以添加到網頁或應用程序中的發布代碼</li>
-      <li><strong><a href="/publish/publishing-video-email.html">電子郵件登陸頁面</a></strong> -提供了將視頻海報圖像嵌入到電子郵件中的功能，並且在單擊時可以在瀏覽器選項卡中打開視頻</li>
-      <li><strong><a href="https://social.support.brightcove.com/general/publishing-videos-social-media-platforms.html">社交網絡</a></strong> -打開一個新的瀏覽器選項卡，可以在該選項卡中使用Brightcove Social發布視頻</li>
-      <li><strong><a href="/publish/publishing-videos-page-experience.html">畫廊頁內體驗</a></strong> -使用Brightcove Gallery創建新的頁內體驗</li>
+      <li><a href="/publish/publishing-videos-and-playlists-media-module.html">網絡播放器</a> -提供視頻的網址或生成可以添加到網頁或應用程序中的發布代碼</li>
+      <li><a href="/publish/publishing-video-email.html">電子郵件登陸頁面</a> -提供了將視頻海報圖像嵌入到電子郵件中的功能，並且在單擊時可以在瀏覽器選項卡中打開視頻</li>
+      <li><a href="https://social.support.brightcove.com/general/publishing-videos-social-media-platforms.html">社交網絡</a> -打開一個新的瀏覽器選項卡，可以在該選項卡中使用Brightcove Social發布視頻</li>
+      <li><a href="/publish/publishing-videos-page-experience.html">畫廊頁內體驗</a> -使用Brightcove Gallery創建新的頁內體驗</li>
     </ul>
   </section>
   <section class="bcls-section">
@@ -1013,7 +1052,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  頁面最後更新於2021年2月4日
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1075,7 +1121,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1086,8 +1132,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

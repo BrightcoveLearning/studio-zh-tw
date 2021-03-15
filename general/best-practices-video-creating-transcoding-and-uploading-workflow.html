@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="zh-TW">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">管理雲播出頻道<strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">概述：雲播出</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">管理玩家<strong> + </strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">添加縮略圖搜索</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">設定播放器覆蓋</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">在谷歌分析中審查玩家活動</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">現在趨勢報告參考</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">建立舊式內嵌設定檔</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">內嵌設定檔的最佳作法</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">標準內嵌設定檔 (DD 與 CAE) </a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">標準內嵌設定檔 (舊式) </a></li>
                   
                 
                   
@@ -1015,11 +1054,11 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         <li><strong>不要小看文件大小。</strong>視頻雲是專為處理大文件上傳而打造的。如果您習慣為了成功上傳而壓縮檔案，請不要。請務必上傳高品質的來源檔案。</li>
         <li><strong>為我們獲取高質量的文件。</strong>我們建議您使用您希望生成的最高演繹版本的比特率2-3倍的源。因此，如果您打算擁有 3 Mbps 的視頻比特率的頂部轉譯，則需要上傳 6-9 Mbps 的位元速率的來源視頻。還要記住，有時數據太多的視頻不會通過 HTTP 流暢地進行流。高質量視頻過多會導致緩衝。<br/>
           <!-- <p>
-      Video Cloud Express customers have access to fixed renditions and need not exceed the bit rate for their fastest rendition when considering data compression rates. Video Cloud Pro and Enterprise customers should consider the bit rate of their current fastest rendition as well as any rendition they might opt to create in the future when re-encoding existing videos with new transcoding settings.
+      Video Cloud Express customers have access to fixed renditions and need not exceed the bit rate for their fastest rendition when considering data compression rates. Video Cloud Enterprise customers should consider the bit rate of their current fastest rendition as well as any rendition they might opt to create in the future when re-encoding existing videos with new transcoding settings.
     </p> --></li>
         <li><strong>與幀頻保持一致</strong>。以您拍攝的影格速率匯出，以避免產生間斷。此外，如果匯出影格速率設定與來源不相同，則會有非同步視訊和音訊軌道的風險。</li>
         <li><strong>保留本機文件的副本</strong>：保存原生視頻文件是一個很好的做法，以防您想要編輯它們，重新壓縮它們或重新編碼它們。使用來自<a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">標準攝取配置文件列表</a>匹配您的目標受眾，或創建自己的提取個人資料。 <!-- <p>
-        <a href="node/3412">Re-encoding existing videos</a> is available only to Video Cloud Pro and Enterprise publishers. You may find after publication that your video would benefit by making changes to the exporting settings. Video Cloud does provide a way to <a href="node/3412#newsource">re-encode your video from a higher quality source</a> file, which allows you to keep all the metadata assigned to a title but to upload a video in the latest most flexible encoding format.
+        <a href="node/3412">Re-encoding existing videos</a> is available only to Video Cloud Enterprise publishers. You may find after publication that your video would benefit by making changes to the exporting settings. Video Cloud does provide a way to <a href="node/3412#newsource">re-encode your video from a higher quality source</a> file, which allows you to keep all the metadata assigned to a title but to upload a video in the latest most flexible encoding format.
       </p> --></li>
         <li><strong>導出高分辨率時請考慮操作和大小</strong>：高解析度視訊特別受益於使用最低位元速率，同時保持品質的遊戲效果。看到<a href="video-source-file-specifications-and-recommendations.html#highres">高分辨率編碼建議</a>考慮視頻大小，寬高比和內容中的操作量時的最低比特率。</li>
         <li><strong>採用移動策略</strong>。如果您想要在行動裝置上顯示影片，除了桌上型螢幕之外，您必須將影片編碼為彈性的 H.264 格式，並考慮其他編碼選項。 <!-- <p>
@@ -1080,7 +1119,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  頁面最後更新於2020年12月8日
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1142,7 +1188,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1153,8 +1199,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

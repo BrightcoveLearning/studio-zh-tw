@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="zh-TW">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">管理雲播出頻道<strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">概述：雲播出</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">管理玩家<strong> + </strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">添加縮略圖搜索</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">設定播放器覆蓋</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">在谷歌分析中審查玩家活動</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">現在趨勢報告參考</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">建立舊式內嵌設定檔</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">內嵌設定檔的最佳作法</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">標準內嵌設定檔 (DD 與 CAE) </a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">標準內嵌設定檔 (舊式) </a></li>
                   
                 
                   
@@ -915,22 +954,17 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <ol class="bcls-tasklist-restart">
         <li>在Studio標頭中，點擊<strong>管理員</strong>鏈接。請注意，您必須是具有管理員角色的Video Cloud Studio用戶才能訪問ADMIN菜單。</li>
         <li>請點擊<strong>攝取個人資料</strong>。</li>
-        <li>點擊一個<strong>個人資料名稱</strong>。配置文件編輯器將顯示配置文件定義。</li>
-        <li>查看圖像尺寸的方法將根據<strong>個人資料版本</strong>（即舊版，動態投放或上下文感知）。
-          <ul>
-            <li>對於<strong>遺產</strong>配置文件，滾動到“配置文件編輯器”窗口的底部，然後搜索<strong><code translate="No">"media_type": "image"</code></strong>。應該有兩個條目，一個用於海報，一個用於縮略圖。</li>
-            <li>對於<strong>動態投放</strong>和<strong>情境感知</strong>個人資料，圖片尺寸列在<strong>圖片</strong>配置文件定義部分。</li>
-          </ul>
-          <p>以下示例來自動態交付配置文件版本。</p>
+        <li>點擊一個<strong>個人資料名稱</strong>。配置文件編輯器將顯示配置文件定義。
+        <!-- <li>The method to view the image sizes will vary based upon the <strong>Profile Version</strong> (i.e. Legacy, Dynamic Delivery or Context-Aware) that was clicked. -->
+            <!-- <li>For <strong>Legacy</strong> profiles, scroll to the bottom of the Profile Editor window and search for <strong><code translate="No">"media_type": "image"</code></strong>. There should be two entries, one for the poster and one for the thumbnail.</li> -->
+					對於<strong>動態投放</strong>和<strong>情境感知</strong>個人資料，圖片尺寸列在<strong>圖片</strong>配置文件定義部分。以下示例來自動態交付配置文件版本。
           <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/media/node16671-profile-editor.png"/></figure>
         </li>
         <li>檢查海報和圖像尺寸。請記住，如果您的任何玩家大於海報的大小，圖像將被升頻。</li>
       </ol>
-      <aside class="bcls-aside bcls-aside--information">注意：標準攝取配置文件的圖像大小也記錄在以下文檔之一中：
-        <ul>
-          <li><a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">舊版轉碼的標準提取配置文件</a></li>
-          <li><a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">用於動態交付和上下文感知編碼的標準攝取配置文件</a></li>
-        </ul>
+      <aside class="bcls-aside bcls-aside--information">注意：標準攝取配置文件的圖片尺寸也記錄在文檔中， 
+          <!-- <li><a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">Standard Ingest Profiles for Legacy Transcoding</a></li> -->
+          <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">用於動態交付和上下文感知編碼的標準攝取配置文件</a>。
       </aside>
     </div>
   </section>
@@ -945,12 +979,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   <section class="bcls-section">
     <h2 id="resize">自動調整大小</h2>
     <p>當您透過 Studio 或動態導入 API 新增自訂海報和/或縮圖影像時，預設情況下，視訊雲端會調整這些大小，以符合帳戶預設「內嵌描述檔」中定義的影像大小。</p>
-    <h3>覆寫自動調整大小</h3>
-    <aside class="bcls-aside bcls-aside--information">注意：僅當使用<strong>遺產</strong>配置文件版本。</aside>
-    <p>如果您想要覆寫此行為，並讓 Video Cloud 保留實際的影像尺寸，請依照下列步驟執行：</p>
+    <!-- <h3>Override auto-resizing</h3>
+    <aside class="bcls-aside bcls-aside--information">Note: This option is only available when using a <strong>Legacy</strong> profile version.</aside>
+    <p>If you want to override this behavior and have Video Cloud retain actual image dimensions, follow these steps:</p>
     <ol class="bcls-tasklist-restart">
-      <li>為您的帳戶<a href="/admin/managing-ingest-profiles.html">建立新的自訂設定檔</a> (或修改現有的自訂設定檔)</li>
-      <li>包含貼文和縮圖的影像轉譯，其中<strong>完全</strong>具有下列<code translate="No">width</code>和<code translate="No">height</code>值：
+      <li><a href="/admin/managing-ingest-profiles.html">Create a new custom ingest profile</a> for your account (or modify an existing custom profile)</li>
+      <li>Include image renditions for the post and thumbnail that have <strong>exactly</strong> these <code translate="No">width</code> and <code translate="No">height</code> values:
         <pre class="line-numbers">
 <code class="language-json" translate="No">{
 "media_type": "image",
@@ -967,9 +1001,9 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 <span style="background-color:#FFFFC9;border:1px #ffcc33" solid="">"height": 9999</span>
 }</code></pre>
       </li>
-      <li><a href="/admin/managing-ingest-profiles.html#default">將此設為默認配置文件</a>該帳戶。</li>
+      <li><a href="/admin/managing-ingest-profiles.html#default">Make this the default profile</a> for the account.</li>
     </ol>
-    <p>現在，當您透過 Studio 或動態攝入新增自訂影像時，它們將具有來源影像的原始尺寸。</p>
+    <p>Now when you add custom images via Studio or Dynamic Ingest, they will have the original dimensions of the source images.</p> -->
   </section>
   <section class="bcls-section">
     <h2 id="existing">那我現有的視頻呢？</h2>
@@ -1004,7 +1038,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  頁面最後更新於2021年2月1日
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1066,7 +1107,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1077,8 +1118,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

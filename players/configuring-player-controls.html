@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="zh-TW">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">管理雲播出頻道<strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">概述：雲播出</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">管理玩家<strong> + </strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">添加縮略圖搜索</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">設定播放器覆蓋</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">在谷歌分析中審查玩家活動</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">現在趨勢報告參考</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">建立舊式內嵌設定檔</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">內嵌設定檔的最佳作法</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">標準內嵌設定檔 (DD 與 CAE) </a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">標準內嵌設定檔 (舊式) </a></li>
                   
                 
                   
@@ -879,159 +918,89 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 
 <article class="bcls-article">
   <h1>設定播放程式控制</h1>
-  <summary
-    >在本主題中，您將學習如何設定玩家的控制項。</summary
-                >
+  <summary>在本主題中，您將學習如何設定玩家的控制項。</summary>
   <section class="bcls-section">
-    <p>
-      播放器控制如品質選擇器，播放速率，全屏控制和垂直音量滑塊可以配置為播放器。
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="樣式功能表" src="/assets/images/players/node18509-player-controls-example.png"/>
-    </figure>
-    <p>
-      如果看到如下所示的控件：
-      <figure class="bcls-figure">
-        <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-button-itself.png"/>
-      </figure>
-      它會啟用畫中畫功能。見<a href="#picture-in-picture">畫中畫</a>本文檔後面的小節中提供了完整的信息。
-    </p>
-    <p>
-      配置<strong>控制項</strong>屬性，請按照以下步驟操作：
-    </p>
+    <p>播放器控制如品質選擇器，播放速率，全屏控制和垂直音量滑塊可以配置為播放器。 </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="樣式功能表" src="/assets/images/players/node18509-player-controls-example.png"/> </figure>
+    <p>如果看到如下所示的控件：
+      <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-button-itself.png"/> </figure>
+      它會啟用畫中畫功能。見<a href="#picture-in-picture">畫中畫</a>本文檔後面的小節中提供了完整的信息。 </p>
+    <p>配置<strong>控制項</strong>屬性，請按照以下步驟操作： </p>
     <ol class="bcls-tasklist-restart">
-      <li>
-        按一下導覽標題中的「<strong>玩</strong>家」以開啟「玩家」模組。
-      </li>
-      <li>
-        按一下您要設定之玩家的連結。
-      </li>
-      <li>
-        按一下左側導覽功能表中的「<strong>控制項</strong>」。
-      </li>
+      <li>按一下導覽標題中的「<strong>玩</strong>家」以開啟「玩家」模組。 </li>
+      <li>按一下您要設定之玩家的連結。 </li>
+      <li>按一下左側導覽功能表中的「<strong>控制項</strong>」。 </li>
     </ol>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="樣式功能表" src="/assets/images/players/node18509-player-controls.png"/>
-    </figure>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="樣式功能表" src="/assets/images/players/node18509-player-controls.png"/> </figure>
     <p>您可以設定下列控制項：</p>
     <ul>
       <li><a href="#quality">質量選擇器</a></li>
       <li><a href="#rates">播放率</a></li>
       <li><a href="#fullscreen">全屏</a></li>
-      <li>
-        <a href="#volume">垂直音量滑塊</a>
-      </li>
-      <li>
-        <a href="#skip">跳到下一個視頻（播放列表）</a>
-      </li>
+      <li> <a href="#volume">垂直音量滑塊</a></li>
+      <li><a href="#seeking">縮略圖搜索</a></li>
+      <li> <a href="#skip">跳到下一個視頻（播放列表）</a> </li>
     </ul>
-    <p>
-      進行任何變更之後，請務必重新發佈播放程式，以便顯示變更。
-    </p>
-    <aside class="bcls-aside bcls-aside--information">
-      注意：對玩家所做的任何變更可能需要 5 分鐘才會出現在已發佈的玩家中。
-    </aside>
+    <p>進行任何變更之後，請務必重新發佈播放程式，以便顯示變更。 </p>
+    <aside class="bcls-aside bcls-aside--information"> 注意：對玩家所做的任何變更可能需要 5 分鐘才會出現在已發佈的玩家中。 </aside>
   </section>
   <section class="bcls-section">
     <h2 id="quality">品質選取器</h2>
-    <p>
-      啟用<strong>質量選擇器</strong>提供了在播放視頻時手動選擇其他表現形式的功能。裝備圖示會出現在玩家的右下角。
-    </p>
-    <aside class="bcls-aside bcls-aside--information">
-      注意：品質選擇器需要 Brightcove 播放器 5.17.0 或更新版本，並且可能不適用於所有瀏覽器。
-    </aside>
-    <p>
-      啟用質量選擇器後，<strong>質量選擇器標籤</strong>已啟用：
-    </p>
+    <p>啟用<strong>質量選擇器</strong>提供了在播放視頻時手動選擇其他表現形式的功能。裝備圖示會出現在玩家的右下角。 </p>
+    <aside class="bcls-aside bcls-aside--information">注意：品質選擇器需要 Brightcove 播放器 5.17.0 或更新版本，並且可能不適用於所有瀏覽器。 </aside>
+    <p>啟用質量選擇器後，<strong>質量選擇器標籤</strong>已啟用： </p>
     <ul>
-      <li>
-        <strong>顯示分辨率（例如720p）</strong> -渲染將以水平分辨率的線顯示
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-resolution.png"/>
-        </figure>
-        <p>
-          使用此選項時，另一個參數（<code translate="No">resolutionLabelBitrates</code>）可以添加到“質量選擇”插件中，以顯示比特率。
-        </p>
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-resolution-bitrates.png"/>
-        </figure>
-        <p>
-          這必須通過編輯插件參數來完成，因為目前沒有辦法使用 Parters 模塊 UI 配置此選項。有關更多信息，請參見<a href="https://player.support.brightcove.com/plugins/quality-selection-plugin.html">質量選擇插件</a>文件。
-        </p>
+      <li><strong>顯示分辨率（例如720p）</strong> -渲染將以水平分辨率的線顯示
+        <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-resolution.png"/> </figure>
+        <p>使用此選項時，另一個參數（<code translate="No">resolutionLabelBitrates</code>）可以添加到“質量選擇”插件中，以顯示比特率。 </p>
+        <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-resolution-bitrates.png"/> </figure>
+        <p>這必須通過編輯插件參數來完成，因為目前沒有辦法使用 Parters 模塊 UI 配置此選項。有關更多信息，請參見<a href="https://player.support.brightcove.com/plugins/quality-selection-plugin.html">質量選擇插件</a>文件。</p>
       </li>
-      <li>
-        <strong>顯示高清/標清</strong> -播放器將查看每個再現的比特率信息，以確定它是SD還是HD
-        <figure class="bcls-figure">
-          <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-hd-sd.png"/>
-        </figure>
+      <li><strong>顯示高清/標清</strong> -播放器將查看每個再現的比特率信息，以確定它是SD還是HD
+        <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-hd-sd.png"/> </figure>
       </li>
     </ul>
   </section>
   <section class="bcls-section">
     <h2 id="rates">播放速率</h2>
-    <p>
-      啟用<strong>播放率</strong>提供了手動選擇其他播放速率的功能。播放速率圖示會出現在播放器的右下角。
-    </p>
-    <aside class="bcls-aside bcls-aside--information">
-      注意事項：
+    <p>啟用<strong>播放率</strong>提供了手動選擇其他播放速率的功能。播放速率圖示會出現在播放器的右下角。</p>
+    <aside class="bcls-aside bcls-aside--information"> 注意事項：
       <ul>
-        <li>
-          播放速率選擇器需要 Brightcove 播放器 6.35.0 或更新版本，並且可能無法在所有瀏覽器上使用。
-        </li>
+        <li>播放速率選擇器需要 Brightcove 播放器 6.35.0 或更新版本，並且可能無法在所有瀏覽器上使用。 </li>
         <li>播放器寬度必須至少為 424 像素，才能顯示播放速率控制。</li>
       </ul>
     </aside>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-playback-rates.png"/>
-    </figure>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-playback-rates.png"/> </figure>
   </section>
   <section class="bcls-section">
     <h2 id="fullscreen">全螢幕</h2>
-    <p>
-      選擇<strong>全屏</strong>啟用全屏控制。全螢幕控制項提供了調整播放器大小以填滿整個顯示的能力。當影片開始播放時，播放器右下角會出現全螢幕圖示。
-    </p>
+    <p>選擇<strong>全屏</strong>啟用全屏控制。全螢幕控制項提供了調整播放器大小以填滿整個顯示的能力。當影片開始播放時，播放器右下角會出現全螢幕圖示。 </p>
   </section>
   <section class="bcls-section">
     <h2 id="volume">垂直音量滑桿</h2>
-    <p>
-      選擇<strong>垂直音量滑塊</strong>垂直顯示音量滑塊。
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-vertical-volume.png"/>
-    </figure>
-    <aside class="bcls-aside bcls-aside--information language-editable">
-      此功能僅適用於布萊特灣球員 6.32.0+。
-    </aside>
+    <p>選擇<strong>垂直音量滑塊</strong>垂直顯示音量滑塊。 </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-vertical-volume.png"/> </figure>
+    <aside class="bcls-aside bcls-aside--information language-editable"> 此功能僅適用於布萊特灣球員 6.32.0+。 </aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="seeking">縮略圖搜索</h2>
+    <p>選擇<strong>縮略圖搜索</strong>在進度條上顯示視頻縮略圖。</p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-thumbnail-seeking.png"/> </figure>
+    <aside class="bcls-aside bcls-aside--information language-editable"> 此功能僅在Brightcove Player 6.41.0+中可用。要了解有關縮略圖搜索的更多信息，請參見<a href="adding-thumbnail-seeking-player.html">向Brightcove播放器添加縮略圖搜索</a>。</aside>
   </section>
   <section class="bcls-section">
     <h2 id="skip">跳到下一個視訊 (播放清單)</h2>
-    <p>
-      選擇<strong>跳到下一個視頻（播放列表）</strong>啟用跳過控制。您可以按一下跳過控制項，前往播放清單中的下一個影片。
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-skip-control.png"/>
-    </figure>
+    <p>選擇<strong>跳到下一個視頻（播放列表）</strong>啟用跳過控制。您可以按一下跳過控制項，前往播放清單中的下一個影片。 </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-skip-control.png"/> </figure>
   </section>
   <section class="bcls-section">
     <h2 id="picture-in-picture">圖片中的圖片</h2>
-    <p>
-      圖片中的 HTML5 圖片功能定義為：<em>允許網站始終在其他窗口之上創建浮動視頻窗口，以便用戶在與其他內容站點或設備上的應用程序交互時可以繼續使用媒體</em>。
-    </p>
-    <p>
-      子母畫面的一個例子顯示在下面的兩個截圖。第一個螢幕擷取畫面會顯示一個瀏覽器，並顯示影片播放程式。請注意玩家右下角的子母畫面按鈕，紅色箭頭指向它。
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="P-在 P 涅槃" width="800" height="525" src="/assets/images/players/node18509-normal.png"/>
-    </figure>
-    <p>
-      下一個截圖顯示點擊子母畫面按鈕的結果。默認情況下，播放器會移動到屏幕右下角附近（而不是瀏覽器）。然後，玩家可以拖動觀眾希望放置它的任何地方。
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" width="800" height="525" src="/assets/images/players/node18509-p-in-p.png"/>
-    </figure>
-    <p>
-      此功能預設為開啟。並非所有瀏覽器都支援此子母畫面功能。下表詳細說明目前的支援。
-    </p>
+    <p>圖片中的 HTML5 圖片功能定義為：<em>允許網站始終在其他窗口之上創建浮動視頻窗口，以便用戶在與其他內容站點或設備上的應用程序交互時可以繼續使用媒體</em>。 </p>
+    <p> 子母畫面的一個例子顯示在下面的兩個截圖。第一個螢幕擷取畫面會顯示一個瀏覽器，並顯示影片播放程式。請注意玩家右下角的子母畫面按鈕，紅色箭頭指向它。 </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="P-在 P 涅槃" width="800" height="525" src="/assets/images/players/node18509-normal.png"/> </figure>
+    <p>下一個截圖顯示點擊子母畫面按鈕的結果。默認情況下，播放器會移動到屏幕右下角附近（而不是瀏覽器）。然後，玩家可以拖動觀眾希望放置它的任何地方。 </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" width="800" height="525" src="/assets/images/players/node18509-p-in-p.png"/> </figure>
+    <p>此功能預設為開啟。並非所有瀏覽器都支援此子母畫面功能。下表詳細說明目前的支援。 </p>
     <table class="bcls-table">
       <thead class="bcls-table__head">
         <tr>
@@ -1058,12 +1027,8 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </tr>
       </tbody>
     </table>
-    <p>
-      您可以使用以下命令在Studio中關閉此功能<strong>JSON編輯器</strong>來自的選項<strong>選手們</strong>模塊。為此，請添加配置選項<code translate="No">"picture_in_picture_control": false,</code>如下所示：
-    </p>
-    <figure class="bcls-figure">
-      <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-json-editor.png"/>
-    </figure>
+    <p>您可以使用以下命令在Studio中關閉此功能<strong>JSON編輯器</strong>來自的選項<strong>選手們</strong>模塊。為此，請添加配置選項<code translate="No">"picture_in_picture_control": false,</code>如下所示： </p>
+    <figure class="bcls-figure"> <img class="bcls-image--no-border" alt="" src="/assets/images/players/node18509-json-editor.png"/> </figure>
   </section>
 </article>
 
@@ -1081,7 +1046,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  頁面最後更新於2021年1月20日
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1143,7 +1115,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1154,8 +1126,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="zh-TW">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">管理雲播出頻道<strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">概述：雲播出</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">管理玩家<strong> + </strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">添加縮略圖搜索</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">設定播放器覆蓋</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">在谷歌分析中審查玩家活動</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">現在趨勢報告參考</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">建立舊式內嵌設定檔</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">內嵌設定檔的最佳作法</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">標準內嵌設定檔 (DD 與 CAE) </a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">標準內嵌設定檔 (舊式) </a></li>
                   
                 
                   
@@ -888,7 +927,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node18434-profile-list.png"/></figure>
     <p>您的 Video Cloud 帳戶將設定一個或多個轉碼選項。所有 Video Cloud 帳戶都設定了一組預設的內嵌設定檔，無法編輯或刪除。這些標記在工作室中標有<strong>標準 VOD </strong><strong>類型</strong>。「<strong>紀要版本</strong>」顯示配合設定檔使用的轉碼類型。如需有關 Brightcove 提供的內嵌描述檔所提供之轉譯的特定詳細資訊，請參閱適當的文件：</p>
     <ul>
-      <li><a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">舊式</a></li>
+      <!-- <li><a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">Legacy</a></li> -->
       <li><a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">動態投放</a></li>
       <li><a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">上下文感知</a></li>
     </ul>
@@ -910,6 +949,12 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
         </ul>
       </li>
       <li>輸入「<strong>海報</strong>」和「<strong>縮圖</strong>」影像的「<strong>寬度</strong>」和「<strong>高</strong>度」。</li>
+      <li>使用“編解碼器”下拉列表選擇要使用的視頻編解碼器。您可以在H264和HEVC之間進行選擇，也可以使用混合編解碼器配置文件，該配置文件將使用兩個編解碼器（H264，HEVC）來創建演繹。
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/admin/codec-options.png" alt="編解碼器選項"/>
+          <figcaption class="bcls-caption--image">編解碼器選項</figcaption>
+        </figure>
+      </li>
       <li>選擇一個<strong>最低分辨率</strong>和<strong>最大分辨率</strong>通過拖動滑塊。建立轉譯時會使用此範圍。
         <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node18434-min-max-res.png"/></figure>
       </li>
@@ -966,14 +1011,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ol>
   </section>
   <section class="bcls-section">
-    <h2 id="default">變更預設內嵌設定檔</h2>
-    <p>所有視訊雲端帳戶都有預設的內嵌設定檔。默認配置文件用表示<img alt="" src="/assets/images/admin/node16840-default-button.png"/>個人資料名稱旁邊。</p>
-    <p>若要變更帳戶的預設內嵌設定檔：</p>
+    <h2 id="default">更改上傳默認攝取配置文件</h2>
+    <p>所有的Video Cloud帳戶都有一個上傳默認攝取配置文件。上載默認攝取配置文件以表示<img alt="" src="/assets/images/admin/node16840-default-button.png"/>個人資料名稱旁邊。</p>
+    <p>要更改帳戶的默認配置文件：</p>
     <ol class="bcls-tasklist-restart">
       <li>點擊工作室標題中的<strong>管理</strong>鏈接。</li>
       <li>按一下「<strong>嵌入設定檔</strong>」連結。「內嵌設定檔」管理頁面將會開啟，顯示已為該帳戶建立的內嵌設定檔。</li>
       <li>按一下您要設定為預設設定檔的內嵌設定檔名稱。</li>
-      <li>請點擊<strong>將此設為我的默認個人資料</strong>頁面頂部的鏈接。</li>
+      <li>點擊<strong>上載中</strong>旁邊的<strong>默認使用</strong>頁面頂部的鏈接。</li>
     </ol>
   </section>
   <section class="bcls-section">
@@ -984,7 +1029,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </section>
   <section class="bcls-section">
     <h2 id="drm">描述檔中的 DRM 支援</h2>
-    <p>支援 DRM，但與舊式內嵌設定檔的運作方式不同。請聯絡 Brightcove 支援部門，以設定影片 DRM 包裝的預設值。您不需要在內嵌設定檔中指定 DRM 封裝。如果您的帳戶已啟用 DRM，而您想要提供一些不含 DRM 的標題，請在媒體模組中編輯視訊屬性，並將視訊的 DRM 旗標設定為「<strong>無 DRM </strong>」。</p>
+    <p>聯繫Brightcove支持為視頻的DRM打包設置默認值。您不需要在內嵌設定檔中指定 DRM 封裝。如果您的帳戶已啟用 DRM，而您想要提供一些不含 DRM 的標題，請在媒體模組中編輯視訊屬性，並將視訊的 DRM 旗標設定為「<strong>無 DRM </strong>」。</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node18434-drm-switch.png"/></figure>
     <aside class="bcls-aside bcls-aside--information">注意：如需有關建立已啟用 DRM 的 Brightcove 播放器的資訊，請參閱<a href="https://player.support.brightcove.com/plugins/configuring-brightcove-player-drm.html"> DRM 外掛程式</a>主題。</aside>
   </section>
@@ -1010,7 +1055,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  頁面最後更新於2021年2月4日
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1072,7 +1124,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1083,8 +1135,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({

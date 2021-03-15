@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="zh-TW">
+<html lang="en-us">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,15 @@
   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/381443caa8.js" crossorigin="anonymous"></script>
-  <script src="https://support.brightcove.com/site-assets/js/site/google-analytics.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
+</script>
   <script src="/assets/js/sajari-head.js"></script>
 </head>
 
@@ -489,8 +497,43 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             
           
             
+              <h5 class="submenu-header"><a href="/cloud-playout/index.html">管理雲播出頻道<strong>+</strong></a></h5>
+              <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-overview.html">概述：雲播出</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+                  
+                
+                  
+                    <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+                  
+                
+              </ul>
+            
+          
+            
               <h5 class="submenu-header"><a href="/players/index.html">管理玩家<strong> + </strong></a></h5>
               <ul class="sidenav-submenu" style="display:none;">
+                
+                  
+                    <li><a href="/players/adding-thumbnail-seeking-player.html">添加縮略圖搜索</a></li>
+                  
                 
                   
                     <li><a href="/players/configuring-player-overlay-using-overlay-plugin.html">設定播放器覆蓋</a></li>
@@ -698,6 +741,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                     <li><a href="/analytics/reviewing-player-event-data-google-analytics.html">在谷歌分析中審查玩家活動</a></li>
                   
                 
+                  
+                    <li><a href="/analytics/trending-now-report-reference.html">現在趨勢報告參考</a></li>
+                  
+                
               </ul>
             
           
@@ -730,10 +777,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                   
                 
                   
-                    <li><a href="/admin/creating-legacy-ingest-profiles.html">建立舊式內嵌設定檔</a></li>
-                  
-                
-                  
                     <li><a href="/admin/ingest-profiles-best-practices.html">內嵌設定檔的最佳作法</a></li>
                   
                 
@@ -763,10 +806,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
                 
                   
                     <li><a href="/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">標準內嵌設定檔 (DD 與 CAE) </a></li>
-                  
-                
-                  
-                    <li><a href="/admin/standard-ingest-profiles-legacy-transcoding.html">標準內嵌設定檔 (舊式) </a></li>
                   
                 
                   
@@ -893,7 +932,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><strong>配置文件名稱和描述</strong></li>
       <li><strong>個人資料版本</strong> -指示使用的轉碼類型。請注意，顯示的類型取決於您的 Video Cloud 帳戶的設定方式：
         <ul>
-          <li><strong>遺產</strong> -使用舊版轉碼</li>
           <li><strong>動態投放</strong> -使用動態傳遞轉碼。有關動態投放的信息，請參見<a href="/general/overview-dynamic-delivery.html">動態交付概述</a>。</li>
           <li><strong>情境感知</strong>&nbsp; -使用上下文感知轉碼。有關上下文感知編碼的信息，請參見<a href="/general/overview-context-aware-encoding.html">上下文感知編碼概述</a>。</li>
         </ul>
@@ -911,11 +949,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     </ul>
     <p>有關Brightcove提供的攝取配置文件（帶有<strong>類型</strong>的<strong>標準視頻點播</strong>要么<strong>標准直播</strong>），請參閱以下文件之一：</p>
     <ul>
-      <li><strong>舊版個人資料版本</strong> -- <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">舊版轉碼的標準提取配置文件</a></li>
       <li><strong>動態交付或上下文感知配置文件版本</strong> -- <a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">用於動態交付和上下文感知編碼的標準攝取配置文件</a></li>
       <li><strong>自定義直播類型</strong> -- <a href="https://live.support.brightcove.com/admin/standard-live-ingest-profiles.html">標準實時攝取配置文件</a></li>
     </ul>
-    <aside class="bcls-aside bcls-aside--information">注意：上傳品質較低的來源內容並選取其中一個標準描述檔時，Video Cloud 只會產生等於或低於來源品質的轉譯。創建自己的自定義配置文件時，您可能需要使用<a href="https://apis.support.brightcove.com/ingest-profiles-legacy/guides/conditional-output.html">條件輸出參數</a>以防止在源與您指定的質量標準不匹配時生成演繹。這樣可以防止動態內嵌系統在上傳品質較低的來源檔案時建立更高品質的轉譯。</aside>
+    <!-- <aside class="bcls-aside bcls-aside--information">Note: When lower quality source content is uploaded and one of the standard profiles is selected, Video Cloud will only produce renditions that are equal to or lower in quality than the source. When creating your own custom profiles, you may want to use <a href="https://apis.support.brightcove.com/ingest-profiles-legacy/guides/conditional-output.html">conditional output parameters</a> to prevent renditions from being generated if the source doesn't match the quality criteria you specify. This will prevent the dynamic ingest system from creating higher quality renditions when lower quality source files are uploaded.</aside> -->
     <p>您可以在「內嵌設定檔管理」頁面執行下列作業：</p>
     <ul>
       <li><a href="#create">創建新的攝取配置文件</a></li>
@@ -925,10 +962,10 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       <li><a href="#hide">隱藏/顯示攝取配置文件</a></li>
     </ul>
   </section>
-  <section class="bcls-section">
-    <h2 id="archivemasters">封存與發佈主版</h2>
-    <p>內嵌設定檔可設定為封存和散佈主要 (來源) 檔案。封存主檔案會保留主檔案的副本，並提供視訊在未來重新編碼的能力，而無需再次上傳。分發主版可以將主版推送到 CDN，並用作可播放的轉譯。的<strong>標準視頻點播</strong>接收配置文件配置為存檔而不分發主數據庫。建立自訂內嵌設定檔時，您可能會想要變更此行為。有關歸檔和分發母版的其他信息，請參見<a href="https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html">歸檔大師</a>文件。有關創建提取配置文件時可以配置的所有字段的列表，請參見<a href="https://apis.support.brightcove.com/ingest-profiles-legacy/references/ingest-profiles-api-fields-reference-legacy-ingest.html">提取配置文件API字段參考</a>開發人員文檔。</p>
-  </section>
+  <!-- <section class="bcls-section">
+    <h2 id="archivemasters">Archiving and distributing masters</h2>
+    <p>Ingest profiles can be configured to archive and distribute master (source) files. Archiving the master keeps a copy of the master file and provides the ability for the video to be re-transcoded in the future without the need to upload it again. Distributing the master enables the master to be pushed to the CDN and used as a playable rendition. The <strong>Standard VOD</strong> ingest profiles are configured to archive and not distribute the master. You may wish to change this behavior when creating a custom ingest profile. For additional information on archiving and distributing masters, see the <a href="https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html">Archiving Masters</a> document. For a list of all the fields that can be configured when creating ingest profiles, see the <a href="https://apis.support.brightcove.com/ingest-profiles-legacy/references/ingest-profiles-api-fields-reference-legacy-ingest.html">Ingest Profiles API Fields Reference</a> developer document.</p>
+  </section> -->
   <section class="bcls-section">
     <h2 id="create">建立新的內嵌設定檔</h2>
     <aside class="bcls-aside bcls-aside--information">注意：建立和編輯內嵌設定檔的功能僅適用於具有企業和專業帳戶的發行者。</aside>
@@ -936,7 +973,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node15628-new-profile.png"/></figure>
     <p>建立新內嵌設定檔的程序會根據建立的設定檔類型而有所不同。如需有關如何建立自訂內嵌設定檔的詳細資訊，請參閱下列其中一個文件：</p>
     <ul>
-      <li><a href="creating-legacy-ingest-profiles.html">建立舊式內嵌設定檔</a></li>
+      <!-- <li><a href="creating-legacy-ingest-profiles.html">Creating Legacy Ingest Profiles</a></li> -->
       <li><a href="creating-ingest-profiles-dynamic-delivery.html">創建用於動態投放的提取配置文件</a></li>
       <li><a href="creating-ingest-profiles-context-aware-encoding.html">創建用於上下文感知編碼的攝取配置文件</a></li>
       <li><a href="https://live.support.brightcove.com/admin/creating-custom-live-ingest-profiles.html">建立自訂即時內嵌設定檔</a></li>
@@ -978,14 +1015,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
       </li>
     </ol>
     <aside class="bcls-aside bcls-aside--information">注意：選擇默認攝取配置文件時，應確保該配置文件為<a href="#hide">可見而不是隱藏</a>。</aside>
-    <aside class="bcls-aside bcls-aside--information">注意：只有動態傳遞設定檔可以設定為社交剪裁預設設定檔。不支援舊版和 CAE 設定檔。</aside>
+    <aside class="bcls-aside bcls-aside--information">注意：只有動態傳遞設定檔可以設定為社交剪裁預設設定檔。不支持CAE配置文件。</aside>
   </section>
   <section class="bcls-section">
     <h2 id="hide">隱藏和顯示嵌入設定檔</h2>
     <p>按一下與設定檔關聯到「隱藏」位置的滑桿，即可隱<strong>藏</strong>內嵌輪廓。這對於隱藏可能不需要的預設設定檔非常有用。</p>
     <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node15628-hide-profile.png"/></figure>
-    <p>內嵌隱藏的設定檔不會顯示在「上傳」模組的「內嵌設定檔」清單中。請注意，在此示例中，<strong>高分辨率</strong>個人資料不顯示。</p>
-    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node15628-upload-profiles.png"/></figure>
+    <p>內嵌隱藏的設定檔不會顯示在「上傳」模組的「內嵌設定檔」清單中。</p>
+    <figure class="bcls-figure"></figure>
   </section>
 </article>
 
@@ -1003,7 +1040,14 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
 </div>
 
 <hr>
-<footer class="bcls-footer" role="contentinfo">  <div class="row">
+<div class="last-updated">
+  頁面最後更新於2021年2月4日
+</div>
+
+
+
+<footer class="bcls-footer" role="contentinfo">
+  <div class="row">
     <div class="region region-footer-top-center col-md-12">
       <nav role="navigation" aria-labelledby="block-brightcovesupport-menu" id="block-brightcovesupport" class="footer-menu">
 
@@ -1065,7 +1109,7 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
             <td><a href="https://www.brightcove.com/en/legal/privacy">私隱</a> | 條<a href="https://www.brightcove.com/en/terms-and-conditions">款及細則</a></td>
             <td>
               <div class="gf-links-cols footer-menu">
-                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin"><i class="fab fa-linkedin-in" style="font-size: 1.5rem;"></i></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter"><i class="fab fa-twitter" style="font-size: 1.5rem;"></i></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><i class="fab fa-facebook-f" style="font-size: 1.5rem;"></i></a>
+                <div class="gf-social"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" newtab="newtab" class="gf-social-linkedin" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/linkedin-gray.svg" style="height: 1.5rem;"/></a><a href="https://twitter.com/brightcove" title="Twitter" newtab="newtab" class="gf-social-twitter" style="margin-right: 1rem;"><img src="https://support.brightcove.com/site-assets/images/site/icons/twitter-gray.svg" style="height: 1.5rem;"/></a><a href="https://www.facebook.com/Brightcove" title="Facebook" newtab="newtab" class="gf-social-facebook"><img src="https://support.brightcove.com/site-assets/images/site/icons/facebook-gray.svg" style="height: 1.5rem;"/></a>
                 </div>
               </div>
             </td>
@@ -1076,8 +1120,6 @@ function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;i
   </div>
 </footer>
 
-</div>
-</div>
 <script>
       
   var searchBox = sajari.init({
