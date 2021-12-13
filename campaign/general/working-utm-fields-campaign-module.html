@@ -1,0 +1,50 @@
+---
+title: 使用營銷活動模塊描中的 UTM 字段
+description: 在本主題中，您將學習如何在 Campaign 模塊中跟踪 UTM 代碼。
+parent: General Information 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>UTM代碼（也稱為UTM參數）是簡單的文本片段，您可以將其添加到URL中以幫助跟踪Web內容的成功。您可以將5個標準參數添加到任何URL: </p>
+    <ul>
+      <li>活動</li>
+      <li>來源</li>
+      <li>中等的</li>
+      <li>語境</li>
+      <li>學期</li>
+    </ul>
+    <p>UTM代碼通常附加到自定義URL。下面是添加到URL的UTM代碼（固定）的示例。</p>
+    <p><code translate="No">https://www.brightcove.com/en/blog/2018/08/define-your-video-strategy-3-simple-steps-1?<strong>utm_campaign=blogpost&amp;utm_medium=social&amp;utm_source=LinkedIn</strong></code></p>
+    <p>UTM代碼使您能夠跟踪博客文章，互聯網廣告或電子郵件爆炸的工作方式，而不必為每個廣告系列創建自定義目標網頁。通過為博客文章，廣告和電子郵件創建獨特的UTM代碼，您可以獲取產生更多流量，轉化等的數據。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">配置數據連接以使用UTM字段</h2>
+    <p>Campaign 從 URL 參數解析 UTM 字段。然後可以從您的營銷自動化軟件或使用Audience API訪問UTM數據。所需的營銷活動配置基於所使用的營銷自動化平台。</p>
+    <ul>
+      <li><a href="#hubspot">HubSpot</a></li>
+      <li><a href="#salesforce">銷售隊伍</a></li>
+      <li><a href="#eloqua">埃洛誇</a></li>
+      <li><a href="#marketo">市場部</a></li>
+    </ul>
+    <h3 id="hubspot">HubSpot</h3>
+    <p>使用HubSpot數據連接，不需要其他設置。UTM 字段將自動出現。</p>
+    <h3 id="salesforce">銷售隊伍</h3>
+    <p>通過Salesforce數據連接，使用<strong>映射類型</strong>的<strong>先進的</strong>然後可以將UTM字段映射到Salesforce中的相應數據對象。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/general/node18655-salesforce.png" /></figure>
+    <h3 id="eloqua">埃洛誇</h3>
+    <p>使用 Eloqua 數據連接，無需額外設置。UTM 字段將自動出現。</p>
+    <h3 id="marketo">市場</h3>
+    <p> 由於沒有足夠的字段可以添加到我們在Marketo中創建的自定義活動中，因此Marketo連接不支持UTM字段。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="export">使用 Campaign 模塊導出數據</h2>
+    <p>導出活動數據並選擇<strong>查看事件</strong> .有關導出數據的信息，請參閱<a href="/campaign/admin/exporting-campaign-data-campaign-module.html">從活動模塊導出活動數據</a> .</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="access">使用Audience API訪問UTM字段</h2>
+    <p>可以使用Audience API訪問UTM字段。有關信息，請參閱<a href="/campaign/develop/reference.html#tag/View_Events">受眾群體API文檔</a>。</p>
+  </section>
+</article>

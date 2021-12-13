@@ -1,0 +1,271 @@
+---
+title: 創建社交媒體發布目的地
+description: 在本主題中，您將學習如何使用 Brightcove Social 創建發布目標。
+parent: General Information 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5017980985001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>發布目的地是您希望將Video Cloud視頻發佈到的社交媒體帳戶/頁面。您必須先創建一個目的地，然後才能使用Brightcove Social將視頻發佈到社交媒體帳戶。可以創建目標以將視頻發佈到YouTube，Facebook和Twitter。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="youtube">建立YouTube目的地</h2>
+    <p>要將視頻發佈到YouTube頻道時，請創建YouTube目標。在創建YouTube目標之前，您可能需要<a href="https://www.youtube.com/verify">驗證您的YouTube帳戶</a>。驗證帳戶後，您將可以上傳15分鐘以上的視頻。</p>
+    <p>要創建YouTube目標，請按照以下步驟操作。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開Brightcove Social。</li>
+      <li>點擊<strong>目的地</strong>在左側導航欄中。</li>
+      <li>點擊<strong>添加目的地</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-add-destination.png" /></figure>
+      </li>
+      <li>點擊<strong>使用YouTube登錄</strong>。</li>
+      <li>系統將提示您登錄到您的Google帳戶（如果尚未登錄）。如果您有多個帳戶，請確保登錄到與您的YouTube頻道關聯的帳戶。</li>
+      <li>將打開一個對話框，請求管理您的YouTube帳戶的權限。檢查對話框的右上角，以確認您使用的是正確的Google帳戶。如果不是，請使用下拉菜單選擇您要向其分發視頻的Google帳戶。點擊<strong>允許</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-auth-yt-dest.png" /></figure>
+      </li>
+      <li>為目的地指定一個唯一的描述性名稱。點擊<strong>添加</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-name-yt-dest.png" /></figure>
+      </li>
+      <li>將顯示基本信息和目的地默認設置。點擊<strong>編輯</strong>中的按鈕<strong>基礎信息</strong>部分以編輯目的地名稱。見<a href="#youtube_defaults">設置YouTube默認值</a>部分，了解有關配置默認值的信息。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-yt-dest-created.png" /></figure>
+      </li>
+      <li>點擊<strong>目的地</strong>在左邊距中，並確認目的地出現在目的地列表中。目標名稱下面的值是目標ID。</li>
+    </ol>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-yt-dest-added.png" /></figure>
+    <p>點擊<strong>目的地名稱</strong>編輯目的地。點擊鏈接<strong>頻道/頁面</strong>列以在另一個瀏覽器標籤中打開YouTube頻道。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="youtube_defaults">設置YouTube默認值</h2>
+    <p>目標默認值將在以下情況下用作默認視頻屬性<a href="/social/publishing-videos-social-media-platforms.html">將視頻發佈到社交平台</a>。要為YouTube目標配置發布默認設置，請單擊目標名稱，然後單擊<strong>編輯</strong>在裡面<strong>此目的地的默認值</strong>部分。可以配置以下視頻屬性: </p>
+    <ul>
+      <li><a href="#ytpostinfo">發布信息</a></li>
+      <li><a href="#ytschedule">日程</a></li>
+      <li><a href="#ytcaptions">字幕</a></li>
+      <li><a href="#ytvisibility">能見度</a></li>
+      <li><a href="#ytlicense">執照</a></li>
+    </ul>
+    <div id="ytpostinfo" class="BCL-subsection">
+      <h3>配置發布信息屬性</h3>
+      <p>點擊<strong>發布信息</strong>關聯。可以設置以下YouTube視頻屬性: </p>
+      <ul>
+        <li><strong>描述</strong> -使用“視頻雲"的簡短描述或詳細描述或輸入要使用的默認描述的選項</li>
+        <li><strong>原始語言代碼</strong> -用於向視頻添加翻譯後的視頻標題和說明；輸入2個字母的語言代碼，然後從列表中選擇</li>
+        <li><strong>YouTube類別</strong> -視頻的內容類別</li>
+        <li><strong>標籤</strong> -選擇包含或排除視頻雲標籤</li>
+        <li><strong>將視頻雲元數據包含為YouTube標籤</strong> -選擇將視頻ID和參考ID包含為YouTube標籤</li>
+        <li><strong>附加標籤</strong> -選擇為視頻輸入其他標籤</li>
+        <li><strong>縮圖來源</strong> -使用YouTube縮略圖，視頻雲縮略圖或上傳自己的縮略圖的選項</li>
+      </ul>
+    </div>
+    <div id="ytschedule" class="BCL-subsection">
+      <h3>配置計劃屬性</h3>
+      <p>點擊<strong>日程</strong>鏈接並選擇計劃設置: </p>
+      <ul>
+        <li><strong>立即發布</strong> -要立即發布視頻</li>
+        <li><strong>使用視頻雲的開始日期</strong> -要使用為視頻設置的視頻雲開始日期。在這種情況下，我們會告訴 YouTube 將影片公開，以「影片雲端」中所' 指定的「排程開始日期」為止。如果該日期是過去的日期，那麼YouTube會立即將其公開。</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">筆記: 若要將<a href="#ytvisibility">視訊可見度</a>設定為 <strong>[未公開]</strong> 或 <strong>[私人]</strong>，請將  <strong>[排程]</strong> 選項以立即發佈，並將<strong>「可見性」</strong>選項設定為<strong>「未公開」</strong>或<strong>「私人」</strong>。<strong></strong></aside> 
+    </div>
+    <div id="ytcaptions" class="BCL-subsection">
+      <h3>配置字幕屬性</h3>
+      <p>點擊<strong>字幕</strong>鏈接並選擇一個選項: </p>
+      <ul>
+        <li><strong>使用視頻雲字幕</strong> -社交模塊將嘗試將與視頻相關的字幕分發給YouTube。社交模塊將嘗試訪問字幕文件，無論它們位於何處。如果使用遠程URL指定字幕文件的位置並且可以訪問這些文件（例如，不受地域限制（以我們無法訪問它們的方式）），則Social會將其分發到YouTube。</li>
+        <li><strong>沒有字幕</strong> -不使用字幕</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">筆記: 有關在Video Cloud中使用字幕的信息，請參閱<a href="/media/overview-adding-captions-video.html">概述: 在影片中加入字幕</a>。</aside> 
+    </div>
+    <div id="ytvisibility" class="BCL-subsection">
+      <h3>配置可見性屬性</h3>
+      <p>點擊<strong>能見度</strong>鏈接，然後選擇視頻的“隱私"設置。以下隱私設置可用: </p>
+      <ul>
+        <li><strong>上市</strong> -任何人都可以觀看視頻</li>
+        <li><strong>不公開</strong> -擁有視頻鏈接的任何人都可以觀看</li>
+        <li><strong>私人的</strong> -視頻只能由您和您選擇的用戶觀看</li>
+        <li><strong>使用YT_Privacy_Status自定義字段</strong> -使用與視頻相關聯的自定義字段動態分配隱私設置。有關信息，請參閱<a href="/social/setting-privacy-status-video.html">設置視頻的隱私狀態</a>。</li>
+      </ul>
+      <p>還有一個設置<strong>將視頻發佈到YouTube時通知訂閱者</strong>。如果選中，則您的訂閱者將在其訂閱源中看到您的視頻，並且可能會收到有關該視頻已上傳的通知。</p>
+      <aside class="bcls-aside bcls-aside--information">筆記: 如需 YouTube 隱私權設定的詳細資訊，請參閱<a href="https://support.google.com/youtube/answer/157177">  YouTube 說明文件</a>。</aside> 
+    </div>
+    <div id="ytlicense" class="BCL-subsection">
+      <h3>配置許可證屬性</h3>
+      <p>點擊<strong>執照</strong>鏈接，然後選擇視頻的許可和權利所有權設置。可以使用以下設置: </p>
+      <ul>
+        <li>標準YouTube許可</li>
+        <li>知識共享-出處</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">筆記: 如需有關 YouTube 授權和版權所有權的詳細資訊，請參閱<a href="https://support.google.com/youtube/answer/2797468">  YouTube 說明文件</a>。</aside> 
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="facebook">創建一個Facebook目的地</h2>
+    <p>要將視頻發佈到Facebook頁面時，請創建一個Facebook目標。請注意，視頻只能分發到Facebook頁面，而不能分發到個人資料頁面。若要創建一個Facebook目標，請按照下列步驟操作。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開Brightcove Social。</li>
+      <li>點擊<strong>目的地</strong>在左側導航欄中。</li>
+      <li>點擊<strong>添加目的地</strong>。</li>
+      <li>點擊<strong>用Facebook登錄</strong>。</li>
+      <li>將打開一個對話框，要求您登錄您的Facebook帳戶。輸入您的憑據，然後單擊<strong>登錄</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-auth-fb-dest.png" /></figure>
+      </li>
+      <li>將打開一個對話框，確認Brightcove Social將收到您的個人資料信息。點擊<strong>繼續</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-auth-fb-dest1.png" /></figure>
+      </li>
+      <li>將打開一個對話框，確認Brightcove Social將能夠管理和發布您的頁面以及訪問您的頁面和應用程序見解。點擊<strong>好的</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-auth-fb-dest2.png" /></figure>
+      </li>
+      <li>為目的地指定一個唯一的描述性名稱。如果您有多個Facebook頁面，請使用下拉列表選擇要發布的頁面，然後單擊<strong>添加</strong>。<aside class="bcls-aside bcls-aside--information">筆記: 您無法將影片發佈到個人檔案頁面。</aside> 
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-name-fb-dest.png" /></figure>
+      </li>
+      <li>將顯示基本信息和目的地默認設置。點擊<strong>編輯</strong>中的按鈕<strong>基礎信息</strong>部分以編輯目的地名稱。見<a href="#facebook_defaults">設置Facebook默認值</a>部分，了解有關配置默認值的信息。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-fb-dest-created.png" /></figure>
+      </li>
+      <li>點擊<strong>目的地</strong>在左邊距中，並確認目的地出現在目的地列表中。目的地名稱下面的值是目的地ID。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-fb-dest-added.png" /></figure>
+      </li>
+    </ol>
+    <p>單擊目標名稱以編輯目標。單擊“頻道/頁面"列中的鏈接，以在另一個瀏覽器選項卡中打開Facebook頁面。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="facebook_defaults">設置Facebook默認值</h2>
+    <p>目標默認值將在以下情況下用作默認視頻屬性<a href="/social/publishing-videos-social-media-platforms.html">將視頻發佈到社交平台</a>。要配置Facebook目標的發布默認設置，請單擊目標名稱，然後單擊<strong>編輯</strong>在裡面<strong>此目的地的默認值</strong>部分。可以配置以下Facebook視頻屬性: </p>
+    <ul>
+      <li><a href="#fbpostinfo">發布信息</a></li>
+      <li><a href="#fbschedule">日程</a></li>
+      <li><a href="#fbcaptions">字幕</a></li>
+      <li><a href="#fbtargeting">目標</a></li>
+      <li><a href="#fbmonetize">營利</a></li>
+      <li><a href="#fbrights">權利</a></li>
+      <li><a href="#fbdistribution">分配</a></li>
+      <li><a href="#fbtracking">追踪</a></li>
+    </ul>
+    <div id="fbpostinfo" class="BCL-subsection">
+      <h3>配置發布信息屬性</h3>
+      <p>點擊<strong>發布信息</strong>關聯。可以設置以下Facebook視頻屬性: </p>
+      <ul>
+        <li><strong>狀態消息</strong> -使用“視頻雲"的簡短描述或詳細描述或輸入要使用的默認描述的選項</li>
+        <li><strong>標籤</strong> -幫助人們發現您的視頻的標籤</li>
+        <li><strong>Facebook類別</strong> -視頻的內容類別</li>
+        <li><strong>縮圖來源</strong> -使用Facebook縮略圖，視頻雲縮略圖或上傳自己的縮略圖的選項</li>
+      </ul>
+    </div>
+    <div id="fbschedule" class="BCL-subsection">
+      <h3>配置計劃屬性</h3>
+      <p>點擊<strong>日程</strong>關聯。選擇<strong>立即發布</strong>立即發布視頻或選擇<strong>使用視頻雲的開始日期</strong>使用為視頻設置的開始日期。你也可以<strong>永不過期的帖子</strong>或有<strong>帖子在Video Cloud結束日期過期</strong>。</p>
+    </div>
+    <div id="fbcaptions" class="BCL-subsection">
+      <h3>配置字幕屬性</h3>
+      <p>點擊<strong>字幕</strong>關聯。選擇<strong>使用視頻雲字幕</strong>使用與視頻相關的字幕，或<strong>沒有字幕</strong>不使用字幕。</p>
+      <aside class="bcls-aside bcls-aside--information">筆記: 有關在Video Cloud中使用字幕的信息，請參閱<a href="/media/overview-adding-captions-video.html">概述: 在影片中加入字幕</a>。</aside> 
+    </div>
+    <div id="fbtargeting" class="BCL-subsection">
+      <h3>配置目標屬性</h3>
+      <p>點擊<strong>目標</strong>關聯。可以設置以下屬性: </p>
+      <ul>
+        <li><strong>受眾群體優化興趣</strong> -添加標籤以描述最有可能喜歡您的帖子的人們的興趣。有關信息，請參閱<a href="https://www.facebook.com/facebookmedia/get-started/audience-optimization">Facebook文件</a>。</li>
+        <li><strong>位置限制</strong> -添加國家以包括或不包括查看信息</li>
+      </ul>
+    </div>
+    <div id="fbmonetize" class="BCL-subsection">
+      <h3>配置獲利屬性</h3>
+      <p>點擊<strong>營利</strong>關聯。可以設置以下屬性: </p>
+      <ul>
+        <li><strong>誰是您發送到該目的地的業務夥伴？</strong> -為品牌內容帖子添加業務合作夥伴。鍵入時，將顯示匹配的企業列表。有關Facebook品牌內容的信息，請參閱<a href="https://www.facebook.com/business/help/788160621327601">Facebook文件</a>。</li>
+        <li><strong>允許業務合作夥伴增加職位</strong></li>
+      </ul>
+    </div>
+    <div id="fbrights" class="BCL-subsection">
+      <h3>配置權限屬性</h3>
+      <aside class="bcls-aside bcls-aside--information">筆記: 您的 Facebook 帳戶必須能夠存取 Facebook 版權管理員，才能顯示 [權限] 選項。</aside> 
+      <p>點擊<strong>權利</strong>關聯。可以設置以下屬性: </p>
+      <ul>
+        <li><strong>檢測匹配內容</strong> -選中以啟用Facebook權限管理。有關信息，請參閱<a href="https://rightsmanager.fb.com">Facebook文件</a>。</li>
+        <li><strong>指定所有權</strong> -指定視頻，音頻或兩者的版權所有權</li>
+        <li><strong>國家選擇</strong> - 選擇<strong>全世界</strong>，<strong>包括國家</strong>或者<strong>排除國家</strong>。如果選擇了包含或排除，則添加<strong>位置限制</strong>。</li>
+        <li><strong>套用比對規則</strong> -選擇一個規則。這<strong>匹配規則</strong>確定當人們上傳匹配的視頻時會發生什麼自動操作。比賽規則在Facebook內部進行管理。</li>
+        <li><strong>授予權限</strong> -授權某些人或Pages或Instagram帳戶有權發布與您的內容匹配的視頻。</li>
+      </ul>
+    </div>
+    <div id="fbdistribution" class="BCL-subsection">
+      <h3>配置分發屬性</h3>
+      <p>點擊<strong>分配</strong>鏈接以設置可以觀看視頻的位置。以下<strong>自定義分發和審核</strong>選項可用: </p>
+      <ul>
+        <li><strong>在消息訂閱裡顯示</strong> -在新聞源中顯示視頻</li>
+        <li><strong>允許嵌入</strong> -允許將視頻嵌入第三方網站</li>
+        <li><strong>添加為秘密視頻</strong> -只能通過直接URL訪問視頻，而Facebook上的人無法搜索視頻
+          <ul>
+            <li><strong>關閉反應，評論和分享</strong> -禁止喜歡和評論</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="fbtracking" class="BCL-subsection">
+      <h3>配置跟踪屬性</h3>
+      <p>點擊<strong>追踪</strong>鏈接以分配通用ID，以在整個系統中跟踪視頻。以下<strong>通用編號</strong>選項可用: </p>
+      <ul>
+        <li>留著空白</li>
+        <li>使用視頻雲中的視頻ID</li>
+        <li>使用Video Cloud中的參考ID（如果有）</li>
+      </ul>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="twitter">創建一個Twitter目的地</h2>
+    <p>當您要將視頻發佈到Twitter feed時，創建一個Twitter目標。要創建Twitter目標，請按照以下步驟操作。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開Brightcove Social。</li>
+      <li>點擊<strong>目的地</strong>在左側導航欄中。</li>
+      <li>點擊<strong>添加目的地</strong>。</li>
+      <li>選擇<strong>使用Twitter登錄</strong>。</li>
+      <li>系統將提示您登錄Twitter帳戶並授權Brightcove Social使用您的帳戶。登錄到您要向其發布視頻的帳戶。如果未提示您登錄，則可能已登錄到Twitter帳戶。在繼續操作之前，請確保您已登錄正確的帳戶。點擊<strong>授權應用</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-auth-twitter-dest.png" /></figure>
+      </li>
+      <li>為目的地指定一個唯一的描述性名稱。點擊<strong>添加</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-name-twitter-dest.png" /></figure>
+      </li>
+      <li>將顯示基本信息和目的地默認設置。點擊<strong>編輯</strong>中的按鈕<strong>基礎信息</strong>部分以編輯目的地名稱。見<a href="#twitter_defaults">設置Twitter默認值</a>部分，了解有關配置默認值的信息。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-twitter-dest-created.png" /></figure>
+      </li>
+      <li>點擊<strong>目的地</strong>在左邊距中，並確認目的地出現在目的地列表中。目的地名稱下面的值是目的地ID。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-twitter-dest-added.png" /></figure>
+      </li>
+    </ol>
+    <p>單擊目標名稱以編輯目標。單擊“頻道/頁面"列中的鏈接以在另一個瀏覽器選項卡中打開Twitter帳戶。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="twitter_defaults">設置Twitter默認值</h2>
+    <p>目標默認值將在以下情況下用作默認視頻屬性<a href="/social/publishing-videos-social-media-platforms.html">將視頻發佈到社交平台</a>。要為Twitter目標配置發布默認設置，請單擊目標名稱，然後單擊<strong>編輯</strong>在裡面<strong>此目的地的默認值</strong>部分。</p>
+    <p>配置默認<strong>推文內容</strong>: </p>
+    <ul>
+      <li>使用視頻雲中的視頻名稱</li>
+      <li>使用Video Cloud中的TW_Tweet自定義字段</li>
+      <li>設置自定義默認Tweet</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="delete">刪除目的地</h2>
+    <p>要刪除目的地，請按照下列步驟操作: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開Brightcove Social。</li>
+      <li>點擊<strong>目的地</strong>在左側導航欄中。將出現目的地列表。</li>
+      <li>單擊目標名稱以刪除。</li>
+      <li>將顯示目的地詳細信息。單擊刪除圖標 (<img alt="" src="/assets/images/social/node16345-delete-dest.png" />) <strong></strong>然後點擊<strong>刪除</strong>以確認刪除。</li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">筆記: 如果創建了使用目標的自動同步作業，則刪除圖標將不會出現。您必須先移除「自動同步」工作，才能刪除目的地。</aside> 
+  </section>
+  <section class="bcls-section">
+    <h2 id="reconnect">重新連接到目的地</h2>
+    <p>如果任何目的地有問題，Brightcove Social將顯示錯誤消息。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16345-error-message.png" /></figure>
+    <p>錯誤圖標 (<img alt="" src="/assets/images/social/node16345-error-icon.png" />) 將顯示在目的地名稱旁邊。如果從社交媒體帳戶中刪除了Brightcove權限，或者創建目標時使用的憑據不再有效，則會發生這種情況。解決此問題的方法: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>單擊目標名稱。</li>
+      <li>點擊<strong>重新連線</strong>頁面頂部的鏈接。</li>
+      <li>系統可能會提示您使用社交媒體帳戶重新進行身份驗證。</li>
+    </ol>
+  </section>
+</article>

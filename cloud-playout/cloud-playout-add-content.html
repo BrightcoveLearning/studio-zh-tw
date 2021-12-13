@@ -1,0 +1,120 @@
+---
+title: 向Cloud Playout頻道說明添加內容
+description: 在本主題，您將了解如何將 VOD 項目、直播活動和播放列表添加到您的 Cloud Playout 頻道。
+parent: Cloud Playout
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+		<h2 id="Introduction">介紹</h2>
+		<p>根據您配置Cloud Playout頻道的方式，您可以添加各種內容。VOD內容和播放列表可以添加到任何頻道。此外，如果您將頻道配置為支持直播活動，則可以添加直播活動。以下各節提供添加各種內容的步驟。</p>
+		<aside class="bcls-aside bcls-aside--information">請注意，您還可以<a href="/cloud-playout/adding-bumpers-to-vod.html">添加保險槓</a>到您的頻道，以及<a href="/cloud-playout/enabling-server-side-ads.html">服務器端廣告</a> , 如果通道是為此配置的。有關如何執行此操作的詳細資訊，請參閱這些主題。</aside> 
+	</section>
+  
+  <section class="bcls-section">
+    <h2 id="add_videos">添加視頻點播內容</h2>
+    <p>創建頻道後，或轉到頻道詳細信息時，屏幕將顯示頻道設置: </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-channel-details.png" alt="Channel Settings">
+      <figcaption class="bcls-caption--image">頻道設定</figcaption>
+    </figure>
+    <p>您可以編輯詳細信息，但是下一步是將內容添加到頻道中。</p>
+    <h3>添加視頻（VOD）步驟</h3>
+    <ol class="bcls-tasklist-restart" style="--s:1">
+      <li>點擊<span class="button-blue"><i data-feather="plus"></i> 新增影片</span>  (如果您在頻道清單頁面上，請按一下頻道名稱以開啟頻道設定頁面，然後按一下<span class="button-blue"> <i data-feather="plus"></i> 新增視訊</span> )。
+      </li>
+      <li>點擊您要添加到頻道的視頻旁邊的複選框。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select videos" src="/assets/images/cloud-playout/playout-select-videos.png" /></figure>
+      </li>
+      <li>點擊<span class="button-blue">新增影片</span>）</li>
+      <li>點擊<span class="button-blue"><i data-feather="save"></i> 儲存</span>。</li>
+      <li>
+        該頻道的節目列表將出現: 
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-vod-program-list.png" alt="Program List">
+          <figcaption class="bcls-caption--image">程序清單</figcaption>
+        </figure>
+        <p>請注意，開始時間和結束時間是根據視頻時長自動計算得出的。您可以將視頻拖放到列表中以對其重新排序，並且開始/結束時間將自動調整。</p>
+      </li>
+    </ol>
+	</section>
+
+	<section class="bcls-section">
+		<h2 id="add_playlists">添加播放列表</h2>
+		<p>您也可以將整個播放列表導入您的頻道。請注意以下情況: </p>
+		<ul>
+			<li>您可以同時導入EXPLICIT（手動）列表和智能播放列表。</li>
+			<li>一種<strong>快照</strong>當前狀態下的播放列表中的將會被導入（這意味著將來對播放列表進行的更改將<strong>不是</strong>反映在頻道內容中）。</li>
+			<li>一次只能導入一個播放列表。</li>
+			<li>如果導入的播放列表包含一個直播事件，則將創建一個具有相同名稱，描述和持續時間的相同的直播事件。這是因為實況事件始終與通道共享1: 1關係。</li>
+			<li>播放列表中的視頻將被添加<strong>到最後</strong>當前頻道節目。</li>
+			<li>您可以添加VOD內容以及播放列表，並且允許重複。</li>
+			<li>對總資產限額（100）進行了驗證檢查。如果導入將超過100個資產限制，則導入將失敗。</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">筆記: 如果頻道的「即時輸入」未啟用，您仍然可以選擇將即時事件排除在匯入之外，匯入包含即時事件的播放清單。</aside> 
+			</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">筆記: 如果這是啟用了SSAI的頻道，則不允許直播活動。您仍然可以選擇將即時事件排除在匯入的播放清單中，以匯入包含即時事件的播放清單。</aside> 
+			</li>
+			<li>
+				<aside class="bcls-aside bcls-aside--information">筆記: 僅允許使用具有MP4格式的合格資產。警告指出哪些資產將不符合匯入資格-確認後，只有合格的資產才會被匯入。</aside> 
+			</li>
+		</ul>
+		<h3>添加播放列表步驟</h3>
+		<ol class="bcls-tasklist-restart">
+			<li>點擊<span class="button-blue"><i data-feather="plus"></i> 匯入播放清單</span>。</li>
+			<li>點擊<span class="blue-button">進口</span>您要導入的播放列表。</li>
+			<li>如果出現消息指示播放列表中的某些項目無法導入，請單擊<span class="blue-button">繼續</span>如果要導入支持的視頻。</li>
+      <li>點擊<span class="button-blue"><i data-feather="save"></i> 儲存</span>。</li>
+			<li>
+				如果導入成功，您將在程序列表中看到它: 
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/cloud-playout/program-list-with-playlist-imports.png" alt="Program List with Playlist">
+					<figcaption class="bcls-caption--image">帶有播放列表的節目列表</figcaption>
+				</figure>
+			</li>
+		</ol>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Add_Live_events">添加現場活動</h2>
+		<p>注意: 僅在為直播事件啟用了頻道的情況下才適用。</p>
+    <ol class="bcls-tasklist">
+        <li>點擊 <img src="/assets/images/cloud-playout/cloudplayout-add-live-event.png" alt="add live event" class="ui-image"></li>
+        <li>
+          在“添加直播事件"對話框中，輸入<strong>名稱</strong>，<strong>期間</strong>， 和<strong>描述</strong>對於現場活動: 
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-add-live-event.png" alt="Add Live Event">
+            <figcaption class="bcls-caption--image">添加直播活動</figcaption>
+          </figure>
+          <p>請注意，現場直播活動的最短持續時間為5分鐘，並且只能以5分鐘為間隔增加或減少持續時間-如果需要，可以在文本框中直接編輯持續時間以調整時間間隔。實時事件的持續時間可以隨時更改，即使當前正在播放。</p>
+        </li>
+        <li>
+          添加實時事件後，它們將與VOD項目一起出現在節目列表中: 
+          <figure class="bcls-figure">
+            <img class="bcls-image" src="/assets/images/cloud-playout/cloudplayout-live-event-program-list.png" alt="Program List">
+            <figcaption class="bcls-caption--image">程序清單</figcaption>
+          </figure>
+        </li>
+        <li>您可以像拖動視頻一樣拖動實時事件來重新排序列表。您還可以使用 <img src="/assets/images/cloud-playout/cloudplayout-quick-edit.png" alt="quick edit" class="ui-image"> 按鈕來修改實時事件的持續時間。</li>
+    </ol>
+	</section>
+    <p>另請參閱<a href="/cloud-playout/adding-bumpers-to-vod.html">向內容添加保險槓</a>用於在VOD或現場活動項目中添加保險槓。</p>
+  
+  <section class="bcls-section">
+    <h2 id="Related_topics">相關話題</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">概述: 雲播出</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+      <li><a href="/cloud-playout/adding-bumpers-to-vod.html">將緩衝器添加到雲播放</a></li>
+      <li><a href="/cloud-playout/static-image-overlays.html">靜態圖像疊加</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">概述: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API參考</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">通道API參考</a></li>
+    </ul>
+  </section>
+</article>

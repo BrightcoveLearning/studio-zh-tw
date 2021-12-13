@@ -1,0 +1,49 @@
+---
+title: '概述: 社交 API '
+description: 本主題概述了社交API。
+parent: Developers
+---
+ <h1>此頁面已移動 - 您將被定向到<a href="https://apis.support.brightcove.com/social/getting-started/overview-social-api.html">新地點</a>在 3 秒內。請更新您的書籤！</h1> 
+<script type="text/javascript">
+var t = setTimeout(function() { window.location.href = 'https://apis.support.brightcove.com/social/getting-started/overview-social-api.html'; } , 3000);
+</script>
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">介紹</h2>
+    <p>社交API可讓您獲取視頻的社交共享狀態和歷史記錄。它主要用於幫助CMS集成，以使您的用戶可以在自己的CMS系統中查看此信息。</p>
+    <p>有關請求的完整詳細信息，請參見<a href="/develop/reference.html">API參考</a>。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="base_url">基本網址</h2>
+    <p>API的基本URL為: </p>
+    <pre>
+  <code class="language-http" translate="No">https://edge.social.api.brightcove.com/v1</code></pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="authentication">驗證</h2>
+    <p>請求的身份驗證需要<span translate="No">授權頭</span>: </p>
+    <pre class="line-numbers">
+        <code class="language-http" translate="No">Authorization: Bearer {access_token}</code></pre>
+    <p>這<code translate="No">access_token</code>是一個臨時的 OAuth2 訪問令牌，必須從<span translate="No">Brightcove OAuth</span>服務。有關如何獲取客戶端憑據以及如何使用它們來檢索訪問令牌的詳細信息，請參閱<a href="https://apis.support.brightcove.com/oauth/getting-started/overview-oauth-api-v4.html">Brightcove OAuth概述</a>話題。</p>
+    <h3>運作方式</h3>
+    <p>當您請求客戶憑據時，您將需要指定所需的帳戶訪問或操作類型。以下是當前支持的操作列表<span translate="No">社交API</span>: </p>
+    <ul>
+      <li><code translate="No">video-cloud/social/status/read</code></li>
+    </ul>
+    <p>請注意，儘管社交API處於測試版中，但其權限為<strong>不是</strong>可在Studio管理員部分中獲取，用於管理API憑據。相反，您將必須使用OAuth API創建憑據。但是，Brightcove學習服務已創建了一個<a href="https://apis.support.brightcove.com/oauth/code-samples/oauth-api-sample-create-client-credentials.html">簡單的在線工具</a>為此。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Summary_of_requests">要求摘要</h2>
+    <p>在當前版本的API中，僅<code translate="No">GET</code>支持請求。有兩類請求，在以下各節中進行了概述。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Status_requests">狀態要求</h2>
+    <p><a href="/develop/reference.html#tag/Status">狀態要求</a>返回視頻的當前社交共享狀態。您可以獲取帳戶中所有視頻或特定視頻的狀態。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="History_requests">歷史記錄請求</h2>
+    <p><a href="/develop/reference.html#tag/History">歷史記錄請求</a>返回視頻的社交共享歷史記錄。您可以獲取帳戶中所有視頻或特定視頻的歷史記錄。</p>
+  </section>
+</article>

@@ -1,0 +1,48 @@
+---
+title: 導出圖庫潛在客戶數據
+description: 在本主題中，您將了解如何導出通過圖庫體驗收集的潛在客戶表單數據。
+parent: Administering Campaign 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>當圖庫體驗已配置為使用潛在顧客表單時，會收集潛在顧客潛在顧客表單數據。有關配置門戶網站體驗以收集潛在客戶數據的信息，請參閱<a href="https://gallery.support.brightcove.com/experiences/portal/using-lead-form-portal-experience.html">使用潛在客戶表單進行門戶體驗</a>。</p>
+    <p>從營銷活動模塊導出圖庫潛在客戶時，只會導出使用營銷活動潛在客戶表單捕獲的數據。來自自定義潛在客戶表單的潛在客戶數據將存儲在您的營銷自動化軟件中。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 只有具有管理員權限的使用者才能下載潛在客戶資料。</aside> 
+  </section>
+  <section class="bcls-section">
+    <p>要導出圖庫線索數據，請按照下列步驟操作。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開<strong>活動</strong>模塊。</li>
+      <li>點擊<strong>出口畫廊線索</strong>在左側導航欄中。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/admin/node18585-export-gallery-leads.png" /></figure>
+      </li>
+      <li>選擇圖庫體驗以從中導出銷售線索。</li>
+      <li>進入一個<strong>開始日期</strong>和<strong>結束日期</strong>為線索。</li>
+      <li>選擇一種導出格式，<strong>逗號分隔值</strong>或者<strong>電子表格</strong>。</li>
+      <li>點擊<strong>出口</strong>按鈕下載銷售線索數據。</li>
+    </ol>
+    <p>以下字段將包含在導出的文件中: </p>
+    <ul>
+      <li><strong>所有可能的潛在客戶表格字段</strong>
+        <ul>
+          <li>電子郵件地址</li>
+          <li>名</li>
+          <li>姓</li>
+          <li>商務電話</li>
+          <li>國家</li>
+          <li>公司名稱</li>
+          <li>行業</li>
+        </ul>
+      </li>
+      <li><strong>externalId</strong> -用於唯一標識觀看者的ID</li>
+      <li><strong>playerId</strong> -顯示潛在客戶表格的玩家ID</li>
+      <li><strong>videoId</strong> -收集數據時正在觀看的視頻的視頻ID</li>
+      <li><strong>pageUrl</strong> -收集數據時打開頁面URL查看器</li>
+      <li><strong>createdAt</strong> -收集日期和時間數據</li>
+      <li><strong>經驗</strong> -收集數據時顯示的體驗名稱</li>
+    </ul>
+  </section>
+</article>

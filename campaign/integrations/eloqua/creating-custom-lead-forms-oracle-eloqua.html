@@ -1,0 +1,116 @@
+---
+title: 為 Oracle Eloqua 創建自定義潛在客戶表單
+description: 在本主題中，您將學習如何使用 Oracle Eloqua 表單來捕獲 Brightcove Player 內的潛在客戶數據。
+parent: Eloqua 
+grandparent: Integrations 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>營銷活動模塊提供創建潛在客戶表單的功能，允許您在 Brightcove 播放器內播放視頻時捕獲觀眾信息。這使您能夠包括所需的任何字段（可見或隱藏），還使您能夠利用諸如漸進分析（如果有）之類的功能。潛在客戶數據將發送到Eloqua並由其處理。</p>
+    <p>要創建自定義銷售線索表單，必須執行以下步驟。</p>
+    <ol>
+      <li><a href="#form">在Eloqua中創建一個表單</a></li>
+      <li><a href="#edit">複製表單HTML</a></li>
+      <li><a href="#styleform">設置表格樣式</a></li>
+      <li><a href="#leadform">在 Campaign 模塊中創建自定義潛在客戶表單</a></li>
+      <li><a href="#player">將線索表分配給玩家</a></li>
+      <li><a href="#formdata">在Eloqua中驗證表單數據</a></li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">筆記: 如需標準潛在客戶表單的資訊，可擷取檢視者資訊並將資料儲存在 Video Cloud 中的資訊，請參閱<a href="/campaign/general/creating-campaign-lead-form.html">建立行銷活動商機表單</a>。</aside> 
+  </section>
+  <section class="bcls-section">
+    <h2 id="form">在Eloqua中創建一個表單</h2>
+    <p>Eloqua提供了創建表單來捕獲查看者信息的功能。這些表格可以顯示在Brightcove Players內部。然後可以將捕獲的數據用於自定義將來的通信。下面的步驟將創建一個簡單的表單來捕獲名字，姓氏和電子郵件地址。有關Eloqua表單的完整詳細信息，請參見<a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAA/Help/Forms/Forms.htm">Eloqua文檔</a>。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>登錄到您的Eloqua帳戶。</li>
+      <li>導航<strong>資產</strong> &gt; <strong>形式</strong>然後點擊<strong>建立表格</strong>。將打開“模板選擇器"表格。</li>
+      <li>點擊<strong>空白表格</strong>然後點擊<strong>選擇</strong>。</li>
+      <li>在左側導航欄中，展開<strong>現場小組</strong>控制板。</li>
+      <li>在裡面<strong>現場小組</strong>面板上，單擊<strong>基本聯繫信息</strong>並將其拖動到表單模板。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node16109-add-fields.png" /></figure>
+      </li>
+      <li>確認字段已添加到表單。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node16109-fields-on-form.png" /></figure>
+      </li>
+      <li>默認情況下，使用字段合併添加字段。在 Campaign 中使用時，這將導致字段中出現奇怪的文本。要刪除字段合併，請選擇<strong>名</strong>單擊該字段。</li>
+      <li>在左側導航面板中，找到<strong>一般性質</strong>部分並設置<strong>預填充字段數據</strong>財產給<strong>沒有任何</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node16109-pre-pop.png" /></figure>
+      </li>
+      <li>重複該過程<strong>姓</strong>和<strong>電子郵件地址</strong>領域。</li>
+      <li>點擊<strong>保存</strong>。</li>
+      <li>給表單命名，然後單擊<strong>保存</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node16109-save-form.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">複製表單HTML</h2>
+    <p>要使用 Campaign 模塊內的表單，您需要復製表單 HTML。請按照以下步驟複製HTML表單。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>點擊<strong>操作&gt;查看表單HTML ...</strong>將顯示HTML表單。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node16109-form-details.png" /></figure>
+      </li>
+      <li>將整個HTML複製到剪貼板。點擊<strong>關閉</strong>。</li>
+      <li>將表單HTML粘貼到您選擇的HTML編輯器中。您可能需要使用編輯器的代碼格式化功能來格式化代碼，以便於閱讀。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="styleform">樣式表</h2>
+    <p>默認情況下，當窗體顯示在Brightcove Player內部時，窗體將顯示在播放器上方的透明背景上。您可能需要使用CSS對錶單進行一些基本的樣式設置。以下各節提供了有關如何設置樣式的兩個示例。還提供了關聯的CSS。您可能需要修改CSS以使其符合標準顏色或處理其他字段的樣式。</p>
+    <div class="BCL-subsection">
+      <h3>簡單表單樣式示例</h3>
+      <p>本示例使用CSS將表單的背景顏色更改為灰色，該表單將如下所示: </p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node16109-simple-styling.png" /></figure>
+      <p>對於此樣式，將以下CSS添加到表單HTML的頂部<code translate="No">style</code>標籤。</p>
+      <pre>
+身體{ background-color: rgba(204,204,204,0.9); margin: 0; padding: 20px; height: 100%; }
+  </pre>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="leadform">在 Campaign 模塊中創建自定義潛在客戶表單</h2>
+    <p>在 Eloqua 中創建表單 HTML 並根據需要設置樣式後，在營銷活動模塊中創建自定義潛在客戶表單並將潛在客戶表單與支持營銷活動的播放器相關聯。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開活動模塊。</li>
+      <li>點擊<strong>潛在客戶表格</strong>在左側導航欄中。如果已創建任何潛在客戶表單，則將顯示它們。</li>
+      <li>點擊<strong>創建銷售線索表格</strong>。</li>
+      <li>給潛在客戶一個描述性的形式<strong>名稱</strong>。</li>
+      <li>選擇一個<strong>形式語言</strong>。</li>
+      <li>選擇<strong>表單時間</strong>。表單時間決定何時顯示潛在客戶表單。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="lead form settings" src="/assets/images/campaign/integrations/eloqua/node16109-edit-lead-form-1.png" /></figure>
+      </li>
+      <li>將表單類型設置為<strong>自定義潛在客戶表格</strong>。</li>
+      <li>粘貼在<strong>表格HTML</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="lead form html" src="/assets/images/campaign/integrations/eloqua/node16109-edit-lead-form-2.png" /></figure>
+      </li>
+      <li><strong>（可選的）</strong>粘貼在<strong>確認HTML</strong>。確認視圖將顯示5秒鐘，然後視頻將繼續播放。如果未包含確認HTML，則視頻將在提交表單後恢復播放。</li>
+      <li><strong>（可選的）</strong>點擊<strong>預覽表格</strong>打開表單的預覽。</li>
+      <li>點擊<strong>保存</strong>保存銷售線索表格。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">分配線索表格給玩家</h2>
+    <p>一旦創建了線索表，就需要將其分配給玩家。請按照以下步驟將潛在客戶表格分配給玩家。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>點擊<strong>競選玩家</strong>在左側導航中。</li>
+      <li>找到您的播放器並使用<strong>潛在客戶表格</strong>下拉列表以選擇銷售線索表格。</li>
+    </ol>
+    <p>設置現已完成，您已準備好捕獲潛在客戶信息。當使用支持廣告系列的播放器發布視頻時，潛在客戶表單將根據表單時間設置顯示。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="formdata">在Eloqua中驗證表單數據</h2>
+    <p>有幾種方法可以驗證表單數據已傳遞到Eloqua。請按照以下步驟在Eloqua中查看表單數據。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>登錄到您的Eloqua帳戶。</li>
+      <li>導航<strong>資產</strong> &gt; <strong>形式</strong>。</li>
+      <li>在左側導航欄中，點擊<strong>全部文件</strong>鏈接以顯示所有表格。</li>
+      <li>雙擊窗體名稱以將其打開。</li>
+      <li>點擊<strong>操作&gt;查看提交數據...</strong>將顯示表格數據。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="lead form data" src="/assets/images/campaign/integrations/eloqua/node16109-form-data.png" /></figure>
+      </li>
+    </ol>
+  </section>
+</article>

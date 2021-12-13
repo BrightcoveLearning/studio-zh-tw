@@ -1,0 +1,95 @@
+---
+title: 為 Salesforce 描創建自定義潛在客戶表單
+description: 在本主題中，您將學習如何使用 Salesforce 表單來捕獲 Brightcove Player 內的潛在客戶數據。
+parent: Salesforce 
+grandparent: Integrations 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>活動模塊提供了創建自定義潛在客戶表單的功能，允許您在 Brightcove 播放器內播放視頻時捕獲觀眾信息。潛在客戶數據將發送到Salesforce並由其進行處理。</p>
+    <p>要創建自定義銷售線索表單，必須執行以下步驟。</p>
+    <ol>
+      <li><a href="#form">在Salesforce中創建表單</a></li>
+      <li><a href="#edit">複製和編輯表單HTML</a></li>
+      <li><a href="#leadform">在 Campaign 模塊中創建自定義潛在客戶表單</a></li>
+      <li><a href="#player">將線索表分配給玩家</a></li>
+      <li><a href="#formdata">在Salesforce中驗證表單數據</a></li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">筆記: 如需標準潛在客戶表單的資訊，可擷取檢視者資訊並將資料儲存在 Video Cloud 中的資訊，請參閱<a href="/campaign/general/creating-campaign-lead-form.html">建立行銷活動商機表單</a>。</aside> 
+  </section>
+  <section class="bcls-section">
+    <h2 id="form">在Salesforce中創建表單</h2>
+    <p>Salesforce中的Web-to-Lead功能可用於從網站訪問者生成潛在客戶信息。這些表格也可以顯示在Brightcove播放器內部。下面的步驟將創建一個簡單的表單來捕獲名字，姓氏，電子郵件地址，公司，城市和州/省。有關網絡領先功能的完整詳細信息，請參見<a href="https://help.salesforce.com/apex/HTViewHelpDoc?id=setting_up_web-to-lead.htm&amp;language=en">Salesforce文檔</a>。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>登錄到您的Salesforce帳戶。</li>
+      <li>從<strong>設置</strong>， 進入<code translate="No">Web-to-Lead</code>在快速查找框中，然後單擊<strong>網絡對領導</strong>。</li>
+      <li>點擊<strong>創建Web到引線表格</strong>。</li>
+      <li>選擇要包含在“Web到鉛"表單中的字段。使用添加和刪除箭頭在<strong>可用字段</strong>列表和<strong>選定字段</strong>列表，然後使用向上和向下箭頭更改表單上字段的順序。
+<figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/salesforce/node16132-lead-setup.png" /></figure>
+      </li>
+      <li>進入一個<strong>返回網址</strong> .對於此示例，“返回URL"將設置為http://www.brightcove.com。當表單用作 Campaign 模塊內的自定義潛在客戶表單時，將忽略此值。</li>
+      <li>點擊<strong>產生</strong>。將顯示HTML表單。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">複製和編輯HTML表單</h2>
+    <p>要使用 Campaign 模塊內的表單，您需要復製表單 HTML。另外，您可能需要對錶單進行一些基本的樣式設置。在下面的步驟中，我們將表單HTML複製到HTML編輯器，然後對錶單進行一些樣式更改。</p>
+    <p>默認情況下，當窗體顯示在Brightcove播放器內部時，該窗體將顯示在播放器上方的透明背景上。使用CSS設置背景顏色。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>將HTML複製到剪貼板。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/salesforce/node16132-lead-form-html.png" /></figure>
+      </li>
+      <li>點擊<strong>完成的</strong>。</li>
+      <li>將表單HTML粘貼到您選擇的HTML編輯器中。您可能需要使用編輯器的代碼格式化功能來格式化代碼，以便於閱讀。</li>
+      <li>使用您的 HTML 編輯器，添加以下 CSS 以將背景顏色更改為灰色。<br />
+        <code translate="No">&lt;style&gt;<br />
+        body {<br />
+        background-color: rgba(204,204,204,0.9);<br />
+        margin: 0;<br />
+        padding: 20px;<br />
+        height: 100%;<br />
+        }<br />
+        &lt;/style&gt;</code></li>
+      <li>（可選）要識別哪些潛在客戶是由 Campaign 生成的，可以在<code translate="No">&lt;form&gt;</code>標籤: <br />
+        <code translate="No">&lt;input type="hidden" name="lead_source" value="Video Cloud Campaign"&gt;</code></li>
+      <li>將HTML複製到剪貼板。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="leadform">在 Campaign 模塊中創建自定義潛在客戶表單</h2>
+    <p>在 Salesforce 中生成表單 HTML 後，在營銷活動模塊中創建自定義潛在客戶表單並將潛在客戶表單與啟用營銷活動的播放器相關聯。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開活動模塊。</li>
+      <li>點擊<strong>潛在客戶表格</strong>在左側導航欄中。如果已創建任何潛在客戶表單，則將顯示它們。</li>
+      <li>點擊<strong>創建銷售線索表格</strong>。</li>
+      <li>給潛在客戶一個描述性的形式<strong>名稱</strong>。</li>
+      <li>選擇一個<strong>形式語言</strong>。</li>
+      <li>選擇<strong>表單時間</strong>。表單時間決定何時顯示潛在客戶表單。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (1)" src="/assets/images/campaign/integrations/salesforce/node16132-edit-lead-form-1.png" /></figure>
+      </li>
+      <li>將表單類型設置為<strong>自定義潛在客戶表格</strong>。</li>
+      <li>粘貼在<strong>表格HTML</strong>來自Salesforce。</li>
+      <li><strong>（可選的）</strong>粘貼在<strong>確認HTML</strong>。確認視圖將顯示5秒鐘，然後視頻將繼續播放。如果未包含確認HTML，則視頻將在提交表單後恢復播放。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit lead form (2)" src="/assets/images/campaign/integrations/salesforce/node16132-edit-lead-form-2.png" /></figure>
+      </li>
+      <li><strong>（可選的）</strong>點擊<strong>預覽表格</strong>打開表單的預覽。</li>
+      <li>點擊<strong>保存</strong>保存銷售線索表格。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">分配線索表格給玩家</h2>
+    <p>一旦創建了線索表，就需要將其分配給玩家。請按照以下步驟將潛在客戶表格分配給玩家。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>點擊<strong>競選玩家</strong>在左側導航中。</li>
+      <li>找到您的播放器並使用<strong>潛在客戶表格</strong>下拉列表以選擇銷售線索表格。</li>
+    </ol>
+    <p>設置現已完成，您已準備好捕獲潛在客戶信息。當使用支持廣告系列的播放器發布視頻時，潛在客戶表單將根據表單時間設置顯示。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="formdata">在Salesforce中驗證表單數據</h2>
+    <p>使用自定義潛在客戶表單捕獲的潛在客戶將作為潛在客戶添加到您的Salesforce帳戶中。</p>
+  </section>
+</article>

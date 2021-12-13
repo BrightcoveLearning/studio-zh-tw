@@ -1,0 +1,97 @@
+  name: 入門
+  url: /get-started/index.html
+  docs:
+    - name: 觀眾入門
+      url: /get-started/getting-started-audience-module.html
+    - name: 觀眾培訓視頻
+      url: /get-started/audience-training-videos.html
+  name: 一般信息
+  url: /general/index.html
+  docs:
+    - name: 受眾字段和數據定義
+      url: /general/audience-fields-and-data-definitions.html
+    - name: 配置受眾群體設置
+      url: /general/configuring-audience-settings.html
+    - name: 創建啟用了受眾群體的播放器
+      url: /general/creating-audience-enabled-player.html
+    - name: 創建受眾線索表格
+      url: /general/creating-audience-lead-form.html
+    - name: 觀眾如何識別觀眾
+      url: /general/how-audience-module-identifies-viewers.html
+    - name: 將視頻發佈到電子郵件
+      url: /general/publishing-video-email-using-audience-module.html
+    - name: 使用自定義指標和事件
+      url: /general/using-custom-metrics-and-events.html
+    - name: 查看玩家事件
+      url: /general/viewing-player-events-audience-module.html
+    - name: 查看視頻活動
+      url: /general/viewing-video-activity.html
+    - name: 查看查看器配置文件信息
+      url: /general/viewing-viewer-profile-information.html
+    - name: 使用 UTM 字段
+      url: /general/working-utm-fields-audience-module.html
+  name: 整合方式
+  url: /integrations/index.html
+  docs:
+    - name: 埃洛誇
+      url: /integrations/eloqua/index.html
+      docs:
+        - name: 創建自定義潛在客戶表單
+          url: /integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html
+        - name: Eloqua集成測試指南
+          url: /integrations/eloqua/eloqua-integration-testing-guide.html
+        - name: 在登陸頁面上嵌入視頻
+          url: /integrations/eloqua/embedding-video-cloud-video-eloqua-landing-page.html
+        - name: 與 Oracle Eloqua 集成
+          url: /integrations/eloqua/integrating-video-cloud-oracle-eloqua.html
+    - name: HubSpot
+      url: /integrations/hubspot/index.html
+      docs:
+        - name: 創建自定義潛在客戶表單
+          url: /integrations/hubspot/creating-custom-lead-forms-hubspot.html
+        - name: HubSpot REST API 測試指南
+          url: /integrations/hubspot/hubspot-rest-api-integration-testing-guide.html
+        - name: '與 HubSpot（客戶端 API）集成'
+          url: /integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html
+        - name: '與 HubSpot 集成（REST API）'
+          url: /integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html
+    - name: 市場部
+      url: /integrations/marketo/index.html
+      docs:
+        - name: 創建自定義潛在客戶表單
+          url: /integrations/marketo/creating-custom-lead-forms-marketo.html
+        - name: '與 Marketo (Munchkin) 集成'
+          url: /integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html
+        - name: '與 Marketo 集成（REST API）'
+          url: /integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html
+        - name: Marketo REST集成測試指南
+          url: /integrations/marketo/marketo-rest-integration-testing-guide.html
+    - name: 非MAP
+      url: /integrations/non-map/index.html
+      docs:
+        - name: 創建自定義集成
+          url: /integrations/non-map/creating-custom-integrations-audience-module.html
+        - name: 與單點登錄集成
+          url: /integrations/non-map/integrating-audience-single-sign.html
+        - name: 使用 Audience 追踪觀眾
+          url: /integrations/non-map/using-audience-module-track-viewers.html
+    - name: 銷售隊伍
+      url: /integrations/salesforce/index.html
+      docs:
+        - name: 創建自定義潛在客戶表單
+          url: /integrations/salesforce/creating-custom-lead-forms-salesforce.html
+        - name: 為 Pardot 創建 Salesforce 對象
+          url: /integrations/salesforce/creating-custom-lead-forms-salesforce.html
+        - name: 與 Salesforce 集成
+          url: /integrations/salesforce/integrating-video-cloud-salesforce.html
+  name: 管理觀眾
+  url: /admin/index.html
+  docs:
+    - name: 從受眾群體導出數據
+      url: /admin/exporting-audience-data-audience-module.html
+    - name: 導出圖庫線索數據
+      url: /admin/exporting-gallery-lead-data.html
+    - name: 管理查看器數據
+      url: /admin/managing-viewer-data.html
+    - name: 解決受眾群體問題
+      url: /admin/troubleshooting-audience-issues.html

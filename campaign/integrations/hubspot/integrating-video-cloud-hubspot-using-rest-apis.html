@@ -1,0 +1,133 @@
+---
+title: 使用 REST API 將視頻雲與 HubSpot 集成
+description: 本主題說明如何配置 Campaign 模塊以與 HubSpot 一起使用。
+parent: HubSpot 
+grandparent: Integrations 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Campaign 模塊允許 Video Cloud 將觀看數據從 Brightcove 播放器同步到 HubSpot。進入HubSpot後，此數據可用於細分，廣告系列邏輯，報告，潛在客戶評分和個性化通信。</p>
+    <p>有兩種方法可以將Video Cloud與HubSpot集成: </p>
+    <ul>
+      <li><strong>使用標準 (REST API) 方法</strong> - 使用此方法，Campaign 將僅跟踪已知觀眾的觀看數據。默認情況下，潛在客戶表單只會顯示給未知的查看者。本主題涵蓋了此方法。</li>
+      <li><strong>使用高容量（客戶端</strong><strong>API) 方法</strong> - 使用此方法，Campaign 將跟踪所有觀眾的觀看數據。有關此類集成的信息，請參見<a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html">使用客戶端API將視頻雲與HubSpot集成</a>。</li>
+    </ul>
+    <p>與 HubSpot 的 Campaign 模塊集成包括兩個主要組件: </p>
+    <ul>
+      <li>Brightcove Player插件，用於跟踪視頻觀看數據</li>
+      <li>從視頻雲向HubSpot發送跟踪數據的同步過程</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="requirements">要求</h2>
+    <p>要將 Campaign 模塊與 HubSpot 結合使用，您必須: </p>
+    <ul>
+      <li>擁有一個HubSpot帳戶</li>
+      <li>擁有專業或企業視頻雲帳戶</li>
+      <li>通過在打開活動模塊時出現的初始啟動屏幕中提交所需信息，為您的帳戶啟用活動模塊</li>
+      <li>首次使用該模塊時，請單擊服務協議</li>
+      <li>發布播放器時，請使用高級嵌入（頁內）發布代碼；由於該插件將在iframe中運行，因此標準嵌入（iframe）發布代碼將無法正常工作，因此將無法訪問任何父頁面URL參數，並且可能無法獲得正確的Cookie</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="features">特徵</h2>
+    <p>視頻雲-HubSpot集成的一些關鍵功能包括: </p>
+    <ul>
+      <li><strong>潛在客戶表格</strong> -創建HubSpot表單，這些表單會在觀眾觀看視頻時自動顯示。有關信息，請參閱<a href="/campaign/integrations/hubspot/creating-custom-lead-forms-hubspot.html">為HubSpot創建自定義潛在客戶表單</a>。</li>
+      <li><strong>資料格式</strong> -查看數據是作為自定義提供的<a href="https://developers.hubspot.com/docs/methods/timeline/timeline-overview">時間軸事件類型</a>。複製到HubSpot的數據如下: 
+        <ul>
+          <li>影片名稱</li>
+          <li>影片編號</li>
+          <li>帳戶ID（視頻雲）</li>
+          <li>頁面URL（引薦頁面的URL）</li>
+          <li>播放器ID（視頻雲播放器）</li>
+          <li>觀看百分比（25％，50％，75％，95％）</li>
+        </ul>
+      </li>
+      <li><strong>數據傳輸</strong> -使用自動過程將查看數據發送到HubSpot；但是，HubSpot平台中的某些報告可能需要一些時間才能刷新</li>
+      <li><strong>資料保留</strong> -收集的數據可以選擇保留在Video Cloud中長達6個月</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="setupConnection">設置連接</h2>
+    <p>請按照以下步驟在Video Cloud和HubSpot之間建立連接。</p>
+    <h3 id="establishConnection">在Video Cloud和HubSpot之間建立連接</h3>
+    <ol class="bcls-tasklist-restart">
+      <li>打開活動模塊並點擊<strong>數據連接</strong>在左側導航中。</li>
+      <li>點擊<strong>添加新連接</strong>。</li>
+      <li>選擇<strong>HubSpot</strong>作為整合。<aside class="bcls-aside bcls-aside--information">筆記: 可用的整合是根據您的 Video Cloud 訂閱而定。</aside> 
+      </li>
+      <li>（可選）輸入<strong>連接名稱</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="campaign setup" src="/assets/images/campaign/integrations/hubspot/node16693-setup-section.png" /></figure>
+      </li>
+      <li>點擊<strong>連接</strong>。</li>
+      <li>選擇<strong>標準（REST API）</strong>然後點擊<strong>保存</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Campaign setup" src="/assets/images/campaign/integrations/hubspot/node16693-rest-or-client.png" /></figure>
+      </li>
+      <li>點擊<strong>連接到HubSpot</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connect to hubspot" src="/assets/images/campaign/integrations/hubspot/node16693-connect-to-hubspot.png" /></figure>
+      </li>
+      <li>系統將提示您登錄HubSpot。輸入您的<strong>電子郵件地址</strong>和<strong>密碼</strong>。點擊<strong>登錄</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="HubSpot login" src="/assets/images/campaign/integrations/hubspot/node16693-hubspot-login.png" /></figure>
+      </li>
+      <li>如果登錄成功，系統會提示您選擇一個帳戶。點擊<strong>選擇賬戶</strong> .
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="hubspot access" src="/assets/images/campaign/integrations/hubspot/node16693-hubspot-permission.png" /></figure>
+      </li>
+    </ol>
+    <p>至HubSpot的視頻雲連接現已建立並可以使用。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">配置集成</h2>
+    <p>建立Video Cloud至HubSpot的連接後，即可配置集成。點擊<strong>HubSpot帳戶信息</strong>顯示連接的HubSpot帳戶信息。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/campaign/integrations/hubspot/node16693-connected-options.png" /></figure>
+    <ol class="bcls-tasklist-restart">
+      <li>默認情況下，<strong>連接狀態</strong>將<strong>已啟用</strong>。這<strong>連接狀態</strong>確定是否將Video Cloud視頻參與度數據發送到HubSpot。
+        <ul>
+          <li><strong>已啟用</strong> -收集數據並將其發送到HubSpot</li>
+          <li><strong>殘障人士</strong> -未收集數據（禁用集成）</li>
+        </ul>
+      </li>
+      <li>默認，<strong>跟踪未知觀看者的數據</strong>將設置為<strong>殘障人士</strong>。啟用此選項將跟踪未知用戶的數據。數據將根據所選的數據保留策略保留。如果數據保留設置為<strong>沒有保留</strong>，則不會顯示此字段。</li>
+      <li>選擇數據保留策略。數據保留政策決定了觀看數據和潛在客戶表單數據（如果使用廣告系列潛在客戶表單）在您的 Video Cloud 帳戶中保留多長時間。將視頻保留在Video Cloud中後，您可以從中斷的同步中恢復。此外，Campaign 將繼續重試無法同步的事件（通常是因為觀看者在觀看視頻時不是已知聯繫人），直到事件超過數據保留期。<strong>您應根據您的隱私政策調整保留設置</strong> -不需要在Video Cloud中保留任何用戶數據。數據保留期過後，數據將被刪除。 
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data retention options" src="/assets/images/campaign/integrations/hubspot/node15636-data-retention-options.png" /></figure>
+      </li>
+    </ol>
+    <p>要刪除與HubSpot的集成，請單擊<strong>斷開</strong>。Campaign 模塊支持與營銷平台的多個連接。點擊<strong>添加新連接</strong>配置其他集成。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="verify">驗證整合</h2>
+    <p>配置集成後，請測試集成以確認視頻觀看數據已發送到HubSpot。有關驗證集成的信息，請參見<a href="/campaign/integrations/hubspot/hubspot-rest-api-integration-testing-guide.html">HubSpot REST API集成測試指南</a>。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">創建支持戰役的播放器</h2>
+    <p>僅當您使用支持營銷活動的視頻播放器時，視頻參與度數據才會發送到 HubSpot。有關創建支持戰役的 Brightcove 播放器的信息，請參閱<a href="/campaign/general/creating-campaign-enabled-player.html">創建支持戰役的播放器</a> .</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="trackingid2">傳遞跟踪ID</h2>
+    <p>Campaign 模塊支持將跟踪 ID 值傳遞給 HubSpot 的功能。例如，跟踪ID可能用於跟踪廣告系列ID。跟踪 ID 可以附加到顯示已啟用戰役的播放器的 URL 或添加到播放器嵌入代碼。</p>
+    <ul>
+      <li>例子: 附加到URL</li>
+    </ul>
+    <pre>
+  http://www.myurl.com/video.html？<strong> bctrackingid = 12345</strong></pre>
+    <ul>
+      <li>例子: 添加到播放器嵌入代碼</li>
+    </ul>
+    <pre>
+  &lt;video data-video-id="6033402539001" data-account="1486906377" data-player="default" data-embed="default" data-application-id class="video-js" <strong>數據 bc-trackingid="12345"</strong>控制&gt;&lt;/視頻&gt;&lt;腳本 src="//players.brightcove.net/1486906377/default_default/index.min.js"&gt;&lt; /腳本&gt;</pre>
+    <p>然後，Campaign 會將值作為另一個同步字段傳遞給 HubSpot。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="identify">識別觀眾</h2>
+    <p>為了進行觀看者跟踪，可以通過以下兩種方式之一來跟踪觀看者: </p>
+    <ul>
+      <li><strong>URL參數</strong> -用戶的電子郵件地址可以通過<strong>郵件</strong>顯示視頻的頁面上的URL參數。有關更多信息和示例，請參閱<a href="/campaign/general/how-campaign-module-identifies-viewers.html#email">活動模塊如何識別查看者</a> .</li>
+      <li><strong>HubSpot cookie</strong> - 當播放器加載時，Campaign 會查看用戶是否已經被 HubSpot cookie。如果是，Campaign 將詢問 HubSpot 是否通過 cookie 值知道用戶是誰。如果 HubSpot 返回聯繫人，Campaign 會將所有查看數據與該用戶關聯。</li>
+    </ul>
+    <p>一種可能的情況是使用為跟踪目的而唯一生成的URL創建視頻登錄頁面。然後，Campaign 模塊將使用 URL 參數來查找用戶服務器端並同步查看數據。</p>
+    <p>為了使播放器/插件讀取URL參數，應使用“高級嵌入"（頁內）發布代碼。由於該插件將在iframe中運行，因此標準嵌入（iframe）發布代碼將無法正常工作，因此無法訪問具有該參數的父頁面URL。</p>
+  </section>
+</article>

@@ -1,0 +1,102 @@
+---
+title: 將插播廣告添加到頻道
+description: 本主題涵蓋向 Cloud Playout 頻道中的 VOD 內容添加插播廣告。
+parent: Cloud Playout
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="introduction">介紹</h2>
+		<p>在閱讀本主題之前，您應該先看看<a href="/cloud-playout/enabling-server-side-ads.html">貨幣化雲播出</a>，其中包括為 SSAI 啟用 Cloud Playout 頻道以及設置前貼片廣告和後貼片廣告插入。</p>
+		<p>正如您將在下面看到的，插播廣告的工作方式略有不同。</p>
+  </section>
+	<section class="bcls-section">
+		<h2 id="overview">概述</h2>
+		<p>插播廣告插入取決於通過 Studio 或 CMS API 為視頻創建的提示點。Cloud Playout 為頻道中的視頻導入提示點數據，並根據它們設置插播廣告插入點。有關如何添加提示點的信息，請參見<a href="/media/working-cue-points-media-module.html">在媒體模塊中使用提示點</a> </p>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Enabling_mid-roll_ad_cuepoints">啟用插播廣告提示點</h2>
+		<p>在您創建頻道時或之後的任何時間，無論頻道狀態如何，都可以啟用或禁用插播廣告提示點的導入: </p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/cloud-playout/midroll-ads-enable-disable.png" alt="Enable Mid-Roll Ads">
+			<figcaption class="bcls-caption--image">啟用插播廣告</figcaption>
+		</figure>
+	</section>
+	<section class="bcls-section">
+		<h2 id="How_mid-rolls_work_in_Cloud_Playout">Cloud Playout 中的插播廣告如何運作</h2>
+		<ul>
+			<li>Cloud Playout 僅根據廣告提示點設置廣告位置（忽略代碼提示點）。</li>
+			<li>由於前貼片廣告和後貼片廣告在 Cloud Playout 中的管理方式不同，因此會忽略由 Video Cloud 自動創建的前貼片廣告和後貼片廣告提示點 - 請參閱<a href="/cloud-playout/enabling-server-side-ads.html#ads">啟用服務器端廣告</a> .</li>
+			<li>僅使用廣告提示點的時間戳來確定插播廣告時間。提示點元數據被忽略。</li>
+			<li>
+				插播廣告的默認持續時間為 30 秒。這可以在頻道設置中更改:  最短持續時間: 30秒;最長持續時間: 10分鐘。
+				<p>無論頻道狀態如何，都可以隨時更改插播廣告位的持續時間: </p>
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/cloud-playout/mid-roll-cuepoints-running-state.png" alt="Edit Mid-Roll Slot Duration (RUNNING State)">
+					<figcaption class="bcls-caption--image">編輯插播廣告位持續時間（RUNNING 狀態）</figcaption>
+				</figure>
+				<aside class="bcls-aside bcls-aside--information">筆記: 
+					<ul>
+						<li>修改後的時長不適用於當前播放的廣告位。後續廣告位（在同一視頻和後續視頻中）將使用修改後的廣告位持續時間。</li>
+						<li>Cloud Playout EPG 是動態生成的，並儘可能接近現實。更改插播持續時間可能會導致 EPG 在一段時間內顯示不准確的時間表，但它會在短時間內自動更正。</li>
+						<li>當 Cloud Playout 當前正在播放廣告（插播廣告或後貼片廣告）並且用戶嘗試使用<strong>現在播放</strong>選項跳到另一個資產，廣告仍將繼續播放，直到編程的廣告位持續時間。在此期間，用戶嘗試立即播放的視頻將在剩餘的廣告位持續時間內被廣告覆蓋。我們建議您等待廣告完成後再使用<strong>現在播放</strong>轉變。</li>
+					</ul>
+					</aside>
+			</li>
+			<li>插播廣告只能插入到 VOD 內容中，不能插入到廣告佔位符中<a href="/cloud-playout/adding-bumpers-to-vod.html">保險槓</a>或者<a href="/cloud-playout/enabling-server-side-ads.html">前貼片廣告和後貼片廣告</a> .</li>
+			<li>Cloud Playout UI 和 EPG 中節目中的開始和結束時間以及資產的持續時間將反映插播廣告內容。</li>
+			<li>
+				無論頻道的當前狀態如何，都可以隨時啟用或禁用為插播廣告導入提示點數據。
+				<figure class="bcls-figure">
+					<img class="bcls-image" src="/assets/images/cloud-playout/mid-roll-cuepoints-running-state.png" alt="Enable/Disable Mid-Rolls while Running">
+					<figcaption class="bcls-caption--image">運行時啟用/禁用中間廣告</figcaption>
+				</figure>
+				<p><strong>筆記</strong></p>
+				<ol>
+					<li>
+						當頻道禁用了插播導入選項並且資產 A 當前正在播放並且它具有插播提示點時，如果現在在頻道設置中啟用了插播導入選項 - 當前播放資產中的廣告位不會在當前迭代中兌現。但是，將導入後續資產的插播廣告。
+					</li>
+					<li>
+						當頻道啟用了插播導入選項並且資產 A 當前正在播放並且它具有插播提示點時，如果現在關閉插播導入選項 - 當前播放資產中的廣告位將被接受在盡最大努力的基礎上。一些與當前播放資產的播放時間如此接近的廣告位可能仍會播放廣告。
+					</li>
+          <li>向當前播放的資產添加/刪除提示點是根據各種因素處理的。當前播放時間位置、其他中間滾動提示點的存在等因素將影響 Cloud Playout 處理當前播放資產的提示點的動態添加/刪除的方式。</li>
+				</ol>
+			</li>
+		</ul>
+	</section>
+	<section class="bcls-section">
+		<h2 id="Identify assets with mid-rolls">使用插播廣告識別資產</h2>
+		<p>如果啟用了插播提示點導入，則具有有效插播提示點的視頻將在程序中的視頻標題旁邊顯示一個綠色虛線圖標: </p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/cloud-playout/mid-roll-assets-with-midroll.png" alt="Videos with Mid-Roll Cuepoints">
+			<figcaption class="bcls-caption--image">帶有中間滾動提示點的視頻</figcaption>
+		</figure>
+		<p>如果頻道在<strong>草案</strong>狀態，您可以將鼠標懸停在綠色虛線圖標上以顯示插播詳細信息: </p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/cloud-playout/mid-roll-draft-state.png" alt="Reveal Mid-Roll Details - DRAFT State">
+			<figcaption class="bcls-caption--image">顯示中間卷詳細信息 - 草稿狀態</figcaption>
+		</figure>
+		<p>如果頻道在<strong>跑步</strong>狀態，您可以單擊綠色虛線圖標以顯示視頻插播詳細信息: </p>
+		<figure class="bcls-figure">
+			<img class="bcls-image" src="/assets/images/cloud-playout/mid-roll-running-state.png" alt="Reveal Mid-Roll Details - RUNNING State">
+			<figcaption class="bcls-caption--image">顯示中間卷詳細信息 - 草稿狀態</figcaption>
+		</figure>
+	</section>
+	<section class="bcls-section">
+    <h2 id="Related_topics">相關話題</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">概述: 雲播出</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+      <li><a href="/cloud-playout/adding-bumpers-to-vod.html">將緩衝器添加到雲播放</a></li>
+      <li><a href="/cloud-playout/static-image-overlays.html">靜態圖像疊加</a></li>
+			<li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">概述: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API參考</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">通道API參考</a></li>
+    </ul>
+  </section>
+</article>

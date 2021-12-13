@@ -1,0 +1,91 @@
+---
+title: Eloqua 集成測試指南
+description: 在本主題中，您將學習如何驗證 Video Cloud 和 Eloqua 之間的集成。
+parent: Eloqua 
+grandparent: Integrations 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>設置新的Eloqua集成時，測試並確認視頻觀看數據確實已交付給Eloqua可能是一個挑戰。在本主題中，您將學習如何系統地測試和確認集成是否有效以及如何將查看數據和銷售線索發送給Eloqua。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 如需如何設定「廣告活動」模組以與 Eloqua 搭配使用的資訊，請參閱&nbsp;<a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">整合視訊雲端與 Oracle Eloqua </a>。</aside> 
+  </section>
+  <section class="bcls-section">
+    <h2 id="start">開始之前</h2>
+    <p>在驗證集成之前，假定您具有: </p>
+    <ul>
+      <li>成功完成了<a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">Brightcove Campaign 與 Eloqua 的集成</a></li>
+      <li>至少創建了一個<a href="/campaign/general/creating-campaign-enabled-player.html">支持戰役的播放器</a>並將其配置為使用 Eloqua 連接</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="lead_form">配置測試線索表格並發布視頻</h2>
+    <p>出於測試目的，您需要在 Campaign 中創建和配置自定義潛在客戶表單。這是一個 Eloqua 表單，您已將其嵌入代碼粘貼到 Campaign 中。即使您不會在生產環境中使用潛在客戶表單，也可以使用該潛在客戶表單來確保您在數據庫和頁面中是已知的。要創建 Eloqua 表單並配置 Campaign 以使用它，請執行以下步驟。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>登錄到您的Eloqua帳戶。</li>
+      <li>創建並設置Eloqua表單的樣式。有關創建Eloqua表單的信息，請參見<a href="/campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html">為Oracle Eloqua創建自定義潛在客戶表單</a>。</li>
+      <li>點擊<strong>操作&gt;查看表單HTML</strong>在頁面頂部。</li>
+      <li>將表單嵌入代碼複製到剪貼板。</li>
+      <li>返回活動模塊。</li>
+      <li>使用Eloqua表單嵌入代碼創建一個新的潛在顧客表單。</li>
+      <li>設置您的自定義窗體以在5秒標記處顯示該窗體。這樣，您將確切知道何時應顯示它。</li>
+      <li>選中復選框<strong>即使已經知道潛在客戶，也要始終顯示潛在客戶表格</strong>。這樣可以確保在測試過程中填寫完表格後繼續顯示該表格。</li>
+      <li><strong>保存</strong>表格。</li>
+      <li>使用Eloqua連接配置Brightcove Player，以使用剛剛創建的Eloqua潛在顧客表單。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="preview_video">生成預覽鏈接以觀看視頻</h2>
+    <p>要生成視頻的預覽鏈接，請按照下列步驟操作。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開媒體模塊。</li>
+      <li>選擇一個視頻並將其發佈到網絡播放器。確保在潛在客戶表單中選擇啟用了戰役的玩家。</li>
+      <li>單擊預覽鏈接以在新的瀏覽器窗口中打開視頻。通過這種方法進行測試，可以消除HTML頁面上嵌入的播放器可能引入的任何潛在變量。</li>
+      <li>確認視頻已播放，並且線索表顯示在5秒標記處。</li>
+      <li>使用唯一的聯繫信息和電子郵件地址（即名人名稱或包含“bctest"的名稱）填寫潛在客戶表單，以便以後在Eloqua中輕鬆找到它。這消除了任何瀏覽器，播放器或數據庫級別的變量。通過以新用戶身份填寫表格，我們可以確保您現在是Eloqua的知名用戶。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="confirm_data">確認 Campaign 成功捕獲數據</h2>
+    <p>在 Eloqua 中查找視頻觀看數據之前，首先確認 Campaign 確實捕獲了視頻觀看。請注意，查看數據最多可能需要 3 小時才能在營銷活動 UI 中顯示。要確認 Campaign 成功捕獲數據，請執行以下步驟。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開活動模塊。</li>
+      <li>點擊<strong>最近所有活動</strong>在左側導航欄中。</li>
+      <li>確認有一個帶有最近時間戳記的事件，該事件顯示了剛剛觀看的視頻的名稱。事件狀態應為<strong>未處理</strong>。這表示 Campaign 已捕獲該視圖，但尚未嘗試將其同步到 Eloqua。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node18742-unprocessed.png" /></figure>
+      </li>
+      <li>要手動觸發 Campaign 和 Eloqua 之間的同步，請單擊<strong>同步活動</strong>在左側導航中。</li>
+      <li>來自<strong>選擇連接</strong>下拉列表，選擇您的Eloqua集成。一種<strong>測試同步</strong>按鈕應該出現。</li>
+      <li>點擊<strong>測試同步</strong>觸發手動同步。請注意，您限於觸發手動同步的頻率。默認情況下，Campaign 每小時將視圖同步到 Eloqua 一次。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node18742-test-sync.png" /></figure>
+      </li>
+      <li>點擊<strong>最近所有活動</strong>在左側導航欄中。</li>
+      <li>您的觀看事件狀態為<strong>排隊</strong>。數據實際同步到Eloqua可能需要15分鐘左右。數據同步後，狀態將更改為以下兩種狀態之一: 
+        <ul>
+          <li><strong>已同步</strong> -表示該用戶是已知用戶，並且數據已成功傳送到其活動日誌。幾分鐘後，數據也應該在Eloqua中可見。</li>
+          <li><strong>unknown_contact</strong> -表示該用戶被認為是未知用戶，並且Eloqua無法接受數據。如果你得到一個<strong>unknown_contact</strong>狀態，請檢查您是否使用正確的播放器發布了視頻，是否已安裝Eloqua表單以及是否正在使用預覽鏈接（而不是嵌入到頁面中）進行測試。
+            <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node18742-synced.png" /></figure>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="confirm_marketo">確認視頻觀看數據在Eloqua中</h2>
+    <p>一旦廣告系列顯示<strong>已同步</strong>狀態，請按照以下步驟驗證數據是否在 Eloqua 中。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: Eloqua UI 需要 5-10 分鐘才能使用從廣告活動收到的新資料進行更新。</aside> 
+    <ol class="bcls-tasklist-restart">
+      <li>登錄到您的Eloqua帳戶。</li>
+      <li>導航到<strong>自定義對象</strong>。</li>
+      <li>找到<strong>BrightcoveVideoView</strong>自定義對象。</li>
+      <li>單擊它旁邊的下拉箭頭，然後單擊<strong>映射到聯繫人細分的自定義對象記錄</strong>。將顯示在此自定義對像中具有視頻觀看數據的聯繫人列表。</li>
+      <li>填寫潛在客戶表單時，找到您使用的唯一名稱或電子郵件地址。</li>
+      <li>單擊聯繫人以打開詳細信息頁面。將顯示該聯繫人的所有視頻觀看記錄的列表。這是從 Campaign 傳送到 Eloqua 的視頻觀看數據。其中包括諸如“視頻名稱"，“視頻ID"，“播放器ID"，“觀看時間"，“觀看百分比"等字段。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/eloqua/node18742-eloqua-info.png" /></figure>
+      </li>
+    </ol>
+    <p>Eloqua要求將傳遞到自定義數據對像中的數據分配給已知聯繫人。Eloqua將僅接受已知聯繫人的數據。未知聯繫人的數據將不會同步。如果您不使用潛在客戶表單，則未知用戶將無法轉換為已知用戶，因此不會同步任何數據。</p>
+  </section>
+</article>

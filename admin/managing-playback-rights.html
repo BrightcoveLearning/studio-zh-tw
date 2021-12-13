@@ -1,0 +1,173 @@
+---
+title: 管理播放權限
+parent: Administering Accounts
+description: In this topic you will learn how to create playback rights. 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>播放權限用於限制視頻播放。創建播放權限後，可以使用“媒體"模塊將它們分配給視頻。</p>
+    <p>要訪問“播放權限"管理頁面，請點擊<strong>行政</strong>鏈接然後<strong>播放權</strong>。將出現播放權限列表。</p>
+    <p>
+      <aside class="bcls-aside bcls-aside--information">筆記: 若要存取 [播放權限] 頁面，您必須是具有管理員角色的 Video Cloud Studio 使用者。</aside> 
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-list.png" /></figure>
+      播放權分配給了<strong>播放限制</strong>媒體模塊中視頻屬性頁的“視頻"部分。 </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-assign.png" /></figure>
+    <p>播放權<strong>地位</strong>的<strong>不活躍</strong>無法分配給“媒體"模塊中的視頻。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create">創建播放權限</h2>
+    <p>要創建播放權限，請按照下列步驟操作。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>以管理員身份登錄Video Cloud Studio。</li>
+      <li>在導航標題中，單擊<strong>行政</strong>然後<strong>播放權</strong>。請注意，您必須是帳戶管理員才能訪問ADMIN菜單。</li>
+      <li>點擊<strong>新播放權</strong>。</li>
+      <li>進入一個<strong>播放權限名稱</strong>。</li>
+      <li>檢查<strong>允許沒有令牌的播放權</strong>將允許在沒有JSON Web令牌（JWT）的情況下發出播放請求。<aside class="bcls-aside bcls-aside--information">筆記: 取消選中此選項不會影響為該“播放權限"設置的限制，但是，播放請求將需要一個有效的JWT，該JWT是在播放器級別以編程方式設置的。如需詳細資訊，請參閱<a href="https://apis.support.brightcove.com/playback-authorization/guides/using-pas-with-bcp.html">使用播放授權 DRM 與 Brightcove 播放程式的開發人員文件</a>。</aside> 
+      </li>
+      <li>查看<strong>默認使用</strong>將其設為默認播放權限。這會將配置的播放權限限制應用於上載的視頻。<aside class="bcls-aside bcls-aside--information">筆記: 如果視訊重新轉碼，則不會指派預設的播放權限。</aside> 
+      </li>
+      <li>點擊<strong>保存</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-create.png" /></figure>
+      </li>
+    </ol>
+    <aside class="bcls-aside bcls-aside--information">筆記: 帳戶中最多可以有100個播放權限。如果您需要增加上限，請聯絡<a href="https://supportportal.brightcove.com">布萊特灣支援部門</a>。</aside> 
+    <p>單擊左側導航中的限制鏈接，以向播放權限添加限制: </p>
+    <ul>
+      <li><a href="#geo">地域</a></li>
+      <li><a href="#domain">領域</a></li>
+      <li><a href="#proxy">代理人</a></li>
+      <li><a href="#date">時間</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="edit">編輯播放權限</h2>
+    <p>若要編輯播放權限，請按照下列步驟操作: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>單擊播放權。</li>
+      <li>進行必要的更改，然後單擊<strong>保存</strong>。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="duplicate">複製播放權限</h2>
+    <p>若要復製播放權限，請按照下列步驟操作: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>單擊播放權。</li>
+      <li>點擊<strong>複製</strong>。</li>
+      <li>進行必要的更改，然後單擊<strong>保存</strong>。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="activate">激活/停用播放權限</h2>
+    <p>播放權限無法刪除，但是可以將其禁用，因此不能將其分配給“媒體"模塊中的視頻。若要激活/停用播放權限，請按照下列步驟操作: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>單擊播放權。</li>
+      <li>點擊<strong>啟用</strong>激活播放權或<strong>停用</strong>取消播放權。無法將已停用的播放權限分配給“媒體"模塊中的視頻。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="geo">分配地理限制</h2>
+    <p>地理限制允許您根據國家、郵政編碼、IP 和指定的市場區域限制視頻播放。要將地理限制分配給播放權限，請按照下列步驟操作: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>單擊播放權。</li>
+      <li>在左側導航中，單擊<strong>地理限制</strong>。</li>
+    </ol>
+    <p>這<strong>全局規則</strong>可以設置為<strong>允許所有</strong>或者<strong>全部屏蔽</strong> .</p>
+    <ul>
+      <li><strong>允許所有</strong>
+        <ul>
+          <li>當您想將少數無權訪問的組列入黑名單時使用</li>
+          <li>選擇允許所有人查看，然後添加禁止查看的黑名單國家、郵政編碼、IP 和 DMA 列表</li>
+        </ul>
+      </li>
+      <li><strong>全部屏蔽</strong>
+        <ul>
+          <li>當您想將少數有權訪問的組列入白名單時使用</li>
+          <li>選擇阻止所有人查看，然後添加允許查看的白名單國家、郵政編碼、IP 或 DMA 列表</li>
+        </ul>
+      </li>
+    </ul>
+    <p>可以添加地理限制以允許/阻止查看基於: </p>
+    <ul>
+      <li><a href="#countries">國別</a></li>
+      <li><a href="#zip">郵遞區號</a></li>
+      <li><a href="#ip">IP限制</a></li>
+      <li><a href="#dma">指定市場區域（DMA）</a></li>
+    </ul>
+    <h3 id="countries">限制進入國家</h3>
+    <p>國家/地區播放權限可用於限制特定國家/地區的觀看。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>選擇將被阻止（列入黑名單）或允許（列入白名單）查看的國家/地區。鍵入時，將過濾選擇列表。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-countries.png" /></figure>
+      </li>
+      <li>點擊<strong>保存</strong>。</li>
+    </ol>
+    <h3 id="zip">限制對郵政編碼的訪問</h3>
+    <p>郵政編碼播放權限可用於限制查看特定郵政編碼。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>輸入將被阻止（列入黑名單）或允許（列入白名單）查看的郵政編碼列表。郵政編碼前應加上大寫字母，兩個字母的國家/地區代碼和連字符，例如，<strong> US-90045</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-zip.png" /></figure>
+      </li>
+    </ol>
+    <p>還可以上傳包含郵政編碼的 .csv 文件。點擊<strong>上載CSV</strong>瀏覽並選擇要上傳的文件。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-upload-csv.png" /></figure>
+    <aside class="bcls-aside bcls-aside--information">筆記: 上傳 .csv 檔案將取代<strong>郵遞區號</strong>欄位的內容。</aside> 
+    <h3 id="ip">限制對 IP 的訪問</h3>
+    <p>IP 播放權限可用於將查看限制在 IP 地址範圍內。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>輸入將被阻止（列入黑名單）或允許（列入白名單）查看的 IP 地址範圍。<a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR 塊符號</a>也支持。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-ip.png" /></figure>
+      </li>
+      <li>點擊<strong>保存</strong>。</li>
+    </ol>
+    <h3 id="dma">限制對 DMA 的訪問</h3>
+    <p>指定市場區域 (DMA)，也稱為媒體市場，是美國的一個區域，用於定義電視和廣播市場。播放權限可用於限制基於 DMA 的觀看。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>輸入將被阻止（列入黑名單）或允許（列入白名單）查看的 DMA 列表
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-dma.png" /></figure>
+      </li>
+      <li>點擊<strong>保存</strong>。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="domain">分配域限制</h2>
+    <p>域限制允許您根據域限制視頻播放。要將域限制分配給播放權限，請按照下列步驟操作: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>單擊播放權。</li>
+      <li>在左側導航中，單擊<strong>域限制</strong>。</li>
+      <li>在裡面<strong>列入黑名單的域</strong>字段中，輸入將無法查看的域。 </li>
+      <li>在裡面<strong>列入白名單的網域</strong>字段中，輸入將允許查看的域。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-domain.png" /></figure>
+      </li>
+      <li>點擊<strong>保存</strong>。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="proxy">分配代理限制</h2>
+    <p>代理限制使您可以根據某些類型的連接來限制視頻播放。要將代理限制分配給播放權限，請按照下列步驟操作: </p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 隨著 VPN 提供商不斷改進他們的服務，解析 IP 地址可能會與您為阻止的 IP 地址定義的不同。正因為如此，代理阻塞並不是 100％ 的保證。</aside> 
+    <ol class="bcls-tasklist-restart">
+      <li>單擊播放權。</li>
+      <li>在左側導航中，單擊<strong>代理限制</strong>。</li>
+      <li>選擇要阻止的代理類型。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-proxy.png" /></figure>
+      </li>
+      <li>點擊<strong>保存</strong>。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="date">分配時間限制</h2>
+    <p>時間限制允許您根據指定的開始日期限制視頻播放。要為播放權限分配時間限制，請執行以下步驟: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>單擊播放權。</li>
+      <li>在左側導航中，單擊<strong>時間限制</strong> .</li>
+      <li>單擊日曆控件以選擇一個<strong>開始日期</strong> .
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/playback-rights-date.png" /></figure>
+      </li>
+      <li>（可選）點擊<strong>添加結束日期</strong>選擇結束日期。</li>
+      <li>點擊<strong>保存</strong>。</li>
+    </ol>
+  </section>
+</article>

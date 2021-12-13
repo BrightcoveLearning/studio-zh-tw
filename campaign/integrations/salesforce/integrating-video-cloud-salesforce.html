@@ -1,0 +1,177 @@
+---
+title: 將視頻雲與 Salesforce 集成
+parent: Salesforce 
+grandparent: Integrations 
+---
+
+<article class="bcls-article">
+  <h1>將視頻雲與Salesforce集成</h1>
+  <summary>本主題說明如何配置 Campaign 模塊以與 Salesforce 一起使用。</summary>
+  <section class="bcls-section">
+    <p>Campaign 模塊允許 Video Cloud 將查看數據從 Brightcove Players 同步到 Salesforce。進入Salesforce後，此數據可用於活動邏輯，報告和個性化通信。與 Salesforce 的 Campaign 模塊集成包括兩個主要組件: </p>
+    <ul>
+      <li>Brightcove Player插件，用於跟踪視頻觀看數據</li>
+      <li>從Video Cloud向Salesforce發送跟踪數據的同步過程</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="requirements">要求</h2>
+    <p>要將 Campaign 模塊與 Salesforce 配合使用，您必須: </p>
+    <ul>
+      <li>擁有專業或企業視頻雲帳戶</li>
+      <li>具有Salesforce帳戶，不支持Salesforce沙箱帳戶</li>
+      <li>通過在打開活動模塊時出現的初始啟動屏幕中提交所需信息，為您的帳戶啟用活動模塊</li>
+      <li>首次使用該模塊時，請單擊服務協議</li>
+      <li>在以下位置擁有一個Salesforce.com帳戶: <strong>已啟用API</strong>權限，該角色屬於允許您讀取和寫入他們選擇將視圖數據發送到的Salesforce對象的角色</li>
+      <li>發布播放器時，請使用高級嵌入（頁內）發布代碼；標準插件（iframe）發布代碼將無法正常工作，因為該插件將在iframe中運行，因此將無法訪問父頁面網址參數</li>
+      <li>如果您將使用 Pardot 集成，您應該完成在<a href="../../../campaign/integrations/salesforce/creating-salesforce-object-pardot.html">為 Pardot 集成創建自定義 Salesforce 對象</a>話題。</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="features">特徵</h2>
+    <p>視頻雲-Salesforce集成的一些關鍵功能包括: </p>
+    <ul>
+      <li><strong>資料格式</strong> -視頻雲查看數據已映射到Salesforce對象</li>
+      <li><strong>數據傳輸</strong> -每小時將查看數據從視頻雲發送到Salesforce</li>
+      <li><strong>潛在客戶表格</strong> -創建Salesforce表單，這些表單將在觀眾觀看視頻時自動顯示。有關信息，請參閱<a href="/campaign/integrations/salesforce/creating-custom-lead-forms-salesforce.html">為Salesforce創建自定義潛在客戶表單</a>。</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="setupconnection">設置連接</h2>
+    <p>請按照以下步驟在Video Cloud和Salesforce之間建立連接。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開活動模塊並點擊<strong>數據連接</strong>在左側導航中。</li>
+      <li>點擊<strong>添加新連接</strong>。</li>
+      <li>選擇<strong>銷售隊伍</strong>作為整合。<aside class="bcls-aside bcls-aside--information">筆記: 可用的整合是根據您的 Video Cloud 訂閱而定。</aside> 
+      </li>
+      <li>（可選）輸入<strong>連接名稱</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select salesforce" src="/assets/images/campaign/integrations/salesforce/node16123-select-salesforce.png" /></figure>
+      </li>
+      <li>點擊<strong>連接</strong>。</li>
+      <li>點擊<strong>連接到Salesforce</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connect to salesforce" src="/assets/images/campaign/integrations/salesforce/node16123-connect-to-salesforce.png" /></figure>
+      </li>
+      <li>在出現的登錄屏幕上，輸入您的Salesforce <strong>用戶名</strong>和<strong>密碼</strong>。點擊<strong>登錄</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Salesforce login" src="/assets/images/campaign/integrations/salesforce/node16123-salesforce-login.png" /></figure>
+      </li>
+      <li>如果登錄成功，則將提示您安裝<strong>適用於Salesforce的Brightcove Video Connect</strong>應用程序。點擊<strong>允許</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/salesforce/node16123-bc-connect-salesforce.png" /></figure>
+      </li>
+    </ol>
+    <p>現在已建立與Salesforce的視頻雲連接並可以使用。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">配置集成</h2>
+    <p>建立Video Cloud與Salesforce的連接後，即可配置集成。點擊<strong>Salesforce用戶信息</strong>查看有關設置集成時使用的帳戶的信息。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/campaign/integrations/salesforce/node16123-configure.png" /></figure>
+    <ol class="bcls-tasklist-restart">
+      <li>要配置查看器標識，請點擊<strong>配置如何識別觀眾</strong>鏈接，然後選擇一個選項:  </li>
+      <ul>
+        <li><strong>派爾多特</strong> -Pardot用於識別觀看者。見<a href="#pardot">配置Pardot集成</a>下面的部分。</li>
+        <li><strong>手動的</strong> - 您的開發人員將負責添加邏輯<a href="#identify">識別觀眾</a> .</li>
+      </ul>
+      <li>選擇一個<strong>映射類型</strong>和<a href="#configuredata">配置數據映射</a>。</li>
+      <li>默認情況下，<strong>連接狀態</strong>將<strong>已啟用</strong>。這<strong>連接狀態</strong>確定是否將視頻雲視頻參與度數據發送到Salesforce。 </li>
+      <ul>
+        <li><strong>已啟用</strong> -收集數據並將其發送到Salesforce</li>
+        <li><strong>殘障人士</strong> -未收集數據（禁用集成）</li>
+      </ul>
+      <li>默認情況下，<strong>跟踪未知查看者的數據</strong>將會<strong>已禁用</strong> .此設置確定當觀看者未知時是否將視頻參與度數據保存在視頻雲中。僅將已知查看者的數據發送到Salesforce。
+        <ul>
+          <li><strong>啟用</strong> - 收集所有觀眾的數據並保存在視頻雲中</li>
+          <li><strong>已禁用</strong> - 未知觀眾的數據不會保存在視頻雲中</li>
+        </ul>
+      </li>
+      <li>選擇數據保留策略。數據保留政策決定了觀看數據和潛在客戶表單數據（如果使用廣告系列潛在客戶表單）在您的 Video Cloud 帳戶中保留多長時間。將視頻保留在Video Cloud中後，您可以從中斷的同步中恢復。此外，Campaign 將繼續重試無法同步的事件（通常是因為觀看者在觀看視頻時不是已知聯繫人），直到事件超過數據保留期。<strong>您應根據您的隱私政策調整保留設置</strong> -不需要在Video Cloud中保留任何用戶數據。數據保留期過後，數據將被刪除。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data retention options" src="/assets/images/campaign/integrations/salesforce/node16123-data-retention-options.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="pardot">配置Pardot集成</h2>
+    <p>建立 Brightcove Campaign 到 Salesforce 的連接後，您可以選擇使用 Pardot 來識別查看者。本節介紹了使用Pardot識別查看者的步驟。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 在配置 Pardot 整合之前，您應該完成「為 Pardot 整合<a href="/campaign/integrations/salesforce/creating-salesforce-object-pardot.html">建立自訂 Salesforce 物件」</a>主題中所述的步驟。</aside> <aside class="bcls-aside bcls-aside--information">筆記: 自 2021 年 2 月 15 日起，使用 Pardot 登入功能已不再有效。</aside> 
+
+    <ol class="bcls-tasklist">
+      <li>點擊<strong>配置如何識別觀眾</strong>關聯。</li>
+      <li>如果您看到 2 個登錄選項，請選擇<strong>使用 Salesforce 登錄</strong> .</li>
+    </ol>
+    <h3 id="pardot-api-key">獲取 Pardot 業務部門 ID</h3>
+    <p>要獲取 Pardot 業務單位 ID 字段的值，請執行以下步驟。</p>
+    <ol  class="bcls-tasklist">
+      <li>登錄您的 Salesforce 帳戶。</li>
+      <li> 單擊齒輪圖標 (<img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/salesforce/pardot-gear-icon.png" />） 進而<strong>設置</strong> .</li>
+      <li>在左側導航中，在<strong>快速查找</strong>框，搜索<strong>帕多</strong>，然後單擊<strong>Pardot 帳戶設置</strong> .</li>
+      <li> 找到<strong>業務單位編號</strong>場地。將值輸入到<strong>Pardot 業務部門 ID</strong>活動中的字段。</li>
+    </ol>
+    <h3 id="tracking-ids">獲取跟踪ID</h3>
+    <p>獲得價值<strong>跟踪碼</strong>和<strong>跟踪piCld</strong>字段，請按照以下步驟操作。</p>
+    <ol class="bcls-tasklist">
+      <li>使用左側導航打開<strong>營銷</strong>頁。</li>
+      <li>點擊<strong>活動</strong>在頂部導航。</li>
+      <li> 單擊廣告系列名稱（或單擊<strong>新的</strong>如果沒有廣告系列，則創建一個廣告系列）。<aside class="bcls-aside bcls-aside--information">筆記: 無論您選擇哪個廣告活動，Brightcove Campaign 都需要這兩個值來獲取 cookie 來識別觀眾。</aside> 
+      </li>
+      <li> 點擊<strong>查看跟踪代碼</strong>。這<strong>皮亞德</strong>和<strong>價格</strong>值將顯示。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/salesforce/pardot-tracking-code.png" /></figure>
+      </li>
+      <li>複製值並將其粘貼到各自的字段中。<aside class="bcls-aside bcls-aside--information">筆記: 布萊特灣戰役不會驗證 PIAID 和 PICID 欄位，但如果輸入錯誤的值，布萊特灣戰役將無法識別觀眾。</aside> 
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="salesforce integration type" src="/assets/images/campaign/integrations/salesforce/pardot-credentials.png" /></figure>
+      </li>
+      <li>點擊<strong>連接到Pardot</strong>。</li>
+    </ol>
+    <p>通常，在使用Pardot集成類型時，您將選擇<strong>先進的</strong>映射類型，然後將視圖字段映射到<a href="/campaign/integrations/salesforce/creating-salesforce-object-pardot.html">Salesforce自定義對象</a>您創建的。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configuredata">配置數據映射</h2>
+    <p>數據映射確定如何將視頻數據映射到Salesforce對像中的字段。默認情況下，集成將使用<strong>簡單的</strong>映射將一些視頻數據映射到<strong>任務</strong> Salesforce中的對象。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/salesforce/node16123-simple-mapping.png" /></figure>
+    <p>請按照以下步驟自定義數據映射。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>點擊<strong>配置如何將數據映射到Salesforce對像中的字段</strong>或點擊<strong>對應關係</strong>關聯。</li>
+      <li>為了<strong>映射類型</strong>， 選擇<strong>先進的</strong>。</li>
+      <li>在裡面<strong>Salesforce對象</strong>下拉列表中，選擇一個對像以將視頻數據映射到。</li>
+      <li>映射適當的<strong>視場</strong>到Salesforce字段。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/campaign/integrations/salesforce/node16123-adv-mapping.png" /></figure>
+      </li>
+      <li>點擊<strong>保存</strong>保存更改。</li>
+    </ol>
+    <p>要刪除與Salesforce的集成，請單擊<strong>斷開</strong>。Campaign 模塊支持與營銷平台的多個連接。點擊<strong>添加新連接</strong>配置其他集成。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">創建支持戰役的播放器</h2>
+    <p>僅當您使用支持營銷活動的視頻播放器時，視頻參與數據才會發送到 Salesforce。有關創建支持戰役的 Brightcove 播放器的信息，請參閱<a href="/campaign/general/creating-campaign-enabled-player.html">創建支持戰役的播放器</a> .</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="trackingid2">傳遞跟踪ID</h2>
+    <p>Campaign 模塊支持將跟踪 ID 值傳遞給 Salesforce 的功能。例如，跟踪ID可能用於跟踪廣告系列ID。跟踪 ID 可以附加到顯示已啟用戰役的播放器的 URL 或添加到播放器嵌入代碼。</p>
+    <ul>
+      <li>例子: 附加到URL</li>
+    </ul>
+    <pre>
+  http://www.myurl.com/video.html？<strong> bctrackingid = 12345</strong></pre>
+    <ul>
+      <li>例子: 添加到播放器嵌入代碼</li>
+    </ul>
+    <pre>
+  &lt;video data-video-id="6033402539001" data-account="1486906377" data-player="default" data-embed="default" data-application-id class="video-js" <strong>數據 bc-trackingid="12345"</strong>控制&gt;&lt;/視頻&gt;&lt;腳本 src="//players.brightcove.net/1486906377/default_default/index.min.js"&gt;&lt; /腳本&gt;</pre>
+    <p>然後，Campaign 會將值作為另一個同步字段傳遞給 Salesforce。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="identify">識別觀眾</h2>
+    <p>如果您的 Salesforce 連接配置為使用<strong>手動的</strong>觀眾識別，由您來識別觀眾。為了進行觀看者跟踪，應該在顯示視頻的頁面上將用戶ID作為URL參數傳遞。支持兩個URL參數: </p>
+    <ul>
+      <li><strong>郵件</strong> -要傳遞查看者的電子郵件地址（例如，請參閱<a href="/campaign/general/how-campaign-module-identifies-viewers.html#email">這個話題</a>）</li>
+      <li><strong>bcsfid</strong> -傳遞查看者的Salesforce ID</li>
+    </ul>
+    <p>在這種情況下，視頻登錄頁面將使用為跟踪目的而唯一生成的URL生成。然後，Campaign 模塊將使用 URL 參數來查找用戶服務器端並同步查看數據。</p>
+    <p>為了使播放器/插件讀取URL參數，應使用“高級嵌入"（頁內）發布代碼。由於該插件將在iframe中運行，因此標準嵌入（iframe）發布代碼將無法正常工作，因此無法訪問具有該參數的父頁面URL。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 默認情況下，“聯繫人"和“潛在客戶"表用於查找查看者的Salesforce ID。營銷活動可以配置為使用 Salesforce 中的客戶表。要啟用此功能，請<a href="https://supportportal.brightcove.com">聯繫Brightcove支持</a>和請求，例如: 「請將我的廣告活動帳戶設定為在查詢檢視者 ID 時使用 Salesforce 帳戶表格。「</aside> 
+  </section>
+  <section class="bcls-section">
+    <h2 id="sfdata">在Salesforce中查看視頻數據</h2>
+    <p>當在支持 Campaign 的播放器中查看視頻時，視頻查看數據將同步到 Salesforce。如果<strong>簡單的</strong>數據映射選項已選中，視頻觀看數據將顯示為<strong>任務</strong> Salesforce內部的條目。如果<strong>先進的</strong>使用“數據映射"選項時，查看數據將顯示為配置映射時選擇的Salesforce對象的一部分。在以下示例中，<strong>先進的</strong>使用了數據映射，並且將視頻字段映射到了自定義<strong>BC視頻觀看</strong> Salesforce對象。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="task record" src="/assets/images/campaign/integrations/salesforce/salesforce-bc-video-view-record.png" /></figure>
+    <p>單擊視頻名稱將顯示詳細信息。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="task detail" src="/assets/images/campaign/integrations/salesforce/salesforce-bc-video-view-detail.png" /></figure>
+  </section>
+</article>

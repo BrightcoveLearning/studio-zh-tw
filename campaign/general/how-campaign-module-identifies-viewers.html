@@ -1,0 +1,74 @@
+---
+title: 活動模塊如何識別查看者
+description: 在本主題中，您將了解營銷活動模塊嘗試識別查看者的不同方式。
+parent: General Information 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Campaign 模塊嘗試使用各種數據源識別查看者: </p>
+    <ul>
+      <li><a href="#cookie">活動cookie</a></li>
+      <li><a href="#eloqua">Oracle Eloqua GUID</a></li>
+      <li><a href="#marketo">Marketo Munchkin餅乾</a></li>
+      <li><a href="#sfurl">Salesforce ID URL參數</a></li>
+      <li><a href="#sfid">Salesforce ID HTML屬性</a></li>
+      <li><a href="#hubspot">HubSpot UTK Cookie</a></li>
+      <li><a href="#email">電子郵件參數</a></li>
+    </ul>
+    <p>活動模塊將遵守用戶的瀏覽器設置<a href="#dnt">不跟踪</a> .</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 使用自定義集成時，您有責任識別查看器。如需詳細資訊，請參閱使用廣告活動模組<a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">建立自訂整合</a>。</aside> 
+  </section>
+  <section class="bcls-section">
+    <h2 id="cookie">活動cookie</h2>
+    <p>支持戰役的玩家&nbsp;如果為他們的帳戶啟用了活動跟踪並且玩家正在使用它，則將設置第三方 cookie 並使用它來將查看數據與同一用戶相關聯。如果用戶填寫了 Campaign 潛在客戶表單，Campaign 將為該查看者創建一個配置文件，並且他們的所有查看數據都將與該配置文件相關聯。</p>
+    <p>Campaign 將設置的 cookie 名為<strong>_bc_uuid</strong> .</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="eloqua">Oracle Eloqua GUID</h2>
+    <p>具有 Eloqua 集成的支持戰役的玩家將調用 Eloqua 的 API 來獲取訪問者 ID，通常稱為 Eloqua GUID。此 ID 在 Campaign 模塊的查看數據中捕獲，用於將查看數據同步到 Eloqua。</p>
+    <p>Eloqua 使用自己的一組 cookie，當 Brightcove 播放器配置了 Eloqua 集成時，Campaign 會在 Eloqua cookie 中捕獲 GUID 並與 Eloqua 服務器端通信，以嘗試找出用戶是誰。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="marketo">Marketo Munchkin餅乾</h2>
+    <p>具有 Marketo 集成的已啟用戰役的玩家將引用在用戶瀏覽器中創建的 Munchkin cookie (_mkto_trk)。該值在 Campaign 模塊的查看數據中捕獲，用於將查看數據同步到 Marketo。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="sfurl">Salesforce ID URL參數</h2>
+    <p>對於Salesforce集成，插件可以通過檢查URL的以下參數來嘗試嘗試識別查看器: <strong> bcsfid</strong>。這樣，Salesforce用戶可以通過在URL中提供銷售線索的Salesforce ID來發送電子郵件活動，該電子郵件活動的登錄頁面URL是為跟踪目的而唯一生成的。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="sfid">Salesforce ID HTML屬性</h2>
+    <p>對於Salesforce集成，如果插件無法通過檢查<strong>bcsfid</strong> URL參數，它將搜索<strong>數據密送</strong>的屬性<code translate="No">&lt;video&gt; </code> HTML元素嵌入視頻的發布代碼，並將其值用作潛在客戶的Salesforce ID（如果已設置）。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="hubspot">HubSpot UTK Cookie</h2>
+    <p>對於HubSpot集成，該插件會注入HubSpot的JavaScript跟踪代碼，該代碼會刪除<strong>Hubspotutk</strong>用戶瀏覽器上的Cookie。該cookie用於跟踪HubSpot中訪客的身份，並將Brightcove查看數據與聯繫人相關聯。如果用戶已經有<strong>集線器</strong>當播放器加載 cookie 時，Campaign 將向 HubSpot 發出 API 請求並詢問 cookie 值是否對應於已知聯繫人，如果是，Campaign 會將查看數據與該用戶相關聯。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="email">電子郵件參數</h2>
+    <p>還可以通過電子郵件地址告訴活動模塊用戶是誰。廣告系列將查找標題為的 URL 參數<strong>郵箱</strong> .這對於具有為跟踪目的而唯一生成的著陸頁URL的電子郵件廣告系列很有用。如果您要從營銷平台或第三方電子郵件服務（如MailChimp）向列表發送批量電子郵件，則需要在發送平台的設置中配置email參數，以動態更新用戶點擊的鏈接。Campaign 隨後將使用此電子郵件參數來查找用戶服務器端並同步查看數據。email參數也可以嵌入播放器嵌入代碼。</p>
+    <h3>網址示例</h3>
+    <code translate="No">http://go.brightcove.com/be-video-hero-cust?<strong>bcemail</strong>=msmith@brightcove.com </code>
+    <p>如果 Campaign 插件未通過<strong>郵箱</strong> URL 參數，然後它會檢查<code translate="No">&lt;video&gt; </code> HTML 嵌入發布代碼的元素。它將搜索<strong>數據密送電子郵件</strong>屬性設置為video元素，並將其值用作電子郵件地址（如果已設置）。</p>
+    <h3>嵌入示例</h3>
+    <pre>
+&lt;video id="player" data-account="0000000001" data-player="default" data-video-id="0000000002" <strong>數據-bc-電子郵件</strong> ="msmith@brightcove.com" class="video-js" 控件&gt;&lt;/視頻&gt;
+</pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="dnt">不跟踪</h2>
+    <p>支持戰役的玩家遵守&nbsp;由查看者的瀏覽器設置與 Do Not Track (DNT) 相關，如果它看到 Do Not Track 已啟用，則不會使用或設置其正常 cookie。還可以指示播放器插件不要跟踪視頻雲客戶是否希望為其所有觀眾或逐個用戶關閉它。這是通過使用頁內嵌入代碼並設置<code translate="No">data-do-not-track </code>值為1。</p>
+    <pre>
+&lt;video-js data-video-id="9240259371001" data-account="3491906377" <strong>數據不跟踪=“1”</strong> data-player="7dccc39d-0e2d-4b27-bea9-af44b2166148" data-embed="default" class="video-js" 控件&gt;&lt;/video-js&gt;&lt;腳本 src="https://players.brightcove.net/1486906377/7dccc39d-0e2d-4b27-bea9-af44b2166148_default/index.min.js"&gt;&lt; /腳本&gt;
+</pre>
+    <h3>甲骨文Eloqua</h3>
+    <p>Eloqua已經聲明他們不處理（基本上忽略）不跟踪請求，並且無論如何都將返回Eloqua GUID。目前，Campaign 沒有以任何特殊方式處理這個問題，即當 Campaign 看到 DNT 時不使用 Eloqua JavaScript API。Eloqua還支持符合歐盟隱私要求的嚴格模式。為Eloqua帳戶啟用此功能後，除非最終用戶通過表單選擇加入，否則不會跟踪最終用戶。</p>
+    <h3>市場</h3>
+    <p>Marketo支持DNT，但由客戶自行決定是否為特定帳戶打開/關閉DNT。有關更多信息，請參見Marketo文檔。<a href="https://docs.marketo.com/pages/releaseview.action?pageId=6095047">編輯“不跟踪"瀏覽器支持設置</a>。</p>
+    <h3>HubSpot</h3>
+    <p>HubSpot尊重DNT <a href="https://knowledge.hubspot.com/getting-started-with-hubspot-v2/how-to-enable-a-privacy-policy-alert-if-you-are-doing-business-in-europe">這個文件</a>。</p>
+  </section>
+</article>

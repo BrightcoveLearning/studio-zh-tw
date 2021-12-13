@@ -1,0 +1,168 @@
+---
+title: 使用自動同步將視頻同步到社交媒體帳戶
+description: 在本主題中，您將學習如何使用 Brightcove Social 中的自動同步功能將視頻自動同步到社交媒體頻道。
+parent: General Information 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5194128705001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>Brightcove Social提供了自動同步功能，該功能可用於根據與視頻關聯的標籤將視頻自動同步到社交媒體渠道。</p>
+    <p>在配置自動同步之前，您應該已經創建了一些發布目標。有關創建發布目標的信息，請參見<a href="/social/creating-social-media-publishing-destinations.html">創建社交媒體發布目的地</a>。</p>
+    <p>請注意，使用“自動同步"和使用“社交"模塊手動發布視頻是獨立的操作。“自動同步"不知道使用“社交"模塊手動發布了哪些視頻。如果以某種方式標記了視頻，使自動同步將其發佈到您的社交目的地之一，則無論該視頻先前是否已使用社交模塊手動發布，它都將這樣做。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">配置自動同步</h2>
+    <p>要配置自動同步，請按照下列步驟。</p>
+    <p>輸入標籤後，將顯示帶有這些標籤的視頻數量。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 具有指定標籤的所有現有視頻都不會自動同步。具有這些標籤的所有新視頻都將自動同步。若要讓現有的影片同步化，請變更視訊中繼資料以觸發自動同步。</aside> 
+    <ol class="bcls-tasklist-restart">
+      <li>打開Brightcove Social。</li>
+      <li>點擊<strong>自動同步</strong>在左側導航欄中。將顯示已創建的所有自動同步名稱的列表。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-autosync-list.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">筆記: 影片同步後，縮圖影像就會填入。</aside> 
+      </li>
+      <li>點擊<strong>設置自動同步</strong>。</li>
+      <li>進入一個<strong>名稱</strong>進行同步。</li>
+      <li>選擇要分發的視頻。
+        <ul>
+          <li><strong>具有所有這些標籤的視頻</strong> -帶有的視頻<strong>全部</strong>列出的標籤中的應該同步</li>
+          <li><strong>具有任何這些標籤的視頻</strong> -帶有的視頻<strong>任何</strong>列出的標籤中的應該同步</li>
+          <li><strong>此帳戶中的所有視頻</strong> -帳戶中的所有視頻均應同步</li>
+        </ul>
+      </li>
+      <li>除非<strong>此帳戶中的所有視頻</strong>已選擇，請輸入以逗號分隔的標籤列表。</li>
+      <li>選擇任何應排除的視頻。
+        <ul>
+          <li><strong>不活躍</strong> -不活動的視頻將不同步（默認）</li>
+          <li><strong>日程限制</strong> -預定的視頻將不會同步</li>
+          <li><strong>受地域限制</strong> -具有地域限制的視頻將不會同步</li>
+        </ul>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-setup.png" /></figure>
+      </li>
+      <li>點擊<strong>下一個</strong>。</li>
+      <li>選擇發布目的地以同步視頻。點擊<strong>管理目的地</strong>創建新目的地或編輯任何現有目的地。單擊目標將顯示目標默認值。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-choose-dest.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">筆記: 編輯目標性質可以變更目標預設值。</aside> 
+      </li>
+      <li>點擊<strong>下一個</strong>。</li>
+      <li><a href="#rules">配置自動同步規則</a>。可用的選項將根據所選的社交平台而變化。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="rules">配置自動同步規則</h2>
+    <p>配置自動同步時，可以配置規則以處理社交媒體網站上的視頻發生了什麼。這包括將視頻從列表中刪除（將視頻從“視頻雲"中刪除或更改標籤）時的操作，或如何處理視頻元數據更新。規則基於所選的社交媒體平台: </p>
+    <ul>
+      <li><a href="#yt">YouTube</a></li>
+      <li><a href="#fb">Facebook</a></li>
+      <li><a href="#twitter">推特</a></li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">筆記: 
+      <ul>
+        <li>使用自動同步將視頻發佈到社交平台後，Brightcove Social不會在社交媒體方面跟踪該視頻發生的任何操作。例如，當從社交平台刪除視頻時，不會通知Brightcove Social，並且已刪除視頻的事實也不會反映在Brightcove Social中。如果社交媒體平台檢測到受版權保護的內容然後將其刪除，也會發生這種情況。Video Cloud端對視頻的任何後續更改都會導致另一個同步事件發生，這將在Brightcove Social中引起同步錯誤。在這種情況下，這是“可重試的錯誤"，重試將導致視頻重新上傳並應用更改。</li>
+        <li>最初有20種可能的自動同步限制。如果您需要更多，請<a href="https://supportportal.brightcove.com/s/login/?language=en_US">聯繫Brightcove支持</a>。</li>
+      </ul>
+    </aside>
+    <div id="yt" class="BCL-subsection">
+      <h3>配置YouTube規則</h3>
+      <p>在YouTube上使用自動同步時: </p>
+      <ul>
+        <li>YouTube的標題限制為100個字符，因此“社交"模塊會將視頻標題截斷為100個字符。</li>
+        <li>如果<strong>在YouTube上更新視頻元數據選項</strong>如果您選擇了不帶字幕的視頻上傳，然後添加了字幕，則字幕將被傳遞到YouTube。</li>
+        <li>如果<strong>在YouTube上更新視頻元數據選項</strong>選中，如果視頻帶有字幕上傳，則Video Cloud中字幕信息的任何更改都將導致更新的字幕傳遞到YouTube。</li>
+      </ul>
+      <ol class="bcls-tasklist-restart">
+        <li>選擇將視頻取消標記或從“視頻雲"中刪除視頻時會發生的情況: 
+          <ul>
+            <li><strong>刪除YouTube上的已分發視頻</strong> -該視頻將從YouTube上刪除</li>
+            <li><strong>製作分佈式視頻</strong> -製作YouTube視頻<strong>私人的</strong>或者<strong>不公開</strong></li>
+            <li><strong>沒有動作</strong> -YouTube視頻沒有任何反應</li>
+          </ul>
+        </li>
+        <li>選擇更改視頻元數據時發生的情況: 
+          <ul>
+            <li><strong>在YouTube上更新視頻元數據</strong> -在視頻雲端對視頻元數據所做的更改將同步到YouTube</li>
+            <li><strong>無動作</strong> - 不採取任何行動<aside class="bcls-aside bcls-aside--information">筆記: 在Studio中更新視頻源文件時，更新後的視頻不會同步到YouTube。這是<a href="https://support.google.com/youtube/answer/55770?hl=en">  YouTube 的限制</a>。</aside> 
+            </li>
+          </ul>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-yt-rules.png" /></figure>
+        </li>
+        <li>點擊<strong>下一個</strong>。</li>
+        <li>確認自動同步設置，然後單擊<strong>結束</strong>。
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-yt-confirm.png" /></figure>
+        </li>
+      </ol>
+    </div>
+    <div id="fb" class="BCL-subsection">
+      <h3>配置Facebook規則</h3>
+      <ol class="bcls-tasklist-restart">
+        <li>選擇將視頻取消標記或從“視頻雲"中刪除視頻時會發生的情況: 
+          <ul>
+            <li><strong>刪除Facebook上的分佈式視頻</strong> -該視頻將從Facebook上刪除</li>
+            <li><strong>使Facebook上的分佈式視頻過期</strong> -該視頻將在Facebook上過期</li>
+            <li><strong>沒有動作</strong> -Facebook視頻沒有任何反應</li>
+          </ul>
+        </li>
+        <li>選擇更改視頻元數據時發生的情況: 
+          <ul>
+            <li><strong>在Facebook上更新視頻元數據</strong> -視頻雲端對視頻元數據的更改將同步到Facebook</li>
+            <li><strong>沒有動作</strong> -不採取任何措施</li>
+          </ul>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-fb-rules.png" /></figure>
+        </li>
+        <li>點擊<strong>下一個</strong>。</li>
+        <li>確認自動同步設置，然後單擊<strong>結束</strong>。
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-fb-confirm.png" /></figure>
+        </li>
+      </ol>
+    </div>
+    <div id="twitter" class="BCL-subsection">
+      <h3>配置Twitter規則</h3>
+      <ol class="bcls-tasklist-restart">
+        <li>選擇將視頻取消標記或從“視頻雲"中刪除視頻時會發生的情況: 
+          <ul>
+            <li><strong>在Twitter上刪除分發的視頻</strong> -該視頻將從Twitter上刪除</li>
+            <li><strong>沒有動作</strong> -Twitter視頻沒有任何反應</li>
+          </ul>
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-twitter-rules.png" /></figure>
+        </li>
+        <li>點擊<strong>下一個</strong>。</li>
+        <li>確認自動同步設置，然後單擊<strong>結束</strong>。
+          <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-twitter-confirm.png" /></figure>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="view">查看和編輯自動同步作業</h2>
+    <p>要查看和編輯已創建的自動同步作業，請按照下列步驟操作: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開Brightcove Social。</li>
+      <li>點擊<strong>自動同步</strong>在左側導航欄中。將顯示已創建的所有自動同步作業的列表。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-autosync-list.png" /></figure>
+        <ul>
+          <li>點擊鏈接中的<strong>標籤</strong>列以打開“媒體"模塊並根據這些標籤進行搜索。</li>
+          <li>點擊<strong>目的地</strong>列以打開發布目標設置。</li>
+          <li>點擊<strong>刪除</strong>刪除同步作業。</li>
+        </ul>
+      </li>
+      <li>點擊鏈接<strong>自動同步名稱和ID</strong>列名稱以打開同步屬性。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-autosync-properties.png" /></figure>
+      </li>
+      <li>這<strong>地位</strong>可以設置為: 
+        <ul>
+          <li><strong>積極的</strong> -視頻將被同步</li>
+          <li><strong>已暫停</strong> -沒有視頻將被同步</li>
+        </ul>
+      </li>
+      <li>這<strong>表演</strong>列表可用於過濾顯示的內容。</li>
+      <li>點擊<strong>設定值</strong>編輯同步設置。點擊<strong>更新</strong>保存更改。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16642-edit-sync-properties.png" /></figure>
+      </li>
+      <li>點擊<strong>刪除</strong>刪除同步作業。</li>
+    </ol>
+  </section>
+</article>

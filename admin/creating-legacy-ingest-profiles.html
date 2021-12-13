@@ -1,0 +1,76 @@
+---
+title: 創建舊版攝取配置文件
+parent: Administering Accounts
+description: This topic provides an overview of how to create custom ingest profiles for use with Legacy transcoding.
+layout: staging 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>提取配置文件管理頁面可用於創建新的舊式提取配置文件。接收配置文件是使用JSON定義的。創建新的舊版配置文件時，查看<a href="https://studio.support.brightcove.com/admin/standard-ingest-profiles-legacy-transcoding.html">舊版轉碼的標準攝取配置文件</a>記錄並找到與您需要的配置文件類似的配置文件。然後，在Studio中，您可以輕鬆地複製配置文件，然後使用所做的更改對其進行編輯。</p>
+    <p >筆記: 有關創建使用DRM的提取配置文件的信息，請參見<a href="https://general.support.brightcove.com/general/mpeg-dash-video.html">MPEG-DASH視頻</a>開發人員文檔。</p>
+    <p >筆記: 每個配置文件最多可以創建25個演繹形式。&nbsp;海報和縮略圖圖像最多計為25。&nbsp;</p>
+    <p>要創建新的舊版提取配置文件，請執行以下操作: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>點擊<strong>行政</strong> Studio標頭中的鏈接。</li>
+      <li>點擊<strong>攝取個人資料</strong>關聯。</li>
+      <li>找到要復制的舊配置文件。單擊配置文件名稱以打開配置文件編輯器。</li>
+      <li>點擊<strong>個人資料重複</strong>。配置文件編輯器將隨新的配置文件一起打開。</li>
+      <li>滾動到配置文件的頂部。編輯<code translate="No"><strong>name</strong></code>元素，為配置文件賦予有意義的名稱。此名稱將顯示在Video Cloud Studio中。</li>
+      <li>編輯<code translate="No"><strong>description</strong></code>元素，為配置文件提供有意義的描述。
+        <figure class="bcls-figure"><img alt="" src="/assets/images/admin/node18503-edit-profile-name.png" /></figure>
+      </li>
+      <li>根據需要編輯移交信息。海報和縮略圖的默認大小位於配置文件的末尾。</li>
+      <li>點擊<strong>保存</strong>。</li>
+    </ol>
+    <div class="BCL-subsection">
+      <h3>在配置文件中添加水印</h3>
+      <p>可以通過添加<code translate="No">watermarks</code>每個元素<code translate="No">rendition</code>: </p>
+      <pre>
+       水印”: [ { "y": -20, "x": -10, "width": "20%", "url": "http://www.mysite.com/companylogo.png" } ]
+       </pre>
+      <p>這<code translate="No">watermarks</code>元素具有以下參數。</p>
+      <table class="bcls-table">
+        <thead class="bcls-table__head">
+          <tr>
+            <th width="13%">範圍</th>
+            <th width="14%">類型</th>
+            <th width="73%">描述</th>
+          </tr>
+        </thead>
+        <tbody class="bcls-table__body">
+          <tr>
+            <td ><code translate="No">url</code></td>
+            <td >細繩</td>
+            <td >水印圖片的網址</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">width</code></td>
+            <td >細繩</td>
+            <td >以像素為單位的寬度或框架寬度的百分比；例如20或10％</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">height</code></td>
+            <td >細繩</td>
+            <td >以像素為單位的高度或框架寬度的百分比；例如20或10％</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">x</code></td>
+            <td >細繩</td>
+            <td >從圖像的左邊緣到中心的距離，以像素或幀寬度的百分比表示；例如20％或10％（使用負值（如-10）相對於右邊緣放置水印）</td>
+          </tr>
+          <tr>
+            <td ><code translate="No">y</code></td>
+            <td >細繩</td>
+            <td >如果圖像是像素或幀高的百分比，則從上邊緣到中心的距離；例如20％或10％（使用負值（如-10）相對於底部邊緣放置水印）</td>
+          </tr>
+        </tbody>
+      </table>
+      &nbsp;
+      <p>帶有水印的示例配置文件如下所示: </p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/admin/node18503-watermark.png" /></figure>
+    </div>
+  </section>
+</article>

@@ -1,0 +1,188 @@
+---
+title: 靜態圖像疊加
+description: '本主題介紹瞭如何將靜態圖像疊加添加到您的 Cloud Playout 頻道。'
+parent: Cloud Playout
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">介紹</h2>
+    <p>您可以使用靜態圖像疊加功能將靜態圖像疊加到 Cloud Playout 頻道中的視頻上。靜態圖像是沒有運動的靜止圖像。您準備圖像並將其存儲在 Cloud Playout 之外，並作為可公開訪問的、未經身份驗證的 http/https URL 提供給我們。</p>
+    <h3>例子</h3>
+    <ul>
+      <li>您希望在通道運行期間的特定時間插入靜態圖像疊加並運行 10 秒。您希望圖像疊加顯示在視頻幀的右下角。您希望圖像疊加具有 50% 的不透明度。</li>
+      <li>您想要插入兩個靜態圖像疊加層，以便它們同時出現在視頻幀中，或者有一些重疊。您希望圖像疊加的顯示稍微重疊，以便一個圖像疊加出現在某個位置，並且當該圖像疊加仍在顯示時，另一個圖像疊加出現在另一個位置。</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Implementation">執行</h2>
+    <ul>
+      <li>您疊加在視頻上的圖像應該是<a href="https://en.wikipedia.org/wiki/Truevision_TGA">.tga</a>或 .png 文件。</li>
+      <li>
+        使用新的側邊菜單項為帳戶創建和管理靜態疊加圖像: 
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/overlays-menu-item.png" alt="Overlays">
+          <figcaption class="bcls-caption--image">疊加層</figcaption>
+        </figure>
+      </li>
+      <li>
+        然後可以將疊加圖像與通道相關聯: 
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/overlay-associate-with-channel.png" alt="Associate Overlay with Channel">
+          <figcaption class="bcls-caption--image">將疊加與通道關聯</figcaption>
+        </figure>
+        <br>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/overlays-draft-channel.png" alt="Overlays in Draft Channel">
+          <figcaption class="bcls-caption--image">草稿通道中的疊加</figcaption>
+        </figure>
+        <br>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/overlays-for-running-channel.png" alt="Overlays in Running Channel">
+          <figcaption class="bcls-caption--image">運行通道中的疊加</figcaption>
+        </figure>
+      </li>
+      <li>
+        您最多可以插入兩個<strong>層</strong>一次。每個圖像應該是一個<strong>分離層</strong> .如果不同的鏡像在同一時間被安排在同一層上，或者如果它們在任何時間窗口內重疊，那麼稍後提供的鏡像將刪除同一層上的現有鏡像。
+          <ul>
+            <li>層按 Z 順序排列，這意味著<strong>具有較高層值的疊加層被插入到具有較低層值的疊加層之上</strong> .</li>
+          </ul>
+      </li>
+      <li>您可以將疊加設置為同時（或不）出現在底層視頻上，並且您可以將它們設置為彼此物理重疊（或不重疊）。</li>
+      <li>
+        您可以使用開始時間和持續時間配置每個圖像疊加: 
+        <ul>
+          <li>如果設置了持續時間，則最長持續時間為 24 小時</li>
+          <li>如果未設置持續時間，覆蓋將繼續顯示直到停用</li>
+          <li>開始時間必須是未來時間</li>
+        </ul>
+      </li>
+      <li>您可以配置 0 - 100 的不透明度。<strong> 0</strong>是透明的<strong>100</strong>完全不透明。</li>
+      <li>
+        您可以按照 x/y 坐標的指定將圖像疊加放置在視頻幀上。默認情況下，X、Y 坐標被視為 0, 0 ( <strong>視頻幀的左上角</strong> ): 
+        <ul>
+          <li><strong>位置 X</strong>: 疊加左邊緣相對於視頻幀左邊緣的位置，以像素為單位。如果放置導致疊加層超出底層視頻的右邊緣，則疊加層將在右側裁剪。</li>
+          <li><strong>位置 Y</strong> : 疊加頂部邊緣相對於視頻幀頂部邊緣的位置，以像素為單位。如果放置導致疊加層超出底層視頻的底部邊緣，則疊加層將在底部被裁剪。</li>
+        </ul>
+      </li>
+      <li>
+        <strong>漿紗: </strong>這<strong>使用原件</strong>選項可用於分辨率以使用所提供圖像的原始分辨率: 
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/overlay-use-original-size.png" alt="Use Original Image Size">
+          <figcaption class="bcls-caption--image">使用原始圖像尺寸</figcaption>
+        </figure>
+        <ul>
+          <li>
+            您可以提供自定義<strong>寬度</strong>和<strong>高度</strong>對於讓系統在將圖像應用於源視頻之前縮放圖像的分辨率: 
+            <figure class="bcls-figure">
+              <img class="bcls-image" src="/assets/images/cloud-playout/overlay-custom-width-height.png" alt="Set Width and Height">
+              <figcaption class="bcls-caption--image">設置寬度和高度</figcaption>
+            </figure>
+          </li>
+          <li>離開<strong>寬度</strong>和<strong>高度</strong>空和<strong>使用原件</strong>未選中將導致系統使用通道的輸出分辨率。例如: 移動和 Web 輸出會將覆蓋分辨率設置為 720p，而智能電視配置文件會將覆蓋分辨率設置為 1080p。<strong>不推薦使用此選項</strong>因為它可能並不總是與 MP4 源分辨率對齊。</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="State_transitions">狀態轉換</h2>
+    <p>覆蓋計劃的狀態轉換</p>
+    <ul>
+      <li>
+        <strong>不活動</strong>
+        <ul>
+          <li>新創建的時間表（或）</li> 
+          <li>已完成運行（或）的計劃</li>
+          <li>已停用的計劃。</li> 
+          <li>您可以更改開始時間以使用相同或更新的覆蓋配置將其恢復到 SCHEDULED 狀態。</li>
+          <li>刪除 - 如果您將不再使用此配置。</li>
+          <li>修改任何配置更改。</li>
+        </ul>
+      </li>
+      <li>
+        <strong>預定</strong>
+        <ul>
+          <li>計劃在指定的開始時間開始。</li> 
+          <li>如果您不再需要此時間表，請刪除。</li>
+          <li>修改任何配置更改。</li> 
+        </ul>
+      </li>
+      <li>
+        <strong>積極的</strong>
+        <ul>
+          <li>當前正在進行的計劃。</li> 
+          <li>當您需要停止覆蓋時停用。</li>
+          <li>修改除 layer 和 start_time 之外的任何配置。</li> 
+          <li>不允許刪除。您需要先停用。</li>
+        </ul>
+      </li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information language-editable">您可以隨時編輯疊加層。然而<strong>層</strong>和<strong>開始時間</strong>不能更改為<strong>積極的</strong>覆蓋。您仍然可以在作用中的覆疊排程中變更解析度、x/y 座標、不透明度，甚至是影像本身。</aside> 
+  </section>
+  <section class="bcls-section">
+    <h2 id="Contextual_Overlay_Launch">上下文疊加啟動</h2>
+    <p>為便於訪問，如果您希望為播放列表中的特定視頻顯示疊加層，您可以將鼠標懸停在播放列表中的視頻上，然後單擊<strong>添加疊加圖標</strong> ( <img src="/assets/images/cloud-playout/overlay-icon.svg" alt="overlay icon"> )，UI 將啟動 Add Overlays 模式，其中包含所選視頻的開始時間和持續時間。</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-add-particular-video.png" alt="Contextual Overlay Launch">
+      <figcaption class="bcls-caption--image">上下文疊加啟動</figcaption>
+    </figure>
+    <h3>筆記</h3>
+    <ol>
+      <li>這將為所選視頻的開始時間創建一個時間表，它不會附加到視頻本身。換句話說，如果視頻由於EPG日程的各種變化而被重新排序（或）刪除（或）開始時間改變，覆蓋日程仍將保持在最初安排的開始時間。</li>
+      <li>建議將此添加到視頻上下文中的疊加用於正在運行的頻道而不是處於 DRAFT 或 SCHEDULED 狀態的頻道 - 因為運行頻道比其他狀態的頻道更準確（由 EPG 提供支持）。</li>
+      <li>在正在運行的頻道上，此選項可用於當前播放視頻之後的所有視頻。</li>
+      <li>此選項不適用於 SSAI 頻道上的廣告佔位符視頻。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Image_handling">圖像處理</h2>
+    <p>圖像以像素為單位疊加在底層源視頻像素上。</p>
+    <aside class="bcls-aside bcls-aside--warning language-editable">如果疊加層大於底層視頻或超出底層視頻的邊緣，則疊加層將不會完全應用於源視頻（它將被裁剪）。這適用於 VOD 資產以及即時區段。</aside> 
+    <p>下面是一些可能的修復/解決方法，用於覆蓋大於視頻的情況。</p>
+    <h3>問題案例</h3>
+    <p>下圖顯示了一個太大的覆蓋圖，右下角有一個公司標誌，因此被隱藏了: </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-problem-case.png" alt="Problem Case">
+      <figcaption class="bcls-caption--image">問題案例</figcaption>
+    </figure>
+    <h4>解決方案1</h4>
+    <p>您可以使用寬度和高度字段來調整圖像大小以適合視頻屏幕的大小。這樣做的缺點是調整圖像大小會降低圖像質量，並使徽標本身變小: </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-solution-1.png" alt="Solution 1">
+      <figcaption class="bcls-caption--image">解決方案1</figcaption>
+    </figure>
+    <h4>解決方案2</h4>
+    <p>如果您將徽標移動到左上角，至少可以確保可見性，但可能沒有理想的位置: </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-solution-2.png" alt="Solution 2">
+      <figcaption class="bcls-caption--image">解決方案2</figcaption>
+    </figure>
+    <h4>解決方案3</h4>
+    <p>這<strong>理想的解決方案</strong>是調整疊加層的大小以與視頻的分辨率完全匹配（並檢查<strong>使用原件</strong>尺寸）: </p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/overlay-solution-3.png" alt="Solution 3">
+      <figcaption class="bcls-caption--image">解決方案3</figcaption>
+    </figure>
+    <h5>筆記</h5>
+    <ol>
+      <li>在創建單獨的輸出編碼（具有不同的分辨率和視頻質量）之前覆蓋圖像。這意味著如果底層視頻針對特定輸出編碼進行了縮放，那麼圖像也會進行類似的縮放。</li>
+      <li>覆蓋圖像被插入到所有輸出中，即覆蓋也將在 Cloud Playout UI 上看到的預覽圖像上可見。 </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">相關話題</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">概述: 雲播出</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+      <li><a href="/cloud-playout/adding-bumpers-to-vod.html">將緩衝器添加到雲播放</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">概述: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API參考</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">通道API參考</a></li>
+    </ul>
+  </section>
+</article>

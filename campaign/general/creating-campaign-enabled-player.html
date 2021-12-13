@@ -1,0 +1,63 @@
+---
+title: 創建支持戰役的玩家
+description: 在本主題中，您將學習如何創建支持戰役的 Brightcove 播放器。
+parent: General Information 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>僅當在支持活動的 Brightcove 播放器中查看視頻內容時，才會記錄視頻參與數據。有兩種方法可以創建啟用戰役的播放器: </p>
+    <ul>
+      <li><a href="#newplayer">使用戰役模塊創建一個新玩家</a></li>
+      <li><a href="#existingplayer">在現有播放器上啟用活動</a></li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="newplayer">使用戰役模塊創建一個新玩家</h2>
+    <p>在使用 Campaign 模塊創建啟用了 Campaign 的播放器之前，應該為 Campaign 模塊配置至少一個數據連接: </p>
+    <ul>
+      <li><a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">埃洛誇</a></li>
+      <li><a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">Marketo（蒙奇金）</a></li>
+      <li><a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">Marketo（REST API）</a></li>
+      <li><a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html">銷售隊伍</a></li>
+      <li><a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">HubSpot（REST API）</a></li>
+      <li><a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html">HubSpot（客戶端API）</a></li>
+      <li><a href="/campaign/integrations/non-map/integrating-campaign-single-sign.html">單點登錄</a></li>
+      <li><a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">定制整合</a></li>
+    </ul>
+    <p>注意<a href="/campaign/integrations/non-map/using-campaign-module-track-viewers.html">活動跟踪</a>默認提供。要使用 Campaign 模塊創建支持 Campaign 的播放器，請按照以下步驟操作。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開活動模塊。</li>
+      <li>點擊<strong>競選玩家</strong>在左側導航中。</li>
+      <li>點擊<strong>創建播放器</strong>。一個新的啟用戰役的玩家將被創建並出現在玩家列表中。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="new player" src="/assets/images/campaign/general/node16419-new-player.png" /></figure>
+      </li>
+      <li>使用<strong>連接到</strong>下拉菜單中，選擇播放器將使用的數據連接。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select integration" src="/assets/images/campaign/general/node16419-select-integration.png" /></figure>
+      </li>
+      <li><strong>（可選的）</strong>使用<strong>潛在客戶表格</strong>下拉菜單中，選擇<a href="/campaign/general/creating-campaign-lead-form.html">潛在客戶表格</a>玩家將使用的。</li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="existingplayer">在現有玩家上啟用戰役</h2>
+    <p>要為現有玩家啟用戰役，請按照以下步驟操作。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開<strong>玩家們</strong>模塊。</li>
+      <li>單擊播放器名稱以打開播放器屬性。</li>
+      <li>點擊<strong>活動</strong>在左側導航菜單中。</li>
+      <li>檢查<strong>啟用廣告系列</strong>選項。</li>
+      <li>使用<strong>連接到</strong>下拉菜單以選擇營銷活動連接。</li>
+      <li>（可選）使用<strong>潛在客戶表格</strong>下拉菜單中選擇一個<a href="/campaign/general/creating-campaign-lead-form.html">潛在客戶表格</a>使用。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="unpublished changes message" src="/assets/images/campaign/general/node16419-campaign-props.png" /></figure>
+      </li>
+      <li>點擊<strong>保存</strong>。將會出現一條消息，指示您尚未發布更改。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="unpublished changes message" src="/assets/images/campaign/general/node16419-unpublished-changes.png" /></figure>
+      </li>
+      <li>點擊<strong>發布並嵌入</strong>然後<strong>發布變更</strong>將更改發布給播放器。</li>
+      <li>返回活動模塊。點擊<strong>競選玩家</strong>在左側導航中。</li>
+      <li>確認玩家出現在戰役玩家列表中。</li>
+    </ol>
+  </section>
+</article>

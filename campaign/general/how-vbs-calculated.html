@@ -1,0 +1,32 @@
+---
+title: 如何計算視頻基準分數
+parent: General Information
+description: In this topic you will learn how about the Video Benchmark Score and learn how it is calculated. 
+---
+
+<article class="bcls-article">
+  <h1>視頻基準評分如何計算</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>視頻基準評分（VBS）檢查了兩個關鍵視頻指標: </p>
+    <ul>
+      <li>播放率</li>
+      <li>平均觀看百分比</li>
+    </ul>
+    <p>播放率是通過將視頻觀看次數除以視頻加載次數（視頻觀看次數/視頻加載次數）得出的。如果您的頁面上有視頻，並且該頁面被瀏覽了10次，並且觀看者在其中的4次瀏覽中觀看了視頻，則視頻的播放率將達到40％。  </p>
+    <p>平均觀看百分比衡量實際觀看視頻的百分比。例如，兩個觀眾觀看60秒的視頻。第一個觀看者觀看5秒，第二個觀看者觀看25秒。這些觀眾總共累積了30秒的觀看時間，或平均15秒。平均觀看百分比為 25%（5 秒 + 25 秒）/（60 秒 * 2 位觀眾）。</p>
+    <p>VBS 首先將您的視頻的播放率和平均觀看百分比與具有相同視頻內容類型（產品概述、產品詳細信息等）的所有視頻進行比較。然後，我們確定您的視頻在此分組中的排名: 是在第10個百分點，在第20個百分點中，依此類推。然後將這兩個百分位數取平均值。因此，如果您的視頻播放率位於第 60 個百分點，平均觀看率位於第 70 個百分點，那麼您的 VBS 將是 65。</p>
+    <p>如果播放率或平均觀看百分比等於或低於第 30 個百分位，則 VBS 的權重會進一步向下。這是為了強調性能不佳和需要改進的地方。</p>
+    <p>向下加權的公式如下，用偽代碼編寫:  </p>
+    <pre><code translate="No">
+If either rate is &lt;=30
+   lower_rate = smaller of the two rates
+   multiple = (1.1-(1/(lower_rate/10)))
+   If multiple &lt; .35
+     multiple = 0.35
+     score = (start_rate + percentage_watched)/2)*multiple
+   end if
+end if
+    </code></pre>
+  </section>
+</article>

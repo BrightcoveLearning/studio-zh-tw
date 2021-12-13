@@ -1,0 +1,103 @@
+---
+title: 使用自定義指標和事件
+description: 在本主題中，您將學習如何附加自定義事件和指標以查看事件。
+parent: General Information 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Campaign 播放器插件包括一個客戶端 API，用於附加自定義事件和指標以查看事件。以下示例概述瞭如何跟踪自定義事件和指標。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>獲取對Brightcove Player的引用。本示例假設<code translate="No">id</code>的<code translate="No">myPlayerID</code>已添加到播放器嵌入代碼。
+        <pre>
+  <code class="language-javascript" translate="No">
+var player = videojs(‘myPlayerID’);
+  </code>
+  </pre>
+      </li>
+      <li>聽觀眾準備活動，<code translate="No">audience:ready</code>。
+        <pre>
+  <code class="language-javascript" translate="No">
+player.on(‘audience:ready’, function() {
+  // player.audience is now available for use
+});
+</code></pre>
+      </li>
+      <li>要跟踪字符串值，請調用<code translate="No">player.audience.track(‘event[1-3]’, ‘value’)</code>。要跟踪數值，請致電<code translate="No">player.audience.track(‘metric[1-3]’, value)</code>。返回值是一個布爾值，指示事件是否已成功發送。
+        <pre>
+  <code class="language-javascript" translate="No">
+// Store the string value “foo” in the slot event1
+player.audience.track(‘event1’, ‘foo’);
+
+// Store the string value “bar” in the slot event2
+player.audience.track(‘event2’, ‘bar’);
+
+// Store the decimal value 15.08 in slot metric1
+player.audience.track(‘metric1’, 15.08);
+
+// Replace the value in slot metric1 with the number 10,
+// and validate that the call was sent successfully
+var result = player.audience.track(‘metric1’, 10);
+
+if (result) {
+   console.log(‘metric sent successfully’);
+}
+  </code>
+  </pre>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="sync">與營銷自動化平台同步</h2>
+    <p>如果在自定義活動或CDO上定義了字段，則存儲在視圖事件上的自定義事件/指標將針對Marketo REST和Eloqua進行同步。如果已定義，Campaign 還會將自定義事件/指標同步到 HubSpot，如果集成使用的是<strong>映射類型</strong>的<strong>先進的</strong>並且事件/指標被映射到某些東西。</p>
+    <h3>Marketo REST</h3>
+    <p>對於Marketo REST集成，發布者應驗證<strong>Brightcove視頻觀看</strong> Marketo中的自定義活動具有自定義事件和指標字段。自定義活動位於<strong>行政</strong> &gt; <strong>數據庫管理</strong> .</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit custom activity" src="/assets/images/campaign/general/node18442-edit-activity.png" /></figure>
+    <p>如果這些字段不在Brightcove Video視圖對像中: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>更新<strong>Brightcove視頻觀看</strong>自定義活動以添加字段，或</li>
+      <li>請與Marketo支持小組聯繫，並要求他們添加字段。</li>
+      <li>添加字段後，返回到 Campaign 並按<strong>完整更新</strong>按鈕，以便 Campaign 可以訪問新添加的字段。</li>
+    </ol>
+    <h3>甲骨文Eloqua</h3>
+    <p>對於Eloqua集成，發布商應驗證<strong>BrightcoveVideoView</strong>自定義對象具有自定義事件和指標字段。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit custom activity" src="/assets/images/campaign/general/node18442-eloqua-cdo.png" /></figure>
+    <p>如果這些字段不存在，則需要將這些字段添加到<strong>BrightcoveVideoView</strong>反對者: </p>
+    <ol class="bcls-tasklist-restart">
+      <li>重新連接您的Eloqua帳戶，或者</li>
+      <li>使用數據映射升級按鈕。</li>
+    </ol>
+    <h3>銷售隊伍</h3>
+    <p>對於 Salesforce，您的 Campaign 連接應使用<strong>映射類型</strong>的<strong>先進的</strong> .這<strong>事件</strong>和<strong>公制</strong>字段可以映射到Salesforce對象。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="edit custom activity" src="/assets/images/campaign/general/node18442-sf-fields.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="notes">筆記</h2>
+    <ul>
+      <li>事件插槽值的字符串長度限制為250個字符。</li>
+      <li>如果在單個觀看會話期間將多個值發送到同一事件或度量標準插槽，則該插槽中的現有值將替換為新值。在以下示例中，存儲在事件1中的最終值是“click3"。
+        <pre>
+  <code class="language-javascript" translate="No">
+player.audience.track(‘event1’, ‘click1’);
+player.audience.track(‘event1’, ‘click2’);
+player.audience.track(‘event1’, ‘click3’);
+</code>
+      </pre>
+      </li>
+      <li>如果該會話的查看事件尚不存在，則將創建一個。</li>
+      <li>如果結果是<code translate="No">track()</code>為false表示事件發送失敗，可以<a href="#logging">啟用詳細選項</a>在 Campaign 插件上查看具有特定原因的控制台日誌記錄。</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="view">查看事件和指標</h2>
+    <p>自定義事件和指標將出現在營銷活動 UI 中。在左側導航中，單擊<strong>最近所有活動</strong>。如果已記錄任何自定義事件或指標，則<strong>顯示互動事件</strong>鏈接將被啟用。單擊鏈接以顯示事件/度量標準數據。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="viewing metrics" src="/assets/images/campaign/general/node18442-events-ui.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="logging">啟用詳細日誌記錄</h2>
+    <p>可以通過添加啟用詳細日誌記錄&nbsp;<code translate="No">bcverbose=1</code>到帶有播放器的頁面的 URL 或通過使用<code translate="No">"verbose": true</code>選項: </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="configure plugin" src="/assets/images/campaign/general/node18442-plugin.png" /></figure>
+  </section>
+</article>

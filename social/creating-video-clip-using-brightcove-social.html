@@ -1,0 +1,100 @@
+---
+title: 使用 Brightcove Social 描創建視頻剪輯
+description: 在本主題中，您將學習如何使用 Brightcove Social 創建視頻剪輯。
+parent: General Information 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Brightcove Social提供了從您的Video Cloud帳戶中的現有視頻創建視頻剪輯的功能。您可能要創建剪輯的原因有幾個: </p>
+    <ul>
+      <li>創建一個簡短的預告片，可以發佈到社交媒體上</li>
+      <li>要限制您要發布的視頻的長度（大多數平台都限制了視頻的長度）</li>
+      <li>您發現較短的視頻在社交媒體上的效果更好</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="create">創建一個片段</h2>
+    保存剪輯後，它將作為視頻保存在您的Video Cloud帳戶中。請按照以下步驟創建一個剪輯。
+    <ol class="bcls-tasklist-restart">
+      <li>打開Brightcove Social。</li>
+      <li>點擊<strong>影片</strong>在左側導航欄中。將顯示您的視頻雲帳戶中的視頻列表。</li>
+      <li>單擊視頻以從中創建剪輯，然後單擊<strong>創建剪輯</strong>。剪輯編輯器將打開。<aside class="bcls-aside bcls-aside--information">
+          <ul>
+        <li>為了創建剪輯，源視頻必須至少具有一個MP4副本。如果<strong>創建剪輯</strong>按鈕被禁用，視頻可能沒有可用的MP4再現。</li>
+        <li>您不能從另一個剪輯創建剪輯。如果您選擇了剪輯的視頻，<strong>創建剪輯</strong>按鈕將被禁用。</li>
+        <li>您無法從啟用了DRM的視頻（鎖定出現在視頻縮略圖中）創建視頻，而該視頻已使用舊版提取配置文件進行了轉碼。可以剪切使用Dynamic Delivery攝取配置文件轉碼的啟用DRM的視頻。如果無法創建剪輯，則<strong>創建剪輯</strong>按鈕將被禁用。</li>
+        <li>帶有隱藏式字幕的視頻可以通過“社交"進行剪輯，但是生成的剪輯後的視頻將沒有字幕。您需要將新的字幕上載到剪輯的視頻，“社交"將在發佈時使用這些字幕。</li>
+      </ul>
+      </aside>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16672-create-clip.png" /></figure>
+      </li>
+      <li>進入一個<strong>剪輯名稱</strong>。</li>
+      <li>拖動時間軸上顯示的手柄以修剪視頻的開頭和結尾。您還可以使用編輯字段輸入特定的開始時間和結束時間。使用編輯器可以實現更精確的編輯時控制。<a href="#keys">鍵盤快捷鍵</a>。完成後，單擊<strong>繼續</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16672-clipped-video.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">筆記: 剪輯模式中的播放器將在顯示的時間滑動到實際幀的一幀或兩幀之內。無論是使用鼠標拖動滑塊還是使用鍵盤快捷鍵設置剪切點，其行為都是相同的。剪輯片段編輯器會依照所提供的時間進行剪輯。</aside> 
+      </li>
+      <li>查看剪輯信息。可以編輯剪輯名稱，標籤和為該帳戶創建的任何自定義字段。<aside class="bcls-aside bcls-aside--information">筆記: 您可能會想要移除標籤，使剪輯片段出現在您現有的播放清單中，或是自動同步至社交目的地。</aside> 
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16672-clip-info.png" /></figure>
+      </li>
+      <li>完成後，選擇一個選項: 
+        <ul>
+          <li><strong>保存</strong> -開始轉碼，然後將片段保存在您的Video Cloud帳戶中。</li>
+          <li><strong>保存並發布</strong> -開始轉碼，然後將片段保存在您的Video Cloud帳戶中。您還可以選擇要將視頻發佈到的目的地。由於必須對視頻進行轉碼，因此發布的剪輯可能會延遲在您的社交媒體網站上顯示。</li>
+          <li><strong>取消</strong> -丟棄剪輯。</li>
+        </ul>
+      </li>
+    </ol>
+    <p>使用指定為的攝取配置文件對保存的剪輯進行轉碼。<strong>社交剪輯默認</strong>該帳戶。有關設置默認攝取配置文件的信息，請參見<a href="/admin/managing-ingest-profiles.html">管理攝取配置文件</a>。</p>
+    <p>請注意，在創建剪輯時，必須下載整個源視頻。對於更長的源視頻，該視頻在您的Video Cloud帳戶中可用之前可能需要更長的時間。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 剪輯片段來源檔案名稱將設定為與來源視訊相同的來源檔案名稱。</aside> 
+  </section>
+  <section class="bcls-section">
+    <h2 id="keys">使用鍵盤快捷鍵</h2>
+    <p>可以使用鍵盤快捷鍵對裁剪進行更精確的控制: </p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th scope="col">捷徑</th>
+          <th scope="col">描述</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td >Ĵ <em>或者</em> ←</td>
+          <td >後退一幀</td>
+        </tr>
+        <tr>
+          <td >ķ</td>
+          <td >播放/暫停</td>
+        </tr>
+        <tr>
+          <td >大號 <em>或者</em> →</td>
+          <td >前進一幀</td>
+        </tr>
+        <tr>
+          <td >一世</td>
+          <td >將當前幀標記為點</td>
+        </tr>
+        <tr>
+          <td >Ø</td>
+          <td >將當前幀標記為出點</td>
+        </tr>
+        <tr>
+          <td >空格鍵</td>
+          <td >播放/暫停</td>
+        </tr>
+        <tr>
+          <td >I +我</td>
+          <td >轉到要點</td>
+        </tr>
+        <tr>
+          <td >⇧+ O</td>
+          <td >出點</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>

@@ -1,0 +1,119 @@
+---
+title: 使用營銷活動模塊描創建自定義集成
+description: 本主題說明如何為自定義集成配置 Campaign 模塊。
+parent: Non-MAP 
+grandparent: Integrations 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p class="BCL-objective">Campaign 模塊允許 Video Cloud 同步來自支持 Campaign 的觀看數據&nbsp; Brightcove Players 到流行的營銷自動化平台。CampaignCampaign 模塊還可以使用自定義集成進行配置。通過自定義集成，查看數據將本地存儲在Video Cloud中，並且Audience API用於以編程方式提取數據。</p>
+    <p>Campaign 模塊集成包含兩個主要組件: </p>
+    <ul>
+      <li>Brightcove Player插件，用於跟踪視頻觀看數據</li>
+      <li>使用Audience API檢索觀看數據的自定義開發</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="requirements">要求</h2>
+    <p>要使用 Campaign 模塊，您必須: </p>
+    <ul>
+      <li>擁有專業或企業視頻雲帳戶</li>
+      <li>通過在打開活動模塊時出現的初始啟動屏幕中提交所需信息，為您的帳戶啟用活動模塊</li>
+      <li>首次使用該模塊時，請單擊服務協議</li>
+      <li>為了收集潛在客戶，<a href="/campaign/general/creating-campaign-lead-form.html">潛在客戶表單必須配置</a>並分配給玩家</li>
+      <li>發布播放器時，請使用“高級（頁內）"嵌入代碼；標準（iframe）嵌入代碼將無法使用，因為該插件將在iframe中運行，因此將無法訪問父頁面的網址參數</li>
+    </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="setupconnection">設置連接</h2>
+    <p>請按照以下步驟配置自定義集成。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開活動模塊並點擊<strong>數據連接</strong>在左側導航中。</li>
+      <li>點擊<strong>添加新連接</strong>。</li>
+      <li>選擇<strong>風俗</strong>作為整合。<aside class="bcls-aside bcls-aside--information">筆記: 可用的整合是根據您的 Video Cloud 訂閱而定。</aside> 
+      </li>
+      <li>（可選）輸入<strong>連接名稱</strong>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="select custom" src="/assets/images/campaign/integrations/custom/node16577-select-custom.png" /></figure>
+      </li>
+      <li>點擊<strong>連接</strong>。</li>
+    </ol>
+    <p>現在，自定義連接已建立並可以使用。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="configure">配置集成</h2>
+    <p>建立連接後，您可以配置集成。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="connected options" src="/assets/images/campaign/integrations/custom/node16577-configure.png" /></figure>
+    <ol class="bcls-tasklist-restart">
+      <li>默認情況下，<strong>連接狀態</strong>將<strong>已啟用</strong>。這<strong>連接狀態</strong>確定是否保存了Video Cloud視頻參與度數據。
+        <ul>
+          <li><strong>已啟用</strong> -收集數據並將其保存</li>
+          <li><strong>殘障人士</strong> -未收集數據（禁用集成）</li>
+        </ul>
+      </li>
+      <li>選擇數據保留策略。數據保留政策決定了觀看數據和潛在客戶表單數據（如果使用廣告系列潛在客戶表單）在您的 Video Cloud 帳戶中保留多長時間。<aside class="bcls-aside bcls-aside--information">筆記: 如果選擇<strong>沒有保留</strong>，將不會保存任何數據。當您使用 API 下載數據時，將不會有任何數據。</aside> 
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="data retention options" src="/assets/images/campaign/integrations/custom/node16577-data-retention-options.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section class="bcls-section">
+    <h2 id="player">創建支持戰役的播放器</h2>
+    <p>視頻參與數據僅在以下情況下才會保存&nbsp;您使用的是支持廣告系列的視頻播放器。有關創建支持戰役的 Brightcove 播放器的信息，請參閱<a href="/campaign/general/creating-campaign-enabled-player.html">創建支持戰役的播放器</a> .</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="trackingid">傳遞跟踪ID</h2>
+    <p>Campaign 模塊支持傳遞跟踪 ID 的功能。例如，跟踪ID可能用於跟踪廣告系列ID。跟踪 ID 可以附加到顯示已啟用戰役的播放器的 URL 或添加到播放器嵌入代碼。</p>
+    <ul>
+      <li>例子: 附加到URL</li>
+    </ul>
+    <pre>
+  http://www.myurl.com/video.html？<strong> bctrackingid = 12345</strong></pre>
+    <ul>
+      <li>例子: 添加到播放器嵌入代碼</li>
+    </ul>
+    <pre>
+<code language="html">&lt;video data-video-id="6033402539001" data-account="1486906377" data-player="default" data-embed="default" data-application-id class="video-js" <strong>數據 bc-trackingid="12345"</strong>控制&gt;&lt;/視頻&gt;&lt;腳本 src="//players.brightcove.net/1486906377/default_default/index.min.js"&gt;&lt; /腳本&gt;</code></pre>
+  </section>
+  <section class="bcls-section">
+    <h2 id="identify">識別觀眾</h2>
+    <p>使用自定義集成時，您有責任識別查看者。Campaign 插件需要兩個關鍵信息: </p>
+    <table class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th>描述</th>
+          <th>URL參數</th>
+          <th>嵌入參數</th>
+          <th>價值</th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>觀眾是否已知（需要潛在客戶形式）</td>
+          <td><code translate="No">bcknownuser</code></td>
+          <td><code translate="No">data-bc-known-user</code></td>
+          <td><code translate="No">0</code>或者<code translate="No">1</code></td>
+        </tr>
+        <tr>
+          <td>什麼是GUID（查看事件跟踪所需）</td>
+          <td><code translate="No">bccustomguid</code></td>
+          <td><code translate="No">data-bc-custom-guid</code></td>
+          <td><code translate="No">string</code></td>
+        </tr>
+      </tbody>
+    </table>
+    &nbsp;
+    <p>這些值可以通過URL參數或播放器嵌入代碼傳遞。為了進行觀看者跟踪，應該在顯示視頻的頁面上將用戶ID作為URL參數傳遞。潛在客戶表單需要已知用戶參數（如果您希望潛在客戶查看者有條件地顯示潛在客戶表單）。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 為了使播放器/插件讀取URL參數，應使用高級（頁內）嵌入代碼。標準（iframe）嵌入代碼將無法工作，因為插件將在 iframe 內部運行，因此無法訪問具有該參數的父頁面 URL。</aside> 
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewdata">查看視頻數據</h2>
+    <p>使用自定義集成時，有幾個選項可用於查看視頻數據: </p>
+    <ul>
+      <li><strong>觀眾活動（事件）</strong> - 作為活動模塊的一部分提供，此選項可用於查看活動模塊內的視頻數據。有關信息，請參閱<a href="/campaign/general/viewing-player-events-campaign-module.html">在戰役模塊中查看玩家事件</a> .</li>
+      <li><strong>導出數據</strong> - 作為活動模塊的一部分提供，此選項可用於導出視頻視圖和潛在客戶數據。有關信息，請參閱<a href="/campaign/admin/exporting-campaign-data-campaign-module.html">從活動模塊導出活動數據</a> .</li>
+      <li><strong>受眾群體API</strong> -Audience API可用於以編程方式檢索視頻觀看和潛在客戶數據。有關信息，請參閱<a href="/campaign/develop/overview-audience-api.html">概述: 受眾群體API</a>。</li>
+    </ul>
+  </section>
+</article>

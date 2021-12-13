@@ -1,0 +1,86 @@
+---
+title: 將緩衝器添加到Cloud Playout說明
+description: 在本主題中，您將了解如何在 Cloud Playout 頻道中向 VOD 視頻和直播活動添加導視廣告（內部廣告）。
+parent: Cloud Playout
+---
+ <h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <h2 id="Introduction">介紹</h2>
+    <p>如果您未為自己的頻道啟用服務器端廣告（SSAI），則可能仍要添加保險槓-滾動前或滾動後的短視頻，這些視頻可能是內部廣告，也可能是其他公告或促銷內容。您也可以使用保險槓為實時編程段創建緩衝區。</p>
+    <p>在初始頻道創建過程中，您無需執行任何操作-您可以選擇<span class="button-blue">插入保險槓</span>頻道創建後將自動出現。這適用於所有頻道，包括啟用了實時流或SSAI的頻道</p>
+    <p>您可以將多個保險槓添加到同一視頻中，並且可以按照程序順序重新排列保險槓，就像視頻一樣。但是，在執行此操作時需要格外小心，否則您可能會得到不正確的EPG。看<a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html#epg_bumpers">EPG和保險槓</a>有關完整的詳細信息。</p>
+    <p>保險槓會<strong>不是</strong>出現在<a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">電子節目單</a>但保險槓的持續時間將在視頻播放之前或之後添加（取決於前插式廣告還是後插式廣告）。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Enabling_bumper_content">啟用保險槓內容</h2>
+    <p>保險槓可以是您帳戶中的任何視頻，但必須有<strong>之一</strong>以下標籤: </p>
+    <ul>
+      <li><code translate="no">cp-preroll-保險槓</code></li>
+      <li><code translate="no">cp-postroll-保險槓</code></li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--warning">潛在問題: 
+			<ul>
+				<li>如果您將這兩個標籤都添加到同一視頻中，則仍可以用作保險槓，但是<a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">電子節目單</a>將是不准確的。</li>
+				<li>同樣，對於啟用了SSAI的頻道，廣告佔位符被視為後置廣告。您不應在廣告佔位符後放置前貼片廣告，因為這會有效地創建前貼片廣告<i data-feather="arrow-right"></i>會導致 EPG 不准確的後滾序列。</li>
+			</ul>
+			</aside>
+  </section>
+  <section class="bcls-section">
+    <h2 id="inserting-bumpers">插入保險槓</h2>
+    <ol class="bcls-tasklist-restart">
+      <li>在插入保險槓之前，必須<a href="/cloud-playout/cloud-playout-stream-vod.html#add_videos">將視頻和/或實時事件添加到頻道</a>和<strong>保存</strong>變化。</li>
+      <li>
+        選擇一個或多個視頻和/或現場活動，然後單擊<span class="button-blue">插入保險槓</span> .<sup><strong><a href="#note1-1">  [ 1-1] </a></strong>  </sup>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/select-videos-for-bumper.png" alt="Select Videos for Bumper">
+          <figcaption class="bcls-caption--image">選擇保險槓的視頻</figcaption>
+        </figure>
+      </li>
+      <li>
+        在裡面<strong>保險槓</strong>對話框選擇<strong>預卷</strong>或者<strong>後卷</strong>然後點擊<span class="button-blue">插入</span>在要插入的保險槓視頻旁邊。<sup><strong><a href="#note1-2">  [ 1-2] </a></strong>  </sup>
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/bumper-dialog.png" alt="Bumper Dialog">
+          <figcaption class="bcls-caption--image">保險槓對話框</figcaption>
+        </figure>
+      </li>
+      <li>
+        現在，您將看到保險槓出現在程序列表中: 
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="/assets/images/cloud-playout/bumper-in-program-list.png" alt="Bumper in Program List">
+          <figcaption class="bcls-caption--image">程序列表中的保險槓</figcaption>
+        </figure>
+      </li>
+    </ol>
+    <h3>筆記</h3>
+    <ul style="list-style: none;">
+      <li id="note1-1" style="list-style: none;"><sup><strong> [ 1-1] </strong> </sup> 如果您選擇多個項目，則每個項目都將添加相同的保險槓。如果您想為不同的物品使用不同的保險槓，請一一添加。</li>
+      <li id="note1-2" style="list-style: none;"><sup><strong> [ 1-2] </strong> </sup> 請記住，只有已<a href="#Enabling_bumper_content">標記為保險槓</a>將出現在列表中。</li>
+  </ul>
+  </section>
+  <section class="bcls-section">
+    <h2 id="removing_bumpers">移動或卸下保險槓</h2>
+    <p>拖放保險槓，將其移動到程序列表中的新位置。</p>
+    <p>要卸下保險槓，只需選擇它，然後單擊<strong>刪除</strong>，然後單擊<strong>刪除</strong>再次在確認對話框中。</p>
+    <figure class="bcls-figure">
+      <img class="bcls-image" src="/assets/images/cloud-playout/delete-bumper.png" alt="Delete Bumper">
+      <figcaption class="bcls-caption--image">刪除保險槓</figcaption>
+    </figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="Related_topics">相關話題</h2>
+    <ul>
+      <li><a href="/cloud-playout/cloud-playout-overview.html">概述: 雲播出</a></li>
+      <li><a href="/cloud-playout/cloud-playout-stream-vod.html">創建雲播出頻道</a></li>
+      <li><a href="/cloud-playout/static-image-overlays.html">靜態圖像疊加</a></li>
+      <li><a href="/cloud-playout/enabling-server-side-ads.html">通過雲播放獲利</a></li>
+      <li><a href="/cloud-playout/using-channel-actions.html">使用頻道動作</a></li>
+      <li><a href="/cloud-playout/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a></li>
+      <li><a href="/cloud-playout/generating-channel-embed-code.html">生成通道嵌入代碼</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html">概述: EPG API</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.html">EPG API參考</a></li>
+      <li><a href="https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html">通道API參考</a></li>
+    </ul>
+  </section>
+</article>

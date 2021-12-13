@@ -1,0 +1,115 @@
+---
+title: 活動字段和數據定義
+description: 本主題概述了 Campaign 模塊可以填充的字段。
+parent: General Information 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <p>Brightcove Campaign 將向您的集成平台中的特定領域提供一組視頻觀看數據。以下是這些字段的示例，並描述了將填充每個字段的數據是什麼</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="standard">標準欄位</h2>
+    <p>Brightcove Campaign 將始終填充這些字段。</p>
+    <table width="99%" class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="12%" style="width: 24%;">場地</th>
+          <th width="88%" style="width: 33%;"><strong>描述</strong></th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>video_id</td>
+          <td valign="top"><p>與觀看事件關聯的Brightcove視頻的ID</p></td>
+        </tr>
+        <tr>
+          <td>video_name</td>
+          <td valign="top"><p>視頻雲中視頻的名稱</p></td>
+        </tr>
+        <tr>
+          <td>跟踪號碼</td>
+          <td valign="top">您可以添加一個<a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html#trackingid">自定義跟踪ID</a>到一個URL</td>
+        </tr>
+        <tr>
+          <td>external_id</td>
+          <td valign="top">用於標識用戶的全局用戶ID（GUID）</td>
+        </tr>
+        <tr>
+          <td>player_id</td>
+          <td valign="top">創建視圖事件的Brightcove Player的ID</td>
+        </tr>
+        <tr>
+          <td>page_url</td>
+          <td valign="top">觀看視頻的頁面的URL</td>
+        </tr>
+        <tr>
+          <td>看過</td>
+          <td valign="top">觀看百分比-他們觀看的時間表有多遠</td>
+        </tr>
+        <tr>
+          <td>time_watched</td>
+          <td valign="top">觀看視頻的秒數-他們實際在該視頻上花費的總時間</td>
+        </tr>
+        <tr>
+          <td>created_at</td>
+          <td valign="top">創建日期</td>
+        </tr>
+        <tr>
+          <td>Updated_at</td>
+          <td valign="top">最後更新日期</td>
+        </tr>
+        <tr>
+          <td>is_synced</td>
+          <td valign="top">表示查看事件是否已同步到第三方平台的布爾值。</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="additional">其他領域</h2>
+    <p>這些字段不會自動填充。他們習慣了<a href="/campaign/general/using-custom-metrics-and-events.html">跟踪其他自定義數據</a>。默認情況下，將它們配置為從庫中捕獲交互性<a href="https://gallery.support.brightcove.com/experiences/inpage/adding-interactions-page-experience.html">頁內體驗</a>。如果您不使用交互性，則這些字段將為空白。</p>
+    <table width="99%" class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="12%" style="width: 24%;">場地</th>
+          <th width="88%" style="width: 33%;"><strong>描述</strong></th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>事件_1，事件_2，事件_3</td>
+          <td valign="top"><p>自定義事件</p></td>
+        </tr>
+        <tr>
+          <td>metric_1，metric_2，metric_3</td>
+          <td valign="top"><p>自定義指標</p></td>
+        </tr>
+        <tr>
+          <td><strong>UTM欄位</strong> -utmSource，utmMedium，utmCampaign，utmTerm和utmContent</td>
+          <td valign="top">有關使用 UTM 字段的信息，請參閱<a href="/campaign/general/working-utm-fields-campaign-module.html">在營銷活動模塊中使用 UTM 字段</a> .</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="bcls-section">
+    <h2 id="custom">自訂欄位</h2>
+    <p>這些字段不會自動填充。您可以選擇通過這些字段將參考ID，標籤或自定義字段同步到MAP或CRM。要進行設置<a href="https://supportportal.brightcove.com/s/login/?language=en_US/create">聯繫支持</a>和請求，例如: “請將我的視頻雲字段“標籤”映射到廣告系列“custom_1”字段。”</p>
+    <table width="99%" class="bcls-table">
+      <thead class="bcls-table__head">
+        <tr>
+          <th width="12%" style="width: 24%;">場地</th>
+          <th width="88%" style="width: 33%;"><strong>描述</strong></th>
+        </tr>
+      </thead>
+      <tbody class="bcls-table__body">
+        <tr>
+          <td>custom_1，custom_2，custom_3</td>
+          <td valign="top"><p>自定義事件</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</article>

@@ -1,0 +1,314 @@
+---
+title: 將視頻發佈到社交媒體平台
+description: 在本主題中，您將學習如何使用 Brightcove Social 將視頻發佈到社交媒體。
+parent: General Information 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section">
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5018055033001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script>
+    <p>Brightcove Social使您可以輕鬆地將視頻雲帳戶中的視頻發佈到YouTube，Facebook和Twitter。在發布視頻之前，您必須為希望向其發布視頻的社交帳戶創建發布目標。有關創建發布目標的信息，請參見<a href="/social/creating-social-media-publishing-destinations.html">創建社交媒體發布目的地</a>。</p>
+    <p>請注意，使用“自動同步"和使用“社交"模塊手動發布視頻是獨立的操作。“自動同步"不知道使用“社交"模塊手動發布了哪些視頻。如果以某種方式標記了視頻，使自動同步將其發佈到您的社交目的地之一，則無論該視頻先前是否已使用社交模塊手動發布，它都將這樣做。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="rules">確定要發布的格式</h2>
+    <p>為了將視頻分發到社交平台，視頻至少應具有一個MP4副本或一個視頻主設備。使用默認提供的Brightcove提供的標準攝取配置文件之一上傳的視頻將默認保存母版。有關歸檔主機的更多信息，請參見<a href="https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html">歸檔大師</a>文檔。</p>
+    <p>將視頻分發到社交平台時，Brightcove Social將嘗試分發滿足各個社交平台所應用規則的最高質量的演繹版本。如果發送到社交平台的演示文稿被拒絕，則不會嘗試發送其他演示文稿。</p>
+    <p>視頻排名的規則如下: </p>
+    <ul>
+      <li>MP4資產比其他任何視頻容器都要好。沒有嘗試訂購其他類型的視頻容器。</li>
+      <li>如果視頻容器的質量相同，則認為編碼率較高的視頻更好。</li>
+      <li>如果編碼速率具有同等質量，則認為分辨率較高的視頻更好。請注意，由於視訊的所有節目並非必須具有相同的長寬比，因此我們會根據計算出的「複合' 代理」來比較視訊，藉由使用各自影片的高度和寬度的乘積來比較視訊。</li>
+    </ul>
+    <p>請注意，如果其中一個視訊資產缺少進行比較所需的任何上述資訊，該視訊就會被視為「' 比擁有所有必要資訊的影片還要糟糕。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="publish">將視頻發佈到社交媒體</h2>
+    <p>一旦有了<a href="/social/creating-social-media-publishing-destinations.html">創建的發布目的地</a>，請按照以下步驟將視頻發佈到社交媒體。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開Brightcove Social。</li>
+      <li>點擊<strong>影片</strong>在左側導航欄中。將顯示您的視頻雲帳戶中的視頻列表。尚未發佈到社交媒體帳戶的視頻將顯示一個<strong>地位</strong>的<strong>從未發表</strong>。已發布的視頻將顯示<strong>檢查狀態</strong>。單擊鏈接以查看視頻在社交媒體目標上的發布狀態。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-video-list.png" /></figure>
+      </li>
+      <li>單擊要發布的視頻，然後單擊<strong>發布</strong>。<aside class="bcls-aside bcls-aside--information">筆記: 啟用DRM的視頻將在視頻縮略圖中顯示一個鎖定圖標。可以發布使用Dynamic Delivery提取配置文件提取的啟用DRM的視頻，但是無法下載或創建剪輯。選取 DRM 啟用的視訊時，這些按鈕將會停用。</aside> 
+      </li>
+      <li>選擇要將視頻發佈到的目的地。您也可以點擊<strong>添加新目的地</strong>至<a href="/social/creating-social-media-publishing-destinations.html">創建一個新的目的地</a>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-publish-preview.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">筆記: 有錯誤的目的地將顯示一個錯誤圖標 (<img alt="" src="/assets/images/social/node16344-error-icon.png" />) 名稱旁邊。選取目的地，然後按一下 [ <strong>重新連線] </strong>以解決問題。</aside> 
+      </li>
+      <li>查看每個目標的視頻元數據屬性。視頻屬性會因要發佈到的社交媒體平台而異。有關更多信息，請參閱每個社交媒體平台的各節: 
+        <ul>
+          <li><a href="#youtube">YouTube</a></li>
+          <li><a href="#facebook">Facebook</a></li>
+          <li><a href="#twitter">推特</a></li>
+        </ul>
+      </li>
+      <li>點擊<strong>發佈到目的地</strong>按鈕以發布視頻。通過單擊監視分發狀態<strong>已發表</strong>在左側導航欄中。有關查看發布流狀態的信息，請參閱<a href="/social/viewing-videos-published-social-media.html">查看您的社交媒體發布流</a>。</li>
+    </ol>
+    <p>使用“發布"按鈕發布視頻是一次性的發布操作。首次上傳後，使用此方法發布的視頻將不會從“社交"模塊收到任何元數據更新。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="youtube">設置YouTube的視頻屬性</h2>
+    <p>默認情況下，最長15分鐘的視頻可以上傳到YouTube。有關上傳較長視頻的信息，請參見<a href="/general/enabling-longer-videos-youtube.html">在YouTube中啟用更長的視頻</a>。將視頻發佈到YouTube後，Studio中對源視頻的任何更新都不會在YouTube端更新。</p>
+    <p>選擇YouTube目標時，可以配置以下視頻屬性: </p>
+    <ul>
+      <li><a href="#ytthumb">縮圖來源</a></li>
+      <li><a href="#ytpostinfo">發布信息</a></li>
+      <li><a href="#ytschedule">日程</a></li>
+      <li><a href="#ytcaptions">字幕</a></li>
+      <li><a href="#ytvisibility">能見度</a></li>
+      <li><a href="#ytlicense">執照</a></li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">筆記: 
+      <ul>
+        <li><a href="creating-social-media-publishing-destinations.html#youtube_defaults">YouTube的默認視頻屬性</a>可以通過編輯目的地進行設置。</li>
+        <li>YouTube API不支持通過其當前API禁用評論，因此無法選擇在社交UI中禁用評論。</li>
+        <li>避免在視頻的名稱和描述中使用特殊字符: 眾所周知，使用“&lt;"或“&gt;"會導致失敗，但其他特殊字符也可能會引起問題。</li>
+      </ul>
+    </aside>
+    <div id="ytthumb" class="BCL-subsection">
+      <h3>配置縮略圖源</h3>
+      <p>發佈到YouTube時，視頻縮略圖源可以設置為: </p>
+      <ul>
+        <li><strong>YouTube</strong> -YouTube將選擇一個縮略圖</li>
+        <li><strong>視頻雲</strong> -使用視頻雲縮略圖作為YouTube縮略圖</li>
+        <li><strong>自訂圖片</strong> -瀏覽並選擇要使用的自定義縮略圖</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-thumb.png" /></figure>
+      <p>檢查<strong>用於所有目的地</strong>將此縮略圖用於當前發佈到的所有目的地。</p>
+      <aside class="bcls-aside bcls-aside--information">筆記: 您必須先驗證您的YouTube帳戶，然後才能從Brightcove Social將自定義視頻縮略圖發佈到YouTube。如需驗證 YouTube 帳戶的詳細資訊，請參閱<a href="https://www.youtube.com/verify">此連結</a>。</aside> <aside class="bcls-aside bcls-aside--information">筆記: 在 Studio 中更新縮圖圖片將不會更新 YouTube 側的縮圖圖片。</aside> 
+    </div>
+    <div id="ytpostinfo" class="BCL-subsection">
+      <h3>配置發布信息屬性</h3>
+      <p>點擊<strong>發布信息信息</strong>關聯。可以設置以下YouTube視頻屬性: </p>
+      <ul>
+        <li><strong>標題</strong> -視頻標題（默認為視頻雲標題）。YouTube最多支持100個字符。</li>
+        <li><strong>描述</strong> -視頻說明（默認為視頻雲簡短說明）。YouTube最多支持5000個字符。</li>
+        <li><strong>YouTube類別</strong> -視頻的內容類別</li>
+        <li><strong>標籤</strong> -視頻標籤（默認為視頻雲標籤）。沒有具體的標籤數量限制；每個標籤最多可以使用30個字符，並且文本字段最多可以接受500個字符。</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">關於標籤字符限制的一些注意事項: 
+        <ol>
+          <li>該屬性值是一個列表，列表中各項之間的逗號將計入500個字符的限制。</li>
+          <li>如果標籤包含空格，則API服務器會像對待標籤值一樣將其包裝在引號中，並且引號計入字符數限制。因此，如果您有一個標籤，例如<code translate="No">late news</code>，這被視為<code translate="No">"late news"</code>併計為11個字符（包括引號）。</li>
+          <li>如果超出標籤的字符數限制，則“社交"模塊中不會報告任何錯誤。要驗證是否成功共享了視頻，請單擊<strong>已發表</strong>在左側導航欄中，查看YouTube或使用<a href="/social/overview-social-api.html">社交API</a>。</li>
+        </ol>
+      </aside>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-post-info.png" /></figure>
+    </div>
+    <div id="ytschedule" class="BCL-subsection">
+      <h3>配置計劃屬性</h3>
+      <p>點擊<strong>日程</strong>鏈接並選擇計劃設置: </p>
+      <ul>
+        <li><strong>立即發布</strong> -要立即發布視頻</li>
+        <li><strong>計劃發布日期</strong> -選擇視頻的發布日期和時間。</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-schedule-info.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">筆記: 當視頻發送到YouTube時，計劃日期和時間僅發送到YouTube一次。如果需要更改計劃日期和/或時間，則必須在YouTube中進行更改。Social 模組在初次同步至 YouTube 後，不會更新任何排程日期或時間。</aside> <aside class="bcls-aside bcls-aside--information">筆記: 若要將<a href="#ytvisibility">視訊可見度</a>設定為 <strong>[未公開]</strong> 或 <strong>[私人]</strong>，請將  <strong>[ 排程]</strong> 選項以立即發佈，並將<strong>「可見性」</strong>選項設定為<strong>「未公開」</strong>或<strong>「私人」</strong><strong></strong>。</aside> 
+    </div>
+    <div id="ytcaptions" class="BCL-subsection">
+      <h3>配置字幕屬性</h3>
+      <p>點擊<strong>字幕</strong>關聯。選擇字幕的來源: </p>
+      <ul>
+        <li><strong>使用視頻雲字幕</strong> -使用與視頻關聯的字幕。有關在Video Cloud中使用字幕的信息，請參閱<a href="/media/overview-adding-captions-video.html">概述: 向視頻添加字幕</a>。</li>
+        <li><strong>沒有字幕</strong> -沒有字幕會發送到YouTube</li>
+        <li><strong>上載字幕</strong> - 點擊<strong>上載字幕</strong>並瀏覽並選擇字幕文件。字幕文件應為.VTT或.SRT格式。選擇標題<strong>語</strong>，添加一個<strong>標籤</strong>然後選擇<strong>格式</strong>。點擊<strong>添加字幕文件</strong>。</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-captions-info.png" /></figure>
+    </div>
+    <aside class="bcls-aside bcls-aside--information">帶有隱藏字幕的視頻可以通過社交進行剪輯，但生成的剪輯視頻將沒有字幕。您必須將新的字幕上傳至剪輯影片，Social 會在發佈時使用這些字幕。</aside> 
+    <div id="ytvisibility" class="BCL-subsection">
+      <h3>配置可見性屬性</h3>
+      <p>點擊<strong>能見度</strong>鏈接，然後選擇視頻的“隱私"設置。以下隱私設置可用: </p>
+      <ul>
+        <li><strong>上市</strong> -任何人都可以觀看視頻</li>
+        <li><strong>不公開</strong> -擁有視頻鏈接的任何人都可以觀看</li>
+        <li><strong>私人的</strong> -視頻只能由您和您選擇的用戶觀看</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">筆記: 在YouTube目的地中，可以使用與視頻相關聯的自定義字段來動態分配隱私設置。如需詳細資訊，請參閱<a href="/social/setting-privacy-status-video.html">設定影片的隱私權狀態</a>。</aside> 
+      <p>還有一個設置<strong>將視頻發佈到YouTube時通知訂閱者</strong>。如果選中，則您的訂閱者將在其訂閱源中看到您的視頻，並且可能會收到有關該視頻已上傳的通知。</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-privacy-info.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">筆記: 如需 YouTube 隱私權設定的詳細資訊，請參閱<a href="https://support.google.com/youtube/answer/157177">  YouTube 說明文件</a>。</aside> 
+    </div>
+    <div id="ytlicense" class="BCL-subsection">
+      <h3>配置許可證屬性</h3>
+      <p>點擊<strong>執照</strong>鏈接，然後選擇視頻的許可和權利所有權設置。可以使用以下設置: </p>
+      <ul>
+        <li>標準YouTube許可</li>
+        <li>知識共享-出處</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-yt-license-info.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">筆記: 如需有關 YouTube 授權和版權所有權的詳細資訊，請參閱<a href="https://support.google.com/youtube/answer/2797468">  YouTube 說明文件</a>。</aside> 
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="facebook">設置Facebook的視頻屬性</h2>
+    <p>選擇Facebook目標時，可以配置以下視頻屬性: </p>
+    <ul>
+      <li><a href="#fbthumb">縮圖</a></li>
+      <li><a href="#fbpostinfo">發布信息</a></li>
+      <li><a href="#fbschedule">日程</a></li>
+      <li><a href="#fbcaptions">字幕</a></li>
+      <li><a href="#fbtarget">目標</a></li>
+      <li><a href="#fbmonetize">營利</a></li>
+      <li><a href="#fbrights">權利</a></li>
+      <li><a href="#fbdistribution">分配</a></li>
+      <li><a href="#fbtracking">追踪</a></li>
+    </ul>
+    <p>將視頻發佈到Facebook後，Studio中對源視頻的任何更新都不會在Facebook端更新。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: <a href="creating-social-media-publishing-destinations.html#facebook_defaults"> Facebook 的默認視頻屬性</a>可以通過編輯目的地來設置。</aside> <aside class="bcls-aside bcls-aside--information">筆記: Facebook不允許使用.gif圖片。如果您的影片使用 .gif 作為縮圖影像，發佈至 Facebook 將會失敗。</aside> 
+    <div id="fbthumb" class="BCL-subsection">
+      <h3>配置縮略圖源</h3>
+      <p>當發佈到Facebook時，視頻縮略圖源可以設置為: </p>
+      <ul>
+        <li><strong>Facebook</strong> -Facebook將選擇一個縮略圖</li>
+        <li><strong>視頻雲</strong> -使用視頻雲縮略圖作為Facebook縮略圖</li>
+        <li><strong>自訂圖片</strong> -瀏覽並選擇要使用的自定義縮略圖</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-thumb.png" /></figure>
+      <p>檢查<strong>用於所有目的地</strong>將此縮略圖用於當前發佈到的所有目的地。</p>
+      <aside class="bcls-aside bcls-aside--information">筆記: 在 Studio 中更新縮略圖圖像不會更新 Facebook 側的縮略圖圖像。</aside> 
+    </div>
+    <div id="fbpostinfo" class="BCL-subsection">
+      <h3>配置發布信息屬性</h3>
+      <p>點擊<strong>發布信息</strong>關聯。可以設置以下Facebook視頻屬性: </p>
+      <ul>
+        <li><strong>標題</strong> -視頻標題（默認為視頻雲標題）。Facebook將截斷65個字符</li>
+        <li><strong>狀態消息</strong> -視頻說明（默認為視頻雲簡短說明）。請注意，Facebook已禁用其搜索API，因此，我們無法自動完成Facebook提及。</li>
+        <li><strong>標籤</strong> -從列表中選擇一個Facebook標籤。請注意，Facebook管理標籤。社交模塊必須遵守它們，以便社交在輸入<strong>標籤</strong>場地。</li>
+        <li><strong>Facebook類別</strong> -視頻的內容類別</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-post-info.png" /></figure>
+    </div>
+    <div id="fbschedule" class="BCL-subsection">
+      <h3>配置計劃屬性</h3>
+      <p>點擊<strong>日程</strong>關聯。選擇<strong>立即發布</strong>立即發布視頻或選擇<strong>計劃發布日期</strong>然後選擇一個<strong>發布日期和時間</strong>。您還可以設置<strong>帖子永不過期</strong>或選擇<strong>時間表到期</strong>然後選擇一個<strong>到期日期和時間</strong>。一種<strong>時區</strong>也可以選擇。</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-schedule-info.png" /></figure>
+      <aside class="bcls-aside bcls-aside--information">筆記: 當視頻發送到Facebook時，計劃日期和時間僅發送到Facebook一次。如果需要更改計劃日期和/或時間，則必須在Facebook中進行更改。Social 模組不會在初始同步至 Facebook 後更新任何排程日期或時間。</aside> 
+    </div>
+    <div id="fbcaptions" class="BCL-subsection">
+      <h3>配置字幕屬性</h3>
+      <p>點擊<strong>字幕</strong>關聯。選擇字幕的來源: </p>
+      <ul>
+        <li><strong>使用視頻雲字幕</strong> -使用與視頻關聯的字幕。有關在Video Cloud中使用字幕的信息，請參閱<a href="/media/overview-adding-captions-video.html">概述: 向視頻添加字幕</a>。
+          <p>對於字幕，Facebook需要一個<code translate="No">language</code>，這是社交網站從<code translate="No">language</code>在文字軌道上，<code translate="No">name</code>，這是社交網站從<code translate="No">label</code>在文字軌道上。</p>
+          <p>請注意，Facebook 播放器中的觀眾可以透過「設定' 選單」和「隱藏式字幕' 選單」看到這些內容。<code translate="No">name</code>   我們建議將文本軌道標籤設置為對觀眾有意義的內容。（例如，用這些語言標記不同語言的字幕。）</p>
+        </li>
+        <li><strong>沒有字幕</strong> -沒有字幕會發送到YouTube</li>
+        <li><strong>上載字幕</strong> - 點擊<strong>上載字幕</strong>並瀏覽並選擇字幕文件。字幕文件應為.VTT或.SRT格式。選擇標題<strong>語</strong>和<strong>格式</strong>。點擊<strong>添加字幕文件</strong>。</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">筆記: Facebook要求字幕語言除語言外還包括國家/地區。例如，en-US或en-UK。同步時，只有一個國家代碼（即 '我們'）的語言代碼將失敗。</aside> <aside class="bcls-aside bcls-aside--information">帶有隱藏字幕的視頻可以通過社交進行剪輯，但生成的剪輯視頻將沒有字幕。您必須將新的字幕上傳至剪輯影片，Social 會在發佈時使用這些字幕。</aside> 
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-captions-info.png" /></figure>
+    </div>
+    <div id="fbtarget" class="BCL-subsection">
+      <h3>配置目標屬性</h3>
+      <p>點擊<strong>目標</strong>鏈接以設置可以觀看視頻的位置。提供以下選項: </p>
+      <ul>
+        <li><strong>受眾群體優化興趣</strong> -添加標籤以描述最有可能喜歡您的帖子的人們的興趣。有關更多信息，請參見<a href="https://www.facebook.com/facebookmedia/get-started/interest-targeting">Facebook文件</a>。</li>
+        <li><strong>位置限制</strong> -添加國家以包括或不包括查看信息</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-targeting-info.png" /></figure>
+    </div>
+    <div id="fbmonetize" class="BCL-subsection">
+      <h3>配置獲利屬性</h3>
+      <p>點擊<strong>貨幣化</strong>關聯。可以設置以下屬性: </p>
+      <ul>
+        <li><strong>誰是您發送到該目的地的業務夥伴？</strong> -為品牌內容帖子添加業務合作夥伴。鍵入時，將顯示匹配的企業列表。有關Facebook品牌內容的信息，請參閱<a href="https://www.facebook.com/facebookmedia/solutions/branded-content">Facebook文件</a>。</li>
+        <li><strong>允許業務合作夥伴增加職位</strong></li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-monetize-info.png" /></figure>
+    </div>
+    <div id="fbrights" class="BCL-subsection">
+      <h3>配置權限屬性</h3>
+      <aside class="bcls-aside bcls-aside--information">筆記: 您的 Facebook 帳戶必須能夠存取 Facebook 版權管理員，才能顯示 [權限] 選項。</aside> 
+      <p>點擊<strong>權利</strong>關聯。可以設置以下屬性: </p>
+      <ul>
+        <li><strong>檢測匹配內容</strong> -選中以啟用Facebook權限管理。有關信息，請參閱<a href="https://rightsmanager.fb.com">Facebook文件</a>。</li>
+        <li><strong>指定所有權</strong> -指定視頻，音頻或兩者的版權所有權</li>
+        <li><strong>國家選擇</strong> - 選擇<strong>全世界</strong>，<strong>包括國家</strong>或者<strong>排除國家</strong>。如果選擇了包含或排除，則添加<strong>位置限制</strong>。</li>
+        <li><strong>套用比對規則</strong> -選擇一個規則。這<strong>匹配規則</strong>確定當人們上傳匹配的視頻時會發生什麼自動操作。比賽規則在Facebook內部進行管理。</li>
+        <li><strong>授予權限</strong> -授權某些人或Pages或Instagram帳戶有權發布與您的內容匹配的視頻。</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-rights-info.png" /></figure>
+    </div>
+    <div id="fbdistribution" class="BCL-subsection">
+      <h3>配置分發屬性</h3>
+      <p>點擊<strong>分配</strong>鏈接以設置可以觀看視頻的位置。以下<strong>自定義分發和審核</strong>選項可用: </p>
+      <ul>
+        <li><strong>在消息訂閱裡顯示</strong> -在新聞源中顯示視頻</li>
+        <li><strong>允許嵌入</strong> -允許將視頻嵌入第三方網站</li>
+        <li><strong>添加為秘密視頻</strong> -只能通過直接URL訪問視頻，而Facebook上的人無法搜索視頻
+          <ul>
+            <li><strong>關閉反應，評論和分享</strong> -禁止喜歡和評論</li>
+          </ul>
+        </li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-distribution.png" /></figure>
+    </div>
+    <div id="fbtracking" class="BCL-subsection">
+      <h3>配置跟踪屬性</h3>
+      <p>點擊<strong>追踪</strong>鏈接以分配通用ID，以在整個系統中跟踪視頻。以下<strong>通用編號</strong>選項可用: </p>
+      <ul>
+        <li>留著空白</li>
+        <li>使用視頻雲中的視頻ID</li>
+        <li>使用Video Cloud中的參考ID（如果有）</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-fb-tracking.png" /></figure>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="twitter">設置Twitter的視頻屬性</h2>
+    <p>選擇Twitter目標時，可以配置以下屬性: </p>
+    <ul>
+      <li><a href="#twpostinfo">發布信息</a></li>
+    </ul>
+    <p class="BCL-aside">將視頻發佈到Twitter後，Studio中對源視頻的任何更新都不會在Twitter端更新。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: <a href="creating-social-media-publishing-destinations.html#twitter_defaults"> Twitter 的預設視訊屬性</a>可以透過編輯目的地來設定。</aside> 
+    <div id="twpostinfo" class="BCL-subsection">
+      <h3>配置發布信息屬性</h3>
+      <p>點擊<strong>發布信息</strong>鏈接並輸入<strong>鳴叫</strong>內容。請注意，@ mentions在發送到Twitter時將轉換為#hashtags。有關更多信息，請參閱博客文章，<a href="https://www.brightcove.com/en/blog/2018/11/deprecation-twitter-mentions-brightcove-social">在Brightcove Social中棄用Twitter @mentions</a>。</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-twitter-tweet.png" /></figure>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="clip">創建一個片段</h2>
+    <p>Brightcove Social提供了從您的Video Cloud帳戶中的現有視頻創建視頻剪輯的功能。剪輯可用作簡短的預告視頻，可以發佈到社交媒體上。要創建剪輯，請單擊<strong>創建剪輯</strong>。有關創建剪輯的信息，請參見<a href="/social/creating-video-clip-using-brightcove-social.html">使用Brightcove Social創建視頻剪輯</a>。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="download">下載影片</h2>
+    <p>Brightcove Social提供了複製視頻URL或下載視頻源文件的功能。下載時，將下載最高質量的MP4副本。如果沒有MP4格式，則<strong>下載</strong>鏈接將被禁用。</p>
+    <p>重要的是要理解，演繹和圖像的URL不是固定的。Brightcove會不時重新配置媒體資產的存儲，當這種情況發生時，特定資產的URL將會更改。如果您依賴於這些資源的硬編碼URL，則鏈接可能會在某些時候斷開。防止與媒體的鏈接斷開的最佳方法是，在運行時使用CMS API從Video Cloud中檢索它們。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 您無法下載已啟用DRM的視頻（視頻縮略圖中會出現鎖定）。如果您選擇啟用 DRM 的視訊，[下<strong>載] </strong>按鈕將會停用。</aside> 
+    <p>請按照以下步驟下載視頻。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開Brightcove Social。</li>
+      <li>點擊<strong>影片</strong>在左側導航欄中。將顯示您的視頻雲帳戶中的視頻列表。</li>
+      <li>單擊視頻以下載，然後單擊<strong>下載</strong>。</li>
+      <li>複製視頻URL或單擊鏈接以在瀏覽器中打開視頻。<span class="bcl-aside">右鍵單擊視頻以將源文件保存在本地。</span>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-download-info1.png" /></figure>
+      </li>
+      <li>點擊<strong>完畢</strong>。</li>
+    </ol>
+    <p>下載鏈接的目的是允許您下載文件或將URL用作可以提供給社交平台的上載器模塊的值（對於支持從URL上載的平台）。該URL並非要粘貼到公共社交平台帖子中的長期存在的，可公開訪問的URL。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewvc">在媒體模塊中觀看視頻</h2>
+    <p>通過單擊視頻，然後單擊“媒體"模塊，可以在“視頻"頁面上查看視頻。<strong>在媒體中查看</strong>。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-view-in-vc.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="status">查看發布的位置</h2>
+    <p>嘗試發佈到社交媒體的視頻將顯示<strong>檢查狀態</strong>在狀態列中。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-status1.png" /></figure>
+    <p>點擊<strong>檢查狀態</strong>鏈接將顯示視頻發佈到的社交目的地的列表以及發布狀態。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/social/node16344-published-locations1.png" /></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="360">發布360°視頻</h2>
+    <p>YouTube，Facebook和Brightcove Player均支持360°視頻播放。當使用Brightcove Social將360°視頻發佈到YouTube或Facebook時，視頻將以360°模式播放。請注意，處理360°效果時可能會有延遲。將360°視頻上傳到Video Cloud之前，您需要做一些事情。有關使用360°視頻的信息，請參閱<a href="/general/working-360deg-videos.html">處理360°視頻</a>。上傳視頻後，發布360°視頻的過程與常規視頻相同。</p>
+    <aside class="bcls-aside bcls-aside--information">筆記: 360° 影片僅限於某些瀏覽器播放。</aside> <aside class="bcls-aside bcls-aside--information">筆記: 使用 Social 模組同步 360° 視訊時，必須將用來內嵌視訊的內嵌描述檔設定為儲存主檔案，否則視訊將無法在 360 中同步。</aside> 
+  </section>
+</article>

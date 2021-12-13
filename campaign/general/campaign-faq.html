@@ -1,0 +1,144 @@
+---
+title: Brightcove 活動常見問題
+description: 本主題包含一些有關 Brightcove Campaign 的常見問題。
+parent: General Information 
+---
+
+<article class="bcls-article">
+  <h1>{{ page.title }}</h1>
+  <summary>{{ page.description }}</summary>
+  <section class="bcls-section" id="why-how">
+    <h2>為什麼要開展活動及其運作方式</h2>
+    <dl>
+      <dt class="bcls-question">為什麼我需要在營銷自動化解決方案中跟踪視頻？</dt>
+      <dd class="bcls-answer">市場營銷自動化解決方案今天無法跟踪視頻。如果您將視頻作為一項功能強大的內容進行投資，則應確保跟踪其效果並自動與查看您內容的銷售線索/用戶進行通信。 </dd>
+      <dt class="bcls-question">Brightcove 和 Campaign 模塊是否使用任何 cookie？</dt>
+      <dd class="bcls-answer">當集成到位時，Campaign 模塊會創建並使用第 3 方 cookie 來識別用戶。這樣一來，觀眾就不會再被要求填寫潛在客戶表格了。該模塊還利用Marketo，HubSpot和Eloqua API，它們本身使用cookie來跟踪觀眾。使用活動配置文件時，會使用 Brightcove cookie。</dd>
+      <dt class="bcls-question">是否為所有客戶啟用 Brightcove 活動？</dt>
+      <dd class="bcls-answer">不可以。Campaign 可作為視頻營銷套件 (VMS) 的可購買附加組件提供。但是，每個 Brightcove 客戶都可以免費使用 Campaign Profiles。您可以將其視為“Campaign-lite”。</dd>
+      <dt class="bcls-question">誰有資格獲得活動資料。</dt>
+      <dd class="bcls-answer">從 2017 年第四季度開始，每個 VMS 客戶都可以免費訪問活動配置文件。<a href="/campaign/integrations/non-map/using-campaign-module-track-viewers.html">客戶將需要激活它以開始跟踪數據</a>。企業視頻套件 (EVS) 客戶還可以使用 Campaign SSO 跟踪。</dd>
+    </dl>
+  </section>
+  <section class="bcls-section" id="tracking-limitations">
+    <h2>觀看者跟踪與限制</h2>
+    <dl>
+      <dt class="bcls-question">與全功能的活動模塊相比，活動配置文件有哪些限制？</dt>
+      <dd class="bcls-answer">
+        <ul>
+          <li>沒有與任何第三方系統的集成</li>
+          <li>沒有API訪問權限</li>
+          <li>無自定義潛在客戶表單（僅限廣告系列潛在客戶表單）</li>
+          <li>最多1000次觀看/ 24小時內捕獲</li>
+        </ul>
+        您仍然可以手動將營銷活動數據導出到 CSV 或 XLS 文件。</dd>
+      <dt class="bcls-question">連接到營銷自動化平台時，Campaign 有哪些限制/要求？</dt>
+      <dd class="bcls-answer">每個平台的文檔中都概述了局限性和要求: 
+        <ul>
+          <li><a href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">甲骨文Eloqua</a></li>
+          <li>HubSpot（<a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html">客戶端API</a>或者<a href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">REST API</a>）</li>
+          <li>Marketo（<a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">蒙奇金</a>或者<a href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">REST API</a>）</li>
+          <li><a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html">銷售隊伍</a></li>
+        </ul>
+      </dd>
+      <dt class="bcls-question">可以對受眾API進行輪詢的頻率有任何限制嗎？我知道視頻搜索結果的上限為1000，但是該API端點還有其他與頻率相關的上限嗎？ </dt>
+      <dd class="bcls-answer">每個API調用的觀看事件最大數量實際上是100。沒有速率限制，但是如果您嘗試過多地調用它，則可能會放慢速度。</dd>
+      <dt class="bcls-question">有什麼方法可以比當前存在的 3 小時延遲更快地獲取活動數據？我想獲得“接近實時"的指標。</dt>
+      <dd class="bcls-answer">不需要。如果您需要實時指標，則需要編寫自己的插件並將數據發送到自己的系統。</dd>
+      <dt class="bcls-question">將事件視圖發送到 Campaign 的觸發器是什麼？是視頻播放完畢，播放器窗口關閉時還是其他時間？如果用戶從不完成視頻並且不關閉其播放器窗口，會發生什麼情況？</dt>
+      <dd class="bcls-answer">它會有所不同，但基本上，Campaign 插件每 10 秒向服務器發送一次心跳。</dd>
+      <dt class="bcls-question">Campaign 何時考慮跟踪“已完成”的視圖？是關閉播放器窗口還是完成視頻播放？如果他們半途觀看，暫停視頻並且從不關閉播放器窗口，會發生什麼？</dt>
+      <dd class="bcls-answer">從上次看到心跳到現在已經過去了15分鐘，基本上沒有活動了。</dd>
+      <dt class="bcls-question">一旦在廣告系列查看數據中可用，查看者數據是否可以更改？將來是否會通過某種日誌整合來更新該事件數據？ </dt>
+      <dd class="bcls-answer">一旦數據通過 UI 或 API 在 Campaign 中可用，它就會被視為“已解決”，並且不會更改。</dd>
+    </dl>
+  </section>
+  <section class="bcls-section" id="data-protection">
+    <h2>數據保護和記錄保留</h2>
+    <dl>
+      <dt class="bcls-question">Campaign GDPR 是否合規？</dt>
+      <dd class="bcls-answer">
+        <p>是的，Campaign 使客戶能夠代表他們的用戶採取行動，查找和清除他們通過 Campaign 收集的任何數據。 </p>
+        <p><a href="/campaign/admin/managing-viewer-data.html"> https://studio.support.brightcove.com/campaign/admin/managing-viewer-data.html </a> </p>
+      </dd>
+      <dt class="bcls-question">數據可以在 Campaign 中保留多長時間？</dt>
+      <dd class="bcls-answer">MAP集成最長可設置為6個月，非MAP集成最長可設置為3年。 </dd>
+      <dt class="bcls-question">GUID查找被緩存了多長時間？</dt>
+      <dd class="bcls-answer">已知30天，未知7天（僅適用於MAP集成，非MAP集成無需查找）</dd>
+    </dl>
+  </section>
+  <section id="marketing-automation" class="bcls-section">
+    <h2>營銷自動化和觀眾分析</h2>
+    <dl>
+      <dt class="bcls-question">在我的營銷自動化平台中跟踪視頻與其他任何媒體有什麼區別？</dt>
+      <dd class="bcls-answer">與帶有視頻的網頁或可下載的白皮書相反，您可以確定觀眾觀看了多少視頻，並因此確定了他們所觀看的內容。 </dd>
+      <dt class="bcls-question">您如何與我的Eloqua / Marketo / HubSpot帳戶建立聯繫？</dt>
+      <dd class="bcls-answer">您可以通過活動模塊中的視頻營銷套件直接登錄您的 Eloqua/Marketo/HubSpot 帳戶。從那裡，您可以使用內置的MAP跟踪創建播放器和銷售線索表單，因此您可以立即開始跟踪視頻分析。</dd>
+      <dt class="bcls-question">我可以在Eloqua / Marketo / HubSpot頁面以及非Eloqua / Marketo / HubSpot登陸頁面（Sitecore / WordPress / Gallery等）上跟踪視圖嗎？ </dt>
+      <dd class="bcls-answer">是的，只要正在使用的播放器“啟用了廣告系列”（安裝了廣告系列插件），無論播放器位於 MAP 登陸頁面還是任何其他登陸頁面，都將跟踪所有觀看次數。</dd>
+      <dt class="bcls-question">通過這種集成，我可以跟踪什麼？</dt>
+      <dd class="bcls-answer">通過我們的集成，您可以跟踪數據庫中已有的已知聯繫人的視頻觀看分析（視頻，視頻ID，觀看百分比，觀看時間）。</dd>
+      <dt class="bcls-question">那未知的聯繫人呢？我也可以追踪他們嗎？</dt>
+      <dd class="bcls-answer">使用 Brightcove Campaign，您可以跟踪未知聯繫人，然後當他們提交 Eloqua/HubSpot 表單（成為已知聯繫人）時，Campaign 能夠追溯地將他們的收視率信息與該新聯繫人相關聯。Campaign 每天重新提交收視率信息，以將來自未知聯繫人的觀看數據與您的 Oracle Eloqua/HubSpot 實例進行匹配。 </dd>
+      <dt class="bcls-question">我的MAP中的視頻觀看數據將顯示在哪裡？</dt>
+      <dd class="bcls-answer">這取決於您所使用的MAP。請參閱以下文檔以了解<a href="/campaign/integrations/eloqua/eloqua-integration-testing-guide.html">甲骨文Eloqua</a>，<a href="/camapign/integrations/marketo/marketo-rest-integration-testing-guide.html">市場部</a>和<a href="/campaign/integrations/hubspot/hubspot-rest-api-integration-testing-guide.html">HubSpot</a>。</dd>
+      <dt class="bcls-question">我的視頻觀看數據將在Salesforce中的何處顯示？</dt>
+      <dd class="bcls-answer">視頻視圖作為任務在“活動"部分中查看者的聯繫人下傳遞到Salesforce中。看<a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html#sfdata">在Salesforce中查看視頻數據</a>舉個例子。 </dd>
+      <dt class="bcls-question">當我的一位聯繫人觀看了視頻時，可以通過Salesforce收到通知嗎？</dt>
+      <dd class="bcls-answer">不直接。但是，您可以運行報告以通知您聯繫人的活動。</dd>
+      <dt class="bcls-question">使用Salesforce進行跟踪與使用Oracle Eloqua / Marketo進行跟踪之間有什麼區別嗎？</dt>
+      <dd class="bcls-answer">最大的區別是Salesforce不會使用Cookie來跟踪用戶。因此，應該傳遞一個唯一的標識符來標識觀眾。看<a href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html#identify">這個文件</a>有關更多信息。此外，作為CRM的Salesforce不提供自動跟進或潛在客戶評分。但是，您可以在Salesforce中創建任務，然後將這些任務分配給您的銷售團隊以進行實際的跟進。</dd>
+      <dt class="bcls-question">Campaign 有一個“自定義”集成選項，Campaign 可以使用它與哪些其他平台集成？</dt>
+      <dd class="bcls-answer">
+        <p>Campaign 可以與以下任何數據平台“集成”: </p>
+        <ol>
+          <li>為每個聯繫人記錄使用唯一的標識符</li>
+          <li>具有可以從第三方平台（如 Campaign）接收額外數據的 API</li>
+        </ol>
+      </dd>
+    </dl>
+  </section>
+  <section id="lead-forms" class="bcls-section">
+    <h2>玩家線索表</h2>
+    <dl>
+      <dt class="bcls-question">Campaign 何時顯示潛在客戶表單？</dt>
+      <dd class="bcls-answer">默認設置僅將潛在客戶表單顯示給MAP數據庫中的未知用戶（您想要轉換成已知用戶的用戶）。如果您選擇始終顯示銷售線索表單，則可以在設置中覆蓋此設置。這對於測試最有用。自動跟踪已知用戶，並且該數據與MAP中的聯繫人相關聯，而無需顯示表單。</dd>
+      <dt class="bcls-question">我可以自定義銷售線索表格嗎？</dt>
+      <dd class="bcls-answer">您可以調整使用用戶界面顯示的文本和字段。您無法在用戶界面中進行任何修改（畫廊可以更新某些樣式以使表單與站點匹配） </dd>
+    </dl>
+  </section>
+  <section id="general" class="bcls-section">
+    <h2>一般主題</h2>
+    <dl>
+      <dt class="bcls-question">我應該使用哪個嵌入代碼？iframe還是頁內？</dt>
+      <dd class="bcls-answer">要使 Campaign 工作，需要使用高級嵌入代碼。如果使用標準（iframe）嵌入代碼，則播放器與頁面隔離，這意味著 Campaign 插件無法看到唯一標識符，因此所有用戶都將被視為“未知”。</dd>
+      <dt class="bcls-question">什麼是營銷自動化？</dt>
+      <dd class="bcls-answer">營銷自動化是一種跟踪潛在客戶/用戶與不同的在線營銷渠道（電子郵件，Web，表單，內容，視頻，社交等）交互的技術。營銷自動化可幫助營銷人員跨這些渠道更有效地進行營銷，並自動執行重複的營銷任務（例如電子郵件通信）。營銷自動化使營銷人員可以基於預定義的變量來設置自動化和個性化的任務。例如，如果用戶觀看了75％的特定視頻，請向他們發送有關該特定主題的電子郵件，但是如果用戶只觀看12％的視頻，則向他們發送其他內容。 </dd>
+      <dt class="bcls-question">Brightcove是一家營銷自動化公司嗎？</dt>
+      <dd class="bcls-answer">不，Brightcove為視頻營銷提供了完整的解決方案。使用我們的解決方案，您可以使視頻在線，組織內容，創建播放器，創建視頻門戶，跟踪分析以及與您自己的現有營銷自動化平台集成。Brightcove將視頻分析集成到營銷自動化平台中。</dd>
+      <dt class="bcls-question">如何檢查Marketo自定義活動是否設置正確？</dt>
+      <dd class="bcls-answer">Campaign 有一個隱藏的 URL，它為某些類型的集成提供了一些調試工具，Marketo REST 就是其中之一。<a href="https://studio.brightcove.com/products/videocloud/campaign/debug"> https://studio.brightcove.com/products/videocloud/campaign/debug</a>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Campaign settings " src="/assets/images/campaign/general/faq-debug.png" /></figure>
+      </dd>
+      <dt class="bcls-question">配置自定義集成需要做什麼？</dt>
+      <dd class="bcls-answer">需要完成三件事: 
+        <ol>
+          <li>您需要在 Campaign 可以捕獲的頁面的 URL 或代碼中公開唯一標識符。</li>
+          <li> 創建一個腳本，該腳本利用Audience API檢索作為JSON文件的數據（Brightcove Global Services可以提供幫助）。</li>
+          <li> 將數據映射到目標數據庫中的字段（考慮電子表格合併）。</li>
+        </ol>
+        以下支持文檔涵蓋了這些任務: 
+        <ul>
+          <li><a href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">使用營銷活動模塊創建自定義集成</a> - 介紹如何提供 Campaign 可以捕獲的唯一標識符</li>
+          <li> <a href="/campaign/develop/overview-audience-api.html">受眾群體API</a> -涵蓋瞭如何以編程方式將所有數據作為JSON文件檢索，然後可以將其導入到所選的數據處理系統中</li>
+        </ul>
+      </dd>
+      <dt class="bcls-question">Campaign 如何將 CDO 數據推送到 Eloqua？</dt>
+      <dd class="bcls-answer">我們使用自定義對象批量API。<a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/api-bulk-2.0-customobjects.html"> https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/api-bulk-2.0-customobjects.html</a></dd>
+      <dt class="bcls-question">Campaign如何推動外部資產活動？如何控制廣告系列，外部資產和活動類型？</dt>
+      <dd class="bcls-answer">我們使用外部活動API（<a href="https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/op-api-rest-2.0-data-activity-post.html"> https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAC/op-api-rest-2.0-data-activity-post.html</a>）。無法控制廣告系列的名稱，資產名稱或類型。我們只需要自己創建一個廣告系列（名為BrightcoveVideoPlay），然後繼續創建活動，也稱為BrightcoveVideoPlay。 </dd>
+      <dt class="bcls-question">我可以將哪些 IP 地址列入白名單，以便 Campaign 可以與服務 X 通信？</dt>
+      <dd class="bcls-answer">Campaign 已經建立了一組 IP 地址，這些 IP 地址應該用於 IP 白名單。要查看列表，請編輯 Eloqua 連接並單擊<a ng-click="showInfo()" ng-if="::!ctrl.hideWhitelistInfo &amp;&amp; ctrl.isEloqua(ctrl.integration)" context="troubleSeeing"><strong>無法在 Eloqua 中查看廣告系列數據？</strong></a>鏈接以查看 IP 地址列表。</dd>
+    </dl>
+  </section>
+</article>
