@@ -9,6 +9,45 @@
       url: /get-started/getting-started-video-cloud-studio.html
     - name: 視頻雲試用版入門
       url: /get-started/getting-started-your-video-cloud-trial.html
+    - name: 學習基礎
+      url: /get-started/basics/index.html
+      docs:
+        - name: 激活和停用視頻
+          url: /get-started/basics/video-cloud-basics-activating-and-deactivating-video.html
+        - name: 將用戶添加到視頻雲帳戶
+          url: /get-started/basics/video-cloud-basics-adding-user-video-cloud-account.html
+        - name: 捕獲視頻海報和縮略圖圖像
+          url: /get-started/basics/video-cloud-basics-capturing-video-poster-thumbnail-images.html
+        - name: 創建手動播放列表
+          url: /get-started/basics/video-cloud-basics-creating-manual-playlist.html
+        - name: 創建一個球員
+          url: /get-started/basics/video-cloud-basics-creating-player.html
+        - name: 創建播放列表播放器
+          url: /get-started/basics/video-cloud-basics-creating-playlist-player.html
+        - name: 創建智能播放列表
+          url: /get-started/basics/video-cloud-basics-creating-smart-playlist.html
+        - name: 確定觀看了多少視頻
+          url: /get-started/basics/video-cloud-basics-determining-how-much-video-being-watched.html
+        - name: 確定哪些視頻的觀看次數最多
+          url: /get-started/basics/video-cloud-basics-determining-which-videos-have-most-views.html
+        - name: 編輯基本視頻屬性
+          url: /get-started/basics/video-cloud-basics-editing-basic-video-properties.html
+        - name: 編輯多個視頻的視頻屬性
+          url: /get-started/basics/video-cloud-basics-editing-video-properties-multiple-videos.html
+        - name: 使用文件夾整理視頻
+          url: /get-started/basics/video-cloud-basics-organizing-videos-using-folders.html
+        - name: 將播放列表發佈到網絡
+          url: /get-started/basics/video-cloud-basics-publishing-playlist-web.html
+        - name: 將單個視頻發佈到Web
+          url: /get-started/basics/video-cloud-basics-publishing-single-video-web.html
+        - name: 造型球員
+          url: /get-started/basics/video-cloud-basics-styling-player.html
+        - name: 上傳視頻海報和縮略圖圖像
+          url: /get-started/basics/video-cloud-basics-uploading-video-poster-thumbnail-images.html
+        - name: 上載影片
+          url: /get-started/basics/video-cloud-basics-uploading-videos.html
+        - name: 查看Brightcove系統狀態頁面
+      url: /get-started/basics/video-cloud-basics-viewing-brightcove-system-status-page.html
     - name: 瀏覽Brightcove支持站點
       url: /get-started/navigating-brightcove-support-site.html
     - name: 視頻雲快速入門
@@ -25,46 +64,6 @@
       url: /get-started/video-cloud-glossary.html
     - name: Video Cloud Studio培訓視頻
       url: /training/video-cloud-studio-training-videos.html
-- section:
-  name: 學習基礎
-  url: /basics/index.html
-  docs:
-    - name: 激活和停用視頻
-      url: /basics/video-cloud-basics-activating-and-deactivating-video.html
-    - name: 將用戶添加到視頻雲帳戶
-      url: /basics/video-cloud-basics-adding-user-video-cloud-account.html
-    - name: 捕獲視頻海報和縮略圖圖像
-      url: /basics/video-cloud-basics-capturing-video-poster-thumbnail-images.html
-    - name: 創建手動播放列表
-      url: /basics/video-cloud-basics-creating-manual-playlist.html
-    - name: 創建一個球員
-      url: /basics/video-cloud-basics-creating-player.html
-    - name: 創建播放列表播放器
-      url: /basics/video-cloud-basics-creating-playlist-player.html
-    - name: 創建智能播放列表
-      url: /basics/video-cloud-basics-creating-smart-playlist.html
-    - name: 確定觀看了多少視頻
-      url: /basics/video-cloud-basics-determining-how-much-video-being-watched.html
-    - name: 確定哪些視頻的觀看次數最多
-      url: /basics/video-cloud-basics-determining-which-videos-have-most-views.html
-    - name: 編輯基本視頻屬性
-      url: /basics/video-cloud-basics-editing-basic-video-properties.html
-    - name: 編輯多個視頻的視頻屬性
-      url: /basics/video-cloud-basics-editing-video-properties-multiple-videos.html
-    - name: 使用文件夾整理視頻
-      url: /basics/video-cloud-basics-organizing-videos-using-folders.html
-    - name: 將播放列表發佈到網絡
-      url: /basics/video-cloud-basics-publishing-playlist-web.html
-    - name: 將單個視頻發佈到Web
-      url: /basics/video-cloud-basics-publishing-single-video-web.html
-    - name: 造型球員
-      url: /basics/video-cloud-basics-styling-player.html
-    - name: 上傳視頻海報和縮略圖圖像
-      url: /basics/video-cloud-basics-uploading-video-poster-thumbnail-images.html
-    - name: 上載影片
-      url: /basics/video-cloud-basics-uploading-videos.html
-    - name: 查看Brightcove系統狀態頁面
-      url: /basics/video-cloud-basics-viewing-brightcove-system-status-page.html
 - section:
   name: 一般信息
   url: /general/index.html

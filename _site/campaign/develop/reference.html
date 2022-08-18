@@ -23,8 +23,12 @@
   
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2728311-17"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];函數 gtag() {dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-2728311-17');
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2728311-17');
 </script>
   <script src="/assets/js/sajari-head.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
@@ -181,8 +185,19 @@
 
 <script>
       
-  var searchBox = sajari.init( { mode: "search-box", project: "1588255093746585379", // Set this to your project. collection: "brightcove-documenation", // Set this to your collection. instantPipeline: "autocomplete", // Pipeline used as you type inputPlaceholder: "Search", // Input element placeholder maxSuggestions: 5, // Maximum number of suggestions to show attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to } ); searchBox("sub", "pipeline.search-sent", function (_, query) { window.location = "/search.html?q=" + encodeURIComponent(query.q); } );
+      var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documentation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder
+    maxSuggestions: 5, // Maximum number of suggestions to show
+    attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
   
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+      window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });  
 
 </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
