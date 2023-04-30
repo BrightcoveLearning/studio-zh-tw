@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>伺服器端廣告設定</title>
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">   -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+  <!-- <link rel="stylesheet" href="assets/css/site/styles.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="assets/css/site/tabs.css"> -->
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/help.css">
+  <!-- <link rel="stylesheet" href="/assets/css/details.css"> -->
+  <link href="/assets/s-site-assets-stylesheets/fonts/public-sans.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+    
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XBJC11HF8Z');
+</script>
+  <!-- <script src="/assets/s-site-assets-scripts/sajari-head.js"></script> -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="body">
+
+<h1>伺服器端廣告設定</h1>
+<article class="bcls-article">
+    <section class="bcls-section">
+        <p>Brightcove 的服務器端廣告插入 (SSAI) 將廣告嵌入到您的視頻流中，以提供無廣告緩衝的類似電視的觀看體驗。</p>
+
+        <details class="details-item">
+          <summary>動作</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>刪除</strong> - 選擇一個或多個廣告配置，然後點擊<span class="button-red-text">刪除</span>從您的帳戶中刪除它們</li>
+              <li><strong>複製</strong> - 選擇廣告配置，然後點擊<span class="button-blue">複製</span>創建廣告配置副本；您可以取消或編輯並保存新配置</li>
+            </ul>
+          </section>
+        </details>
+        
+        <details class="details-item">
+          <summary>查看廣告配置</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>姓名</strong> - 廣告配置名稱；單擊名稱鏈接以查看廣告配置的詳細信息</li>
+              <li><strong>類型</strong> - 任何一個<strong>點播</strong>或者<strong>居住</strong></li>
+              <li><strong>廣告服務器響應</strong> - 來自您的廣告服務器的響應格式</li>
+              <li><strong>已創建</strong> - 廣告配置的創建日期</li>
+            </ul>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>創建廣告配置</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist">
+              <li>點擊<span class="button-blue">創建廣告配置<i class="button-icon" data-feather="chevron-down"></i></span>展開下拉菜單。</li>
+              <li>選一個：
+                <ul>
+                  <li><strong>點播</strong> - 視頻點播</li>
+                  <li><strong>居住</strong> - 現場直播</li>
+                </ul>
+              </li>
+              <li><strong>姓名</strong> - 廣告配置名稱</li>
+              <li><strong>廣告服務器響應</strong> - 來自您的廣告服務器的響應格式
+              <ul>
+                <li><strong><a href="https://www.google.com/ads/publisher/#?modal_active=none" target="_blank">DFP 廣告規則<i data-feather="external-link"></i></a></strong> - DFP/Google for Publishers 的專有格式</li>
+                <li><strong><a href="https://www.iab.com/guidelines/vmap/" target="_blank">DFP VMAP <i data-feather="external-link"></i></a></strong> - 視頻多廣告播放列表</li>
+                <li><strong><a href="https://www.freewheel.com/" target="_blank">智能XML <i data-feather="external-link"></i></a></strong> - FreeWheel 的專有格式</li>
+                <li><strong><a href="https://www.iab.com/guidelines/vast/" target="_blank">浩瀚3.0 <i data-feather="external-link"></i></a></strong> - 數字視頻廣告服務模板</li>
+              </ul>
+              </li>
+              <li><strong>廣告代碼</strong> - 廣告代碼的服務器網址</li>
+              <li><strong>禁用服務器端信標</strong> - 這些信標從服務器發出事件以衡量廣告印象並報告廣告錯誤；如果禁用，事件將不會從服務器觸發，但會包含在廣告響應中</li>
+              <li>按一下「<span class="button-blue">儲存</span>」。</li>
+            </ol>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>修改廣告配置</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist-restart">
+              <li>單擊廣告配置名稱鏈接。</li>
+              <li>編輯廣告配置值。</li>
+              <li>按一下「<span class="button-blue">儲存</span>」。</li>
+            </ol>
+          </section>
+        </details>
+      
+  </section>
+    <section class="bcls-section">
+       <h3><a href="/admin/general/configuring-server-side-ad-settings.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></h3>
+    </section>
+</article>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitehttps-fix.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="/assets/s-site-assets-scripts/js/details.js"></script>
+  <!-- <script src="/assets/js/expand-dl.js"></script> -->
+
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetabs.js"></script> -->
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetoc.js"></script> -->
+  <!-- <script src="/assets/js/sites_nav.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitelocal-link-fix.js"></script> -->
+  <!-- <script src="/assets/js/feedback.js"></script> -->
+  <!-- <script src="/assets/js/local.js"></script> -->
+  <script translate="no">
+    feather.replace()
+  </script>
+</body>
+
+</html>

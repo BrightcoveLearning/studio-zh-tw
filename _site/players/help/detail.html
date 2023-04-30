@@ -1,0 +1,533 @@
+﻿<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>球員詳情</title>
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">   -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+  <!-- <link rel="stylesheet" href="assets/css/site/styles.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="assets/css/site/tabs.css"> -->
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/help.css">
+  <!-- <link rel="stylesheet" href="/assets/css/details.css"> -->
+  <link href="/assets/s-site-assets-stylesheets/fonts/public-sans.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+    
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XBJC11HF8Z');
+</script>
+  <!-- <script src="/assets/s-site-assets-scripts/sajari-head.js"></script> -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="body">
+
+<h1>球員詳情</h1>
+<article class="bcls-article">
+  <section class="bcls-section">
+    <p>玩家詳細信息頁麵包括</p>
+    <ul>
+      <li><a href="#toolbar">工具欄按鈕</a></li>
+      <li><a href="#details">球員詳情</a></li>
+    </ul>
+  </section>
+  <hr/>
+  <section id="toolbar" class="bcls-section">
+    <h3>工具欄按鈕</h3>
+    <details>
+      <summary>刪除播放器</summary>
+      <section class="bcls-section">
+        <ol class="bcls-tasklist-restart">
+          <li>按一下「<span class="button-red-text">刪除</span>」。</li>
+        </ol>
+      </section>
+    </details>
+    <details>
+      <summary>激活/停用播放器</summary>
+      <section class="bcls-section">
+        <p>激活的播放器可以播放視頻。停用的播放器不能播放視頻。</p>
+        <ol class="bcls-tasklist-restart">
+          <li>單擊 <span class="button-blue-text-bordered">激活</span> 或 <span class="button-blue-text-bordered">停用</span>。</li>
+        </ol>
+      </section>
+    </details>
+    <details>
+      <summary>還原更改</summary>
+      <section class="bcls-section">
+        <p>還原更改將丟棄對玩家所做的所有未發布的更改。要恢復對播放器的更改：</p>
+        <ol class="bcls-tasklist-restart">
+          <li>按一下<span class="button-blue-text-bordered">回復變更</span>。</li>
+          <li>按一下<span class="button-red">捨棄變更</span>。</li>
+        </ol>
+      </section>
+    </details>
+    <details>
+      <summary>預覽播放器</summary>
+      <section class="bcls-section">
+        <p>在發布之前預覽播放器更改。若要預覽播放器，請按一下「<span class="button-blue-text-bordered">預覽」</span>。預覽對話框將提供：</p>
+        <ul>
+          <li>預覽網址</li>
+          <li>標準和高級播放器嵌入代碼</li>
+        </ul>
+        <p>請注意，不應在生產站點上使用預覽 URL 和嵌入代碼。</p>
+      </section>
+    </details>
+    <details>
+      <summary>發布與嵌入</summary>
+      <section class="bcls-section">
+        <p>「<strong>發佈並嵌入</strong>」按鈕可用來發佈播放程式，以及產生已發佈播放程式的播放程式內嵌程式碼和 URL。要發布播放器並獲取嵌入代碼：</p>
+        <ol class="bcls-tasklist-restart">
+          <li>按一下「<span class="button-gray-border">發佈與嵌入...」</span>。</li>
+          <li>按一下<span class="button-blue">發佈變更</span>。</li>
+        </ol>
+      </section>
+    </details>
+  </section>
+  <section id="details" class="bcls-section">
+    <h3>球員詳情</h3>
+    <p>查看和設置播放器詳細信息，包括播放器信息、樣式、播放、廣告等。</p>
+    <details class="details-item">
+      <summary>玩家信息</summary>
+      <section class="bcls-section">
+        <p>使用播放器信息屬性設置播放器名稱、大小、縱橫比、尺寸、更新模式和播放器版本。</p>
+        <ul>
+          <li><strong>玩家編號</strong> - 玩家唯一標識符</li>
+          <li><strong>姓名</strong> - 內部玩家名稱</li>
+          <li><strong>播放器類型</strong> - 確定播放器是顯示單個視頻還是支持播放列表
+            <ul>
+              <li><strong>單視頻</strong> - 播放器將顯示單個視頻</li>
+              <li><strong>播放列表</strong> - 播放器將支持播放列表
+                <aside class="bcls-aside bcls-aside--information">選取<strong>播放清單</strong>會啟用「<strong>樣式」</strong>和「<strong>播放」</strong>區段中的一些其他屬性。</aside>
+              </li>
+            </ul>
+          </li>
+          <li><strong>簡短的介紹</strong> - 播放器的內部描述</li>
+          <li><strong>漿紗</strong> - 設置播放器尺寸
+            <ul>
+              <li><strong>反應靈敏</strong> -播放器大小將根據瀏覽器大小自動調整</li>
+              <li><strong>固定</strong> -播放器大小取決於寬度和高度參數</li>
+            </ul>
+          </li>
+          <li><strong>縱橫比</strong> - 玩家的寬度與高度的比例
+            <ul>
+              <li><strong>1:1、3:2、4:3、16:9、21:9 或 9:16</strong> -選取此選項後，輸入播放器寬度並產生高度</li>
+              <li><strong>風俗</strong> - 輸入玩家寬度和高度的值</li>
+            </ul>
+          </li>
+          <li><strong>球員尺寸</strong> - 控製播放器的寬度和高度；與寬高比相關 </li>
+          <li><strong>更新模式</strong> - 控製播放器何時更新
+            <ul>
+              <li><strong>自動的</strong>
+                <ul>
+                  <li>預設</li>
+                  <li>當 Brightcove 發布新版本的播放器時，播放器會更新</li>
+                </ul>
+              </li>
+              <li><strong>手動的</strong>
+                <ul>
+                  <li>不推薦 - 您可能會錯過錯誤修復和增強功能</li>
+                  <li>將播放器鎖定到一個版本</li>
+                  <li>播放器不會自動更新</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><strong>播放器版本</strong> -與更<strong>新模式相關</strong>。如需詳細資訊，請參閱「<a href="/players/properties/setting-player-update-mode-and-version.html" target="_blank">設定播放程式更新模式和版本」<i data-feather="external-link"></i></a>文件 </li>
+          <li><strong>發布播放器版本</strong> - 該播放器的當前版本</li>
+          <li><strong>本土化</strong> - 本地化播放器界面元素以顯示在各種語言中
+            <ul>
+              <li>默認為英語</li>
+              <li>包括您希望用於播放器本地化的語言</li>
+            </ul>
+          </li>
+          <li>按一下「<span class="button-blue">儲</span>存」以儲存變更</li>
+        </ul>
+        <p><a href="/players/properties/setting-player-information-properties.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>樣式</summary>
+      <section class="bcls-section">
+        <p>為播放器配置一些基本樣式選項。</p>
+        <aside class="bcls-aside bcls-aside--information">要查看播放列表樣式選項，請執行以下操作：
+          <ul>
+            <li>在左側導覽列中，選擇「<strong>玩家資訊」</strong></li>
+            <li>對於<strong>播放器類型</strong>，選擇<strong>播放清單</strong></li>
+            <li>按一下<span class="button-blue">儲存</span></li>
+          </ul>
+        </aside>
+        <ul>
+          <li><strong>播放列表類型</strong> - 設置播放列表的顯示方式
+            <ul>
+              <li><strong>水平播放列表</strong> -播放器將顯示一個水平播放列表</li>
+              <li><strong>垂直播放列表</strong> -播放器將顯示一個垂直播放列表</li>
+              <li><strong>隱藏的播放列表</strong> -播放列表將被隱藏</li>
+            </ul>
+            <aside class="bcls-aside bcls-aside--information">對玩家所做的任何變更可能需要 5 分鐘才會出現在已發佈的玩家中。</aside>
+          </li>
+          <li>選取 [ <strong>顯示標題和說明]，</strong>即可在播放程式上顯示影片標題和說明</li>
+          <li><strong>播放按鈕形狀</strong> - 控製播放按鈕的形狀：
+            <ul>
+              <li>圓</li>
+              <li>方形</li>
+              <li>矩形</li>
+            </ul>
+          </li>
+          <li><strong>播放按鈕位置</strong> - 控製播放器中播放按鈕的位置：
+            <ul>
+              <li>中心</li>
+              <li>左上</li>
+              <li>右上方</li>
+            </ul>
+          </li>
+          <li><strong>色彩主題</strong> - 控製播放器中使用的顏色，包括播放/暫停按鈕、播放時間、音量、字幕、全屏和共享圖標。 </li>
+          <li>&nbsp;<strong>恢復到舊播放器默認主題</strong> - 選擇有粉紅色的播放按鈕和進度條</li>
+          <li><strong>徽標覆蓋</strong> - 在播放器頂部添加圖像：
+            <ul>
+              <li><strong>在</strong> - 上傳圖片並定位：
+                <ul>
+                  <li>右下方</li>
+                  <li>左下方</li>
+                  <li>右上方</li>
+                </ul>
+              </li>
+              <li><strong>離開</strong> - 沒有圖像</li>
+            </ul>
+          </li>
+          <li>按一下「<span class="button-blue">儲</span>存」以儲存變更</li>
+        </ul>
+        <p><a href="/players/appearance/styling-players.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>播放</summary>
+      <section class="bcls-section">
+        <p>設置播放器的視頻播放屬性。</p>
+        <aside class="bcls-aside bcls-aside--information">要查看播放列表播放選項，請執行以下操作：
+          <ul>
+            <li>在左側導覽列中，選擇「<strong>玩家資訊」</strong></li>
+            <li>對於<strong>播放器類型</strong>，選擇<strong>播放清單</strong></li>
+            <li>按一下<span class="button-blue">儲存</span></li>
+          </ul>
+        </aside>
+        <ul>
+          <li><strong>在播放器加載時自動播放視頻</strong> - 加載播放器時開始播放視頻
+            <ul>
+              <li>自動播放的功能可能因瀏覽器而異</li>
+              <li>如需詳細資訊，請參閱<a href="https://player.support.brightcove.com/playback/autoplay-considerations.html" target="_blank">自動播放考量<i data-feather="external-link"></i></a>文件</li>
+            </ul>
+          </li>
+          <li><strong>靜音播放</strong> - 允許您靜音視頻播放</li>
+          <li><strong>播放前預加載視頻</strong> - 控製播放器是否會在用戶開始播放之前預加載視頻內容
+            <ul>
+              <li><strong>預加載視頻（最快）</strong> - 下載整個視頻文件，即使從未觀看過。這會增加帶寬消耗，但視頻會立即播放</li>
+              <li><strong>預加載元數據</strong> - 默認：僅預加載視頻元數據</li>
+              <li><strong>不要預加載</strong> -沒有視頻預加載</li>
+              <li>如需詳細資訊，請參閱<a href="https://player.support.brightcove.com/publish/available-options-advanced-page-embed-code.html#preload_details" target="_blank">預先載入的詳細資<i data-feather="external-link"></i></a>訊</li>
+            </ul>
+          </li>
+          <li><strong>啟用數字版權管理</strong> - 使播放器能夠播放受 DRM 保護的內容</li>
+          <li>播放列表屬性 - 附加屬性<strong>播放器類型</strong>的<strong>播放列表</strong>被選在<strong>玩家信息</strong>部分：
+            <ul>
+              <li><strong>隨機播放順序</strong> - 視頻以隨機順序播放</li>
+              <li><strong>選擇後播放視頻</strong> - 從播放列表中選擇時播放視頻，即使之前的視頻已暫停</li>
+              <li><strong>連續播放模式</strong> - 視頻自動前進並無限期重複</li>
+              <li><strong>視頻倒計時</strong> -在選中<strong>連續播放模式</strong>時啟用
+                <ul>
+                  <li><strong>向上下一張卡（自動推進）</strong> -下一張牌顯示在玩家</li>
+                  <li><strong>下一個終止畫面（倒數計時）</strong> -播放器中會顯示結束畫面倒數計時</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="/players/properties/configuring-player-playback-properties.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>控制項</summary>
+      <section class="bcls-section">
+        <p>配置播放器控制欄。</p>
+        <ul>
+          <li><strong>質量選擇器</strong> - 允許用戶在視頻播放時手動選擇不同的再現
+            <ul>
+              <li><strong>顯示解析度 (例如 720p)</strong> -節目將以水平解析度的線條顯示</li>
+              <li><strong>顯示高清/標清</strong> - 播放器使用比特率信息來確定再現是高清還是標清</li>
+            </ul>
+          </li>
+          <li><strong>播放率</strong> - 允許用戶手動選擇不同的播放速率</li>
+          <li><strong>全屏</strong> - 啟用全屏控件以調整播放器的大小以填滿整個顯示屏</li>
+          <li><strong>垂直音量滑塊</strong> - 垂直顯示音量滑塊</li>
+          <li><strong>縮略圖搜索</strong> - 啟用在進度條上顯示視頻縮略圖</li>
+          <li><strong>跳到下一個視頻（播放列表）</strong> - 啟用跳過控制以允許用戶前進到播放列表中的下一個視頻</li>
+        </ul>
+        <p><a href="/players/appearance/configuring-player-controls.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>社交</summary>
+      <section class="bcls-section">
+        <p>為玩家配置社交共享屬性。</p>
+        <ul>
+          <li><strong>啟用共享</strong> - 啟用後，會出現分享圖標；選擇視頻可以分享到的社交媒體網站</li>
+          <li><strong>顯示播放器嵌入代碼</strong> - 顯示社交分享選項時，允許用戶複製播放器嵌入代碼</li>
+          <li><strong>顯示播放器直接鏈接</strong> - 當顯示社交分享選項時，允許用戶將鏈接複製到嵌入播放器的頁面</li>
+        </ul>
+        <p><a href="/players/appearance/configuring-social-properties-player.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>外掛程式</summary>
+      <section class="bcls-section">
+        <p>將播放器插件、樣式表和/或腳本添加到 Brightcove 播放器。</p>
+        <ul>
+          <li>添加插件：
+            <ol class="bcls-tasklist-restart">
+              <li>按一下<strong>外掛程式</strong>連結。</li>
+              <li>按一下「<span class="button-blue">新增外掛程式」</span>並按一下外掛程式類型
+                <ul>
+                  <li><strong>自定義插件</strong> - 添加您或第三方開發的插件</li>
+                  <li><strong>Brightcove 插件</strong> - 添加由Brightcove開發和提供的插件</li>
+                </ul>
+              </li>
+              <li>要編輯任何插件屬性，請單擊插件名稱。若要刪除外掛程式，請按一下<img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="刪除圖標"/></li>
+            </ol>
+          </li>
+          <li>添加樣式表：
+            <ol class="bcls-tasklist-restart">
+              <li>按一下<strong>樣式表</strong>連結。</li>
+              <li>按一下<span class="button-blue">新增樣式表</span>。</li>
+              <li>添加您的 CSS 網址。</li>
+              <li>按一下<span class="button-blue">儲存</span></li>
+              <li>若要編輯檔案路徑，請按一下檔案名稱。若要刪除檔案，請按一下<img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="刪除圖標"/></li>
+            </ol>
+          </li>
+          <li>添加腳本：
+            <ol class="bcls-tasklist-restart">
+              <li>按一下「<strong>指令碼」</strong>連結。</li>
+              <li>按一下「<span class="button-blue">新增指令碼</span>」。</li>
+              <li>添加您的 JavaScript 網址。</li>
+              <li>按一下<span class="button-blue">儲存</span></li>
+              <li>若要編輯檔案路徑，請按一下檔案名稱。若要刪除檔案，請按一下<img class="ui-image" width="16px" src="/assets/images/admin/help/delete-icon-red.png" alt="刪除圖標"/></li>
+            </ol>
+          </li>
+        </ul>
+        <p><a href="/players/general/configuring-player-plugins.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>結束畫面</summary>
+      <section class="bcls-section">
+        <p>配置播放器以在視頻結束時顯示結束屏幕。</p>
+        <ul>
+          <li><strong>播放器結束屏幕</strong> - 選擇結束屏幕選項：
+            <ul>
+              <li><strong>沒有任何</strong> - 不會顯示結束畫面</li>
+              <li><strong>社會的</strong> -視頻結束時顯示社交分享對話框</li>
+              <li><strong>自訂</strong> -視訊結束時顯示自訂結束畫面
+                <ol class="bcls-tasklist-restart">
+                  <li>添加自定義 HTML 以在重播和共享圖標上方顯示其他文本或圖像。</li>
+                  <li>按一下<span class="button-blue">儲存</span></li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="/players/appearance/configuring-player-endscreen.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>廣告</summary>
+      <section class="bcls-section">
+        <p>配置播放器以支持客戶端和/或服務器端廣告。</p>
+        <aside class="bcls-aside bcls-aside--tip">當您同時啟用客戶端和服務器端廣告時，廣告故障轉移會自動打開。這意味著當 Brightcove Player 在瀏覽器中檢測到廣告攔截器時，播放器會請求服務器端廣告。否則，它使用客戶端廣告。</aside>
+        <ul>
+          <li><strong>啟用客戶端 (IMA)</strong> - 為玩家配置客戶端廣告
+            <ul>
+              <li><strong>廣告代碼</strong> -輸入廣告代碼網址；若要進行測試，請選取 [ <strong>插入範例廣告代碼]</strong></li>
+              <li><strong>請求廣告</strong> - 設置何時請求廣告
+                <ul>
+                  <li><strong>負載</strong> - 播放器加載時立即請求廣告（通常是 DFP/VPAID 的最佳體驗）</li>
+                  <li><strong>正在播放</strong> - 第一個廣告請求延遲到播放開始</li>
+                  <li><strong>隨選</strong> -所有廣告請求都是使用此方法以程式設計<code translate="No">player.ima3.adrequest()</code>方式啟動</li>
+                </ul>
+              </li>
+              <li><strong>VPAID模式</strong> - VPAID 模式用於在 IMA 廣告中啟用 VPAID 2 支持
+                <ul>
+                  <li><strong>啟用</strong> - 在不同域的 iframe 中播放 VPAID 廣告</li>
+                  <li><strong>缺乏安全感</strong> - 在具有相同域的 iframe 中播放 VPAID 廣告</li>
+                  <li><strong>殘疾人</strong> - VPAID 廣告拋出錯誤</li>
+                </ul>
+              </li>
+              <li><strong>暫停</strong> - 播放前等待廣告初始化的最長時間（以毫秒為單位）</li>
+              <li><strong>硬超時</strong> - 防止加載緩慢的廣告出現；取消選中此選項可能會導致加載緩慢的廣告中斷視頻播放</li>
+              <li><strong>最大重定向數</strong> - 設置拒絕後續重定向和中止廣告加載之前的最大重定向次數；重定向的數量直接影響延遲和用戶體驗</li>
+              <li><strong>插件版本</strong> - 選擇要使用的 IMA 插件版本</li>
+              <li>按一下<span class="button-blue">儲存</span></li>
+            </ul>
+          </li>
+          <li><strong>啟用服務器端 (SSAI)</strong> - 為播放器配置服務器端廣告
+            <aside class="bcls-aside bcls-aside--information">服務器端廣告選項僅在您的帳戶已啟用服務器端廣告時才會出現。</aside>
+            <aside class="bcls-aside bcls-aside--information">若要取得精確的廣告曝光次數，請將 [ <strong>播放]</strong>區段中的設定變更為 [ <strong>不要預先載入]</strong>。</aside>
+            <ul>
+              <li><strong>選擇配置</strong> - 選擇與該播放器相關聯的廣告配置</li>
+              <li><strong>啟用廣告資訊覆蓋</strong> -讓播放器在您的廣告上顯示覆蓋圖；這包括<strong>了解詳情</strong>和廣告倒數疊加</li>
+              <li>按一下<span class="button-blue">儲存</span></li>
+            </ul>
+          </li>
+        </ul>
+        <p><a href="/players/general/configuring-player-advertising-using-players-module.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>內容限制</summary>
+      <section class="bcls-section">
+        <p>配置播放器以限制特定域的播放，並允許/阻止來自特定國家/地區的觀看。</p>
+        <aside class="bcls-aside bcls-aside--tip">域限制適用於所有帳戶。地理限制僅適用於企業和專業帳戶。</aside>
+        <ul>
+          <li><strong>允許的域</strong> - 輸入一個或多個域 URL 以限制玩家對這些域的可用性
+            <ul>
+              <li>您必須使用不帶通配符的完整網址</li>
+              <li>網址不得以<code translate="No">/</code> </li>
+              <li>僅支援網域 (非特定路徑)。例如：
+                <ul>
+                  <li>是：<code translate="No">https://www.brightcove.com</code></li>
+                  <li>否：<code translate="No">https://www.brightcove.com/documentation</code></li>
+                </ul>
+              </li>
+              <li>按一下<span class="button-blue">儲存</span></li>
+            </ul>
+          </li>
+          <li><strong>地理過濾</strong> - 控制哪些國家可以，哪些不能使用玩家
+            <ol class="bcls-tasklist-restart">
+              <li>選擇一個：
+                <ul>
+                  <li><strong>無限制</strong></li>
+                  <li><strong>允許從以下國家觀看</strong></li>
+                  <li><strong>禁止從以下國家觀看</strong></li>
+                </ul>
+              </li>
+              <li>輸入國家名稱。當您輸入時，會篩選國家清單。</li>
+              <li>單擊一個國家並按回車鍵添加它。</li>
+              <li>按一下「<span class="button-blue">儲存</span>」。</li>
+            </ol>
+          </li>
+        </ul>
+        <p><a href="/players/properties/configuring-player-content-restrictions.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>行銷活動</summary>
+      <section class="bcls-section">
+        <p>Brightcove Campaign 提供了一套工具來幫助營銷人員進行潛在客戶生成過程。</p>
+        <p><a href="/campaign/index.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>JSON 編輯器</summary>
+      <section class="bcls-section">
+        <p>JSON 編輯器允許高級用戶使用名稱/值對管理播放器配置。</p>
+        <p><a href="https://apis.support.brightcove.com/player-management/guides/player-configuration-guide.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Google Analytics</summary>
+      <section class="bcls-section">
+        <p>配置播放器以使用 Google Analytics 事件跟踪。這允許將事件和自定義維度發送到您的 Google Analytics（分析）帳戶以用於報告目的。</p>
+        <ol class="bcls-tasklist-restart">
+          <li>勾選<strong>「啟用谷歌分析」</strong>。</li>
+          <li>按一下「<span class="button-blue">登入 Google 帳戶」</span>。</li>
+          <li>使用您的憑據登錄到您的 Google 帳戶。</li>
+          <li>點擊<strong>允許</strong>讓布萊特灣訪問您的 Google 帳戶。</li>
+          <li>使用<strong> [選取帳戶]</strong>下拉式清單選取要傳送追蹤資料的 Google 帳戶。</li>
+          <li>選取要追蹤的<strong>事件</strong>。</li>
+          <li>按一下「<span class="button-blue">儲存</span>」。</li>
+        </ol>
+        <aside class="bcls-aside bcls-aside--tip">確保將更改發佈到播放器。</aside>
+        <p><a href="/players/general/configuring-google-analytics-event-tracking.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+    <details class="details-item">
+      <summary>Adobe Analytics</summary>
+      <section class="bcls-section">
+        <p>配置播放器以使用 Adobe Analytics 事件跟踪。這允許將跟踪數據發送到您的 Adobe Analytics 帳戶以用於報告目的。</p>
+        <ol class="bcls-tasklist-restart">
+          <li>
+            <p>登錄到您的 Adobe Analytics 帳戶，並創建自定義成功事件。</p>
+            <p>要追蹤的每個 Brightcove 事件都必須建立為 Adobe Analytics 中的自訂成功事件。</p>
+          </li>
+          <li>
+            <p>在 Adobe Analytics 中，創建流量變量。</p>
+            <p>將記錄的每個 Brightcove 參數都必須創建為流量變量。</p>
+          </li>
+          <li>返回燈塔工作室。</li>
+          <li>勾選<strong>「啟用 Adobe 分析」</strong>。</li>
+          <li>輸入您的 Adobe 帳戶資訊。
+            <ul>
+              <li><strong>報表套裝 ID</strong></li>
+              <li><strong>Marketing Cloud 組織 ID</strong></li>
+              <li><strong>追蹤伺服器</strong></li>
+              <li><strong>已啟用 C名稱</strong></li>
+              <li><strong>訪客命名空間</strong></li>
+            </ul>
+          </li>
+          <li>對於您要跟踪的每個事件，將 Adobe Analytics 事件 ID 輸入相應的 Brightcove 事件字段。</li>
+          <li>
+            <p>對於要捕獲的每個參數，將 Adobe Analytics 參數編號輸入相應的 Brightcove 參數字段。</p>
+            <p>使用<code translate="No">propX</code>格式在哪裡<code translate="No">X</code>對應於<strong>財產 ＃</strong>在 Adobe Analytics 中。</p>
+            <p>範例：<strong>屬性 # 1</strong>的值為<code translate="No">prop1</code>。</p>
+          </li>
+          <li>按一下「<span class="button-blue">儲存</span>」。</li>
+        </ol>
+        <aside class="bcls-aside bcls-aside--tip">確保將更改發佈到播放器。</aside>
+        <p><a href="/players/general/configuring-adobe-analytics-event-tracking.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+      </section>
+    </details>
+  </section>
+</article>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitehttps-fix.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="/assets/s-site-assets-scripts/js/details.js"></script>
+  <!-- <script src="/assets/js/expand-dl.js"></script> -->
+
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetabs.js"></script> -->
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetoc.js"></script> -->
+  <!-- <script src="/assets/js/sites_nav.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitelocal-link-fix.js"></script> -->
+  <!-- <script src="/assets/js/feedback.js"></script> -->
+  <!-- <script src="/assets/js/local.js"></script> -->
+  <script translate="no">
+    feather.replace()
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+﻿<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>實時設置</title>
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">   -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+  <!-- <link rel="stylesheet" href="assets/css/site/styles.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="assets/css/site/tabs.css"> -->
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/help.css">
+  <!-- <link rel="stylesheet" href="/assets/css/details.css"> -->
+  <link href="/assets/s-site-assets-stylesheets/fonts/public-sans.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+    
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XBJC11HF8Z');
+</script>
+  <!-- <script src="/assets/s-site-assets-scripts/sajari-head.js"></script> -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="body">
+
+<h1>實時設置</h1>
+<article class="bcls-article">
+    <section class="bcls-section"> 
+        <p>管理 Brightcove Live 流的填充板和憑據。SSAI 廣告配置在<strong>服務器端廣告設置</strong> .</p>
+
+        <details class="details-item">
+          <summary>添加填充板</summary>
+          <section class="bcls-section">
+            <p>Fill slates 是在直播廣告插播中出現間隙時要提供的內容。</p>
+            <ol class="bcls-tasklist">
+              <li>點擊<span class="button-blue"><i class="button-icon" data-feather="plus"></i>添加填充板</span> .</li>
+              <li>進入<strong>姓名</strong> - 填充板的描述性名稱。</li>
+              <li>進入<strong>來源網址</strong> - 填寫名單的完整地址。</li>
+              <li>按一下「<span class="button-blue">儲存</span>」。</li>
+            </ol>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>刪除填充板</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist">
+              <li>點擊<img class="ui-image" alt="刪除圖標" src="/assets/images/admin/help/delete-icon.png"/>刪除關聯的填充板。</li>
+              <li>在裡面<strong>刪除</strong>對話，點擊<span class="button-red-text">刪除</span>確認。</li>
+            </ol>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>添加憑據</summary>
+          <section class="bcls-section">
+            <p>使用 Live 模塊或 Live API 時需要 Live 憑據。</p>
+            <ol class="bcls-tasklist">
+              <li>對於實時視頻雲憑證，從<a href="https://live.support.brightcove.com/admin/managing-live-settings.html#credentials" target="_blank">API 身份驗證憑據<i data-feather="external-link"></i></a> .<br/>對於 S3、FTP 或 RTMP 憑據，請跳過此步驟。</li>
+              <li>進入<strong>標籤</strong> - 此憑證的內部名稱</li>
+              <li>選擇一個<strong>類型</strong>：
+                <ul>
+                  <li><strong>的FTP</strong> -用於將VOD資產保存到ftp位置（使用API）</li>
+                  <li><strong>RTMP</strong> -用於創建RTMP憑證以供編碼器使用</li>
+                  <li><strong>S3</strong> -用於將VOD資產保存到Amazon S3帳戶（使用API）</li>
+                  <li><strong>視頻雲</strong> -用於將VOD資產保存到視頻雲帳戶（使用API）</li>
+                </ul>
+              </li>
+              <li>進入<strong>公鑰/用戶名</strong> :
+                <ul>
+                  <li><strong>的FTP</strong> -輸入FTP站點的用戶名</li>
+                  <li><strong>RTMP</strong> -輸入編碼器將用於驗證的用戶名</li>
+                  <li><strong>S3</strong> -輸入S3帳戶的用戶名</li>
+                  <li><strong>視頻雲</strong> - 輸入客戶編號為API身份驗證憑證生成</li>
+                </ul>
+              </li>
+              <li>進入<strong>私鑰/密碼</strong> :
+                <ul>
+                  <li><strong>的FTP</strong> -輸入FTP站點的密碼</li>
+                  <li><strong>RTMP</strong> -輸入編碼器用於驗證的密碼</li>
+                  <li><strong>S3</strong> -輸入S3帳戶的密碼</li>
+                  <li><strong>視頻雲</strong> - 輸入客戶機密為API身份驗證憑證生成</li>
+                </ul>
+              </li>
+              <li>按一下「<span class="button-blue">儲存</span>」。</li>
+            </ol>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>刪除憑據</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist">
+              <li>點擊<img class="ui-image" alt="刪除圖標" src="/assets/images/admin/help/delete-icon.png"/>刪除關聯的憑據。</li>
+              <li>在裡面<strong>刪除</strong>對話，點擊<span class="button-red-text">刪除</span>確認。</li>
+            </ol>
+          </section>
+        </details>
+      
+  </section>
+    <section class="bcls-section">
+       <h3><a href="/admin/general/managing-live-settings.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></h3>
+    </section>
+</article>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitehttps-fix.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="/assets/s-site-assets-scripts/js/details.js"></script>
+  <!-- <script src="/assets/js/expand-dl.js"></script> -->
+
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetabs.js"></script> -->
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetoc.js"></script> -->
+  <!-- <script src="/assets/js/sites_nav.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitelocal-link-fix.js"></script> -->
+  <!-- <script src="/assets/js/feedback.js"></script> -->
+  <!-- <script src="/assets/js/local.js"></script> -->
+  <script translate="no">
+    feather.replace()
+  </script>
+</body>
+
+</html>

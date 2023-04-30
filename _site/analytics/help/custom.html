@@ -1,0 +1,214 @@
+﻿<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>自定義報告</title>
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">   -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+  <!-- <link rel="stylesheet" href="assets/css/site/styles.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="assets/css/site/tabs.css"> -->
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/help.css">
+  <!-- <link rel="stylesheet" href="/assets/css/details.css"> -->
+  <link href="/assets/s-site-assets-stylesheets/fonts/public-sans.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+    
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XBJC11HF8Z');
+</script>
+  <!-- <script src="/assets/s-site-assets-scripts/sajari-head.js"></script> -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="body">
+
+<h1>自定義報告</h1>
+<article class="bcls-article">
+    <section class="bcls-section">
+        <p>創建顯示一段時間內選定數據和指標的自定義分析報告。</p>
+   
+        <details class="details-item">
+          <summary>報告時區</summary>
+          <section class="bcls-section">
+            <p>自定義報告中的數據基於帳戶的報告時區；配置您的時區：</p>
+            <ol class="bcls-tasklist-restart">
+              <li>在 Video Cloud Studio 中，展開<strong>行政</strong>落下。</li>
+              <li>選擇<strong>帳號設定</strong> .</li>
+              <li>設置你的<strong>當前時區</strong> .</li>
+              <li>按一下「<span class="button-blue">儲存</span>」。</li>
+            </ol>
+            <aside class="bcls-aside bcls-aside--information">更改報告時區只會影響以後的數據，不會追溯應用更改。</aside>
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#timezone" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>報表數據</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>包括賬戶</strong> - 包括來自當前視頻雲帳戶的數據或選擇多個帳戶</li>
+              <li><strong>報告類型</strong> 
+                <ul>
+                  <li><strong>一度</strong> - 報告立即運行一次
+                  <li><strong>日期範圍</strong> - 對於一次性報告，指定分析數據的時間段</li>
+                  </li>
+                  <li><strong>再次發生的</strong> - 可以安排報告每天、每週或每月運行
+                  <li><strong>頻率</strong> - 對於經常性報告
+                    <ul>
+                      <li><strong>日常</strong> -報告涵蓋一整天</li>
+                      <li><strong>每週</strong> - 報告涵蓋整個星期，定義為星期一到星期日</li>
+                      <li><strong>每月一次</strong> -報告涵蓋整個月</li>
+                    </ul>
+                  </li>
+                  <aside class="bcls-aside bcls-aside--information">定期報告在分析協調後執行，通常在報告期結束後 3 到 5 天。</aside>
+                  </li>
+                </ul>
+              </li>
+              <li><strong>數據組</strong> - 數據組確定報告中包含的數據字段
+                <ul>
+                  <li>顯示的數據字段基於您選擇的數據組</li>
+                  <li>您可以選擇多個數據組，但某些組合無效</li>
+                  <li>必須至少選擇一個數據組</li>
+                </ul>
+              </li>
+              <li><strong>數據字段</strong> - 當你選擇一個數據組時，可以返回的數據字段是可選的
+                <ul>
+                  <li>無法為所選數據組返回灰色字段</li>
+                </ul>
+              </li>
+            
+              
+              <li>點擊<span class="button-blue">節省</span>保存您的更改</li> 
+            </ul>
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>添加報告過濾器</summary>
+          <section class="bcls-section">
+            <p>可以添加過濾器來限制返回的數據量。</p>
+            <ul>
+              <li>使用多個過濾器時，將使用 AND 運算</li>
+              <li>如果您選擇了匹配的數據組，過濾器只會顯示在您的報告中
+                <ul>
+                  <li>例如，如果你想過濾<strong>視頻標籤</strong>，您必須選擇<strong>視頻</strong>方面</li>
+                </ul>
+              </li>
+            </ul>
+            <p>您可以過濾以下內容：</p>
+            <ul>
+              <li><strong>視頻</strong> -帳戶中的一個或多個有效視頻ID</li>
+              <li><strong>影片標記</strong> -一個或多個視頻標籤</li>
+              <li><strong>自定義字段</strong> -帳戶中的一個或多個自定義字段</li>
+              <li><strong>播放器</strong> - 輸入一個或多個玩家 ID，以逗號分隔</li>
+              <li><strong>來源類型</strong></li>
+              <li><strong>設備類型</strong></li>
+              <li><strong>設備操作系統</strong></li>
+              <li><strong>設備製造商</strong></li>
+              <li><strong>瀏覽器類型</strong></li>
+              <li><strong>搜索詞</strong></li>
+              <li><strong>國家</strong></li>
+              <li><strong>目標域</strong></li>
+              <li><strong>搜索詞</strong></li>
+            </ul>
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#filter" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>預覽報告</summary>
+          <section class="bcls-section">
+            <p>報告預覽中顯示的數據是樣本數據，而不是您的視頻雲帳戶中的實際數據。</p>
+            <ul>
+              <li>這<strong>預覽報告</strong>部分顯示所選的數據列，其中填充了示例數據</li>
+              <li>點擊<img class="ui-image" alt="刪除圖標" src="/assets/images/admin/help/delete-icon.png"/>刪除關聯的數據項</li>
+              <li>預覽的排序順序對下載報告的排序順序沒有影響</li>
+              <li>您可以使用電子表格應用程序對下載的數據進行排序</li>
+            </ul>
+           
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#preview" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>配置和交付報告</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>報告名稱</strong> - 首先給報告起一個有意義的名字</li>
+              <li><strong>格式</strong> 
+                <ul>
+                  <li><strong>CSV文件</strong> - 逗號分隔值 </li>
+                  <li><strong>XLSX</strong> - 微軟Excel</li>
+                </ul>
+              </li>
+              <li><strong>當我的報告準備好時給我發電子郵件</strong> - 報告完成後收到一封電子郵件通知給自己</li>
+              <li><strong>通知他人</strong> - 輸入以逗號分隔的電子郵件地址</li>
+              <li>在 Brighcove 電子郵件中，報告下載鏈接的有效期為 90 天</li>
+              
+              <li>對於一次性報告， 
+                <ul>
+                  <li>點擊<span class="button-blue">請求報告</span></li>
+                  <li>報告完成後將被下載</li>
+                </ul>
+              </li>
+              <li>對於重複報告， 
+                <ul>
+                  <li>點擊<span class="button-blue">進度報告</span></li>
+                  <li>當數據準備好時，報表將被排隊並運行</li>
+                </ul>
+              </li>
+            </ul>
+            <li>要查看所有計劃的報告，請單擊<span class="button-blue">預定報告</span>在左側導航</li>
+           
+            <p><a href="/analytics/reports/creating-custom-analytics-reports.html#options" target="_blank">了解更多 <i data-feather="external-link"></i></a></p>
+          </section>
+        </details> 
+   
+  </section>
+</article>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitehttps-fix.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="/assets/s-site-assets-scripts/js/details.js"></script>
+  <!-- <script src="/assets/js/expand-dl.js"></script> -->
+
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetabs.js"></script> -->
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetoc.js"></script> -->
+  <!-- <script src="/assets/js/sites_nav.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitelocal-link-fix.js"></script> -->
+  <!-- <script src="/assets/js/feedback.js"></script> -->
+  <!-- <script src="/assets/js/local.js"></script> -->
+  <script translate="no">
+    feather.replace()
+  </script>
+</body>
+
+</html>

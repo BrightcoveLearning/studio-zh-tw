@@ -1,0 +1,178 @@
+﻿<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  
+  <title>播放程式</title>
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">   -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">  
+  <!-- <link rel="stylesheet" href="assets/css/site/styles.css"> -->
+  <!-- <link rel="stylesheet" href="assets/css/site/landing-page.css">
+  <link rel="stylesheet" href="assets/css/site/tabs.css"> -->
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/help.css">
+  <!-- <link rel="stylesheet" href="/assets/css/details.css"> -->
+  <link href="/assets/s-site-assets-stylesheets/fonts/public-sans.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css" rel="stylesheet">
+  <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+    
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+<script translate="no">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XBJC11HF8Z');
+</script>
+  <!-- <script src="/assets/s-site-assets-scripts/sajari-head.js"></script> -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body class="body">
+
+<h1>播放程式</h1> 
+<article class="bcls-article">
+    <section class="bcls-section">
+        <p>播放器模塊允許您創建和管理視頻播放器。</p>
+
+        <details class="details-item">
+          <summary>球員名單</summary>
+          <section class="bcls-section">
+            <ul>
+              <li><strong>姓名</strong> - 單擊播放器名稱鏈接以編輯播放器詳細信息。玩家 ID 顯示在玩家名稱下方。</li>
+              <li><strong>更新</strong> - 最近更新的日期和時間</li>
+              <li><strong>版本</strong> - 播放器版本</li>
+              <li><strong>地位</strong> - 球員狀態
+                <ul>
+                  <li><img alt="" src="/assets/images/players/node14049-cone-icon.png"/> -表示已對播放器進行了更改，但尚未發布更改</li>
+                  <li><img alt="" src="/assets/images/players/node14049-check-icon.png"/> -表示播放器已激活，並且已發布對播放器的所有更改</li>
+                  <li><img alt="" src="/assets/images/players/node14049-red-circle-icon.png"/> -表示播放器處於非活動狀態</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>球員總結</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist-restart">
+              <li>選擇玩家名稱以查看玩家列表右側的摘要。信息包括：
+                <ul>
+                  <li>玩家姓名 - 單擊玩家姓名鏈接以編輯玩家詳細信息。</li>
+                  <li><strong>已創建</strong> - 球員創建日期</li>
+                  <li>按一下「<span class="button-blue">玩家預覽」，</span>即可在模組視窗中查看播放器的預覽</li>
+                  <li>按一下「<span class="button-blue">內嵌程式碼與 URL」</span>以複製「<strong>預覽播放程式」</strong>或「<strong>已發佈播放程式」</strong>內嵌程式碼，以測試您在 HTML 頁面中的播放程式</li>
+                  <li><strong>玩家編號</strong> - 玩家唯一標識符</li>
+                  <li><strong>姓名</strong> - 參賽者姓名</li>
+                  <li><strong>描述</strong> - 球員簡短描述</li>
+                  <li><strong>地位</strong> - 球員狀態
+                    <ul>
+                      <li><span class="button-blue">積極的</span> - 播放器處於活動狀態並可以使用</li>
+                      <li><span class="button-red">無效</span> - 播放器已停用</li>
+                    </ul>
+                  </li>
+                  <li><strong>發布狀態</strong> - 播放器發布狀態
+                    <ul>
+                      <li><strong>發表</strong> - 播放器已發布且沒有未發布的更改</li>
+                      <li><strong>您有未發布的更改</strong> - 您對播放器進行了更改；在您發布播放器之前，用戶不會看到它們</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ol>  
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>搜索玩家</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist-restart">
+              <li>在<span class="button-gray"><i class="button-icon" data-feather="search"></i>搜尋玩家中</span>，開始輸入以搜尋您帳戶中的玩家。搜索以下字段：
+                <ul>
+                  <li>選手姓名</li>
+                  <li>播放程式 ID</li>
+                  <li>簡短描述</li>
+                </ul>
+              </li>
+            </ol>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>創建播放器</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist-restart">
+              <li>按一下<span class="button-blue"> + 新增播放器</span>。</li>
+              <li>輸入<strong>姓名</strong>為您的播放器。</li>
+              <li>進入一個<strong>簡短的介紹</strong>為您的播放器。</li>
+              <li>按一下「<span class="button-blue">儲存</span>」。</li> 
+            </ol>
+            <aside class="bcls-aside bcls-aside--information">當您創建新播放器時，它是使用 Brightcove 發布的最新播放器版本構建的。</aside>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>重複播放器</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist-restart">
+              <li>選擇您要復制的播放器。</li>
+              <li>按一下「<span class="button-blue">複製</span>」。</li>
+              <li>輸入新玩家的<strong>名稱</strong>和<strong>簡短說明</strong>。</li>
+              <li>按一下「<span class="button-blue">儲存</span>」。</li> 
+            </ol>
+          </section>
+        </details>
+
+        <details class="details-item">
+          <summary>刪除播放器</summary>
+          <section class="bcls-section">
+            <ol class="bcls-tasklist-restart">
+              <li>選擇您要刪除的玩家。</li>
+              <li>按一下<img class="ui-image" alt="刪除圖標" src="/assets/images/admin/help/delete-icon-red.png"/>。</li>
+              <li>在「<strong>刪除玩家</strong>」對話方塊中，按一下「<span class="button-red-text">刪除」確認</span>。</li> 
+            </ol>
+          </section> 
+        </details> 
+  </section>
+  <section class="bcls-section">
+    <h4><i data-feather="chevrons-right"></i><a href="/players/module/getting-started-players-module.html" target="_blank">了解更多<i data-feather="external-link"></i></a></h4>
+  </section>
+</article>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitehttps-fix.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="/assets/s-site-assets-scripts/js/details.js"></script>
+  <!-- <script src="/assets/js/expand-dl.js"></script> -->
+
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetabs.js"></script> -->
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitetoc.js"></script> -->
+  <!-- <script src="/assets/js/sites_nav.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <!-- <script src="https://support.brightcove.com/site-assets/js/sitelocal-link-fix.js"></script> -->
+  <!-- <script src="/assets/js/feedback.js"></script> -->
+  <!-- <script src="/assets/js/local.js"></script> -->
+  <script translate="no">
+    feather.replace()
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,3349 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW"> 
+    <head>
+        <title>將視頻發佈到社交媒體平台</title>
+        
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="在本主題中，您將學習如何使用 Brightcove Social 將視頻發佈到社交媒體。">
+        
+        <!-- Google Font -->
+        <link href="/assets/s-site-assets-stylesheets/fonts/poppins.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/fonts/articulat-site.css">
+        <link href="/assets/s-site-assets-stylesheets/fonts/source-code-pro.css" rel="stylesheet">
+        
+        <!-- FontAwesome JS-->
+        
+        <script src="https://kit.fontawesome.com/d67c74a882.js" crossorigin="anonymous"></script>  
+        
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.css">
+
+        <!-- Theme CSS -->  
+        <link id="theme-style" rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/css/theme.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-stylesheets/prism.css">
+        <link rel="stylesheet" href="/assets/s-site-assets-template-stylesheets/custom-css/styles.css">
+
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XBJC11HF8Z"></script>
+        <script translate="no">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XBJC11HF8Z');
+        </script>
+        <script src="/assets/s-site-assets-scripts/sixth-sense.js"></script>
+        <script src="/assets/s-site-assets-scripts/sajari-head.js"></script>
+        <script src="/assets/s-site-assets-scripts/feather.min.js"></script>
+
+    </head> 
+
+    <body class="docs-page">
+        
+
+<header class="header fixed-top">
+  <div class="branding docs-branding">
+    <div class="container-fluid position-relative py-2">
+      <div class="docs-logo-wrapper">
+        <button id="docs-sidebar-toggler" class="docs-sidebar-toggler"
+          type="button">
+          <span></span> <span></span> <span></span>
+        </button>
+        <div class="site-logo"><a class="navbar-brand" href="https://support.brightcove.com/" style="margin-left: 15px;"> <img class="logo-icon me-2" src="/assets/s-site-assets-template-stylesheets/images/bc_logo_black_1@1x.png" alt="商標" style="margin-bottom: 9px;"/>
+            <!-- <span class="logo-text">BRIGHTCOVE</span> -->
+          </a></div>
+      </div><!--//docs-logo-wrapper-->
+
+      <div class="docs-top-utilities d-flex justify-content-end
+        align-items-center">
+        
+        <!-- Search bar -->
+        <div id="nav-search-box" class="top-search-box d-none d-lg-flex" style="margin-right: 10px ;"></div>
+
+<select id="site_select" class="form-select select-focus" style="width:
+          20%; margin-right: 10px;" translate="no">
+          <option value="">Other Brightcove Docs</option>
+          
+          
+          <option value="https://support.brightcove.com" translate="no">Documentation Home</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO CLOUD --</option>
+          
+          
+          
+          <option value="https://studio.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Studio</option>
+          
+          
+          
+          <option value="https://mstudio.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Marketing Studio</option>
+          
+          
+          
+          <option value="https://player.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Player Development</option>
+          
+          
+          
+          <option value="https://apis.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Platform APIs</option>
+          
+          
+          
+          <option value="https://sdks.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud Device SDKs</option>
+          
+          
+          
+          <option value="https://integrations.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Integrations and CMS Connectors</option>
+          
+          
+          
+          <option value="https://general.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Video Cloud General Information</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO ESSENTIALS --</option>
+          
+          
+          
+          <option value="https://audience-insights.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Audience Insights</option>
+          
+          
+          
+          <option value="https://beacon-help.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Studio</option>
+          
+          
+          
+          <option value="https://beacon.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Beacon Classic</option>
+          
+          
+          
+          <option value="https://corptv.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;CorpTV</option>
+          
+          
+          
+          <option value="https://live.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Live</option>
+          
+          
+          
+          <option value="https://zencoder.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Zencoder</option>
+          
+          
+          
+          <option value="https://support.brightcove.com/" translate="no">-- VIDEO CLOUD ADD-ONS --</option>
+          
+          
+          
+          <option value="https://gallery.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Gallery</option>
+          
+          
+          
+          <option value="https://studio.support.brightcove.com/social/index.html" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Social</option>
+          
+          
+          
+          <option value="https://interactivity.support.brightcove.com/index.html" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Interactivity</option>
+          
+          
+          
+          <option value="https://ssai.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove SSAI</option>
+          
+          
+          
+          <option value="https://campaign.support.brightcove.com" translate="no">&nbsp;&nbsp;&nbsp;&nbsp;Brightcove Campaign</option>
+          
+          
+        </select>
+
+        <select id="language_select" class="form-select select-focus" style="width: 10%;"
+          onchange="doGTranslate(this);" translate="no">
+          <!-- <option value="">Select Language</option> -->
+          <option value="en|en" translate="No">English</option>
+          <option value="en|zh-TW" translate="No">繁體中文</option>
+          <option value="en|fr" translate="No">Français</option>
+          <option value="en|de" translate="No">Deutsche</option>
+          <option value="en|ja" translate="No">日本語</option>
+          <option value="en|ko" translate="No">한국어</option>
+          <option value="en|es" translate="No">Español</option>
+        </select>
+
+        <script translate="no">
+          /* <![CDATA[ */
+          function doGTranslate(lang_pair) {if(lang_pair.value)lang_pair=lang_pair.value;if(lang_pair=='')return;var lang=lang_pair.split('|')[1];var plang=location.hostname.split('.')[0];if(plang.length !=2 && plang.toLowerCase() != 'zh-cn' && plang.toLowerCase() != 'zh-tw')plang='en';location.href=location.protocol+'//'+(lang == 'en' ? '' : lang+'.')+location.hostname.replace('www.', '').replace(RegExp('^' + plang + '\\.'), '')+location.pathname+location.search;}
+          /* ]]> */
+        </script>
+      </div>
+    </div>
+  </div>
+</header><!--//header-->
+
+<div class="docs-wrapper">
+  <div id="docs-sidebar" class="docs-sidebar" style="padding-right: 15px;">
+    <div id="nav-search-box" class="top-search-box d-lg-none p-3"></div>
+    <div class="row">
+      
+        <div id="side_nav" style="margin-left: 1em; display: inline-block; border-right: 1px solid #e5e5e6; padding-right: 1em;">
+          
+          <nav class="docs-nav sidenav" aria-label="Main">
+            <ul class="site-nav" style="list-style-type: none;">
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/index.html">首頁</a></li>
+            
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/get-started/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;開始使用</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/getting-started-video-cloud-studio.html">開始使用視訊雲端工作室</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/getting-started-your-video-cloud-trial.html">開始使用視訊雲端試用</a></li>
+              
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/get-started/basics/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;學習基礎知識</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/activating-and-deactivating-video.html">啟用和停用視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/adding-user-video-cloud-account.html">將使用者新增至視訊雲端帳戶</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/capturing-video-poster-thumbnail-images.html">擷取視訊海報和縮圖影像</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/creating-manual-playlist.html">建立手動播放清單</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/creating-player.html">建立播放程式</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/creating-playlist-player.html">建立播放清單播放器</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/creating-smart-playlist.html">建立智慧型播放清單</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/determining-how-much-video-being-watched.html">決定觀看影片的數量</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/determining-which-videos-have-most-views.html">判斷哪些影片的觀看次數最多</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/editing-basic-video-properties.html">編輯基本視訊屬性</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/editing-video-properties-multiple-videos.html">編輯多個視訊的視訊屬性</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/organizing-videos-using-folders.html">使用資料夾組織視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/publishing-playlist-web.html">將播放清單發佈至網路</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/publishing-single-video-web.html">將單一視訊發佈至網路</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/styling-player.html">設定播放器樣式</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/uploading-video-poster-thumbnail-images.html">上傳影片海報和縮圖影像</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/get-started/basics/uploading-videos.html">上傳視訊</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/navigating-brightcove-support-site.html">瀏覽布萊特灣支援網站</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/quick-start-video-cloud.html">視訊雲端快速入門</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/step-step-video-cloud-studio-publishing-workflow.html">逐步：視訊雲端發佈工作流程</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/video-cloud-glossary.html">視訊雲端詞彙</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/get-started/training/index.html">訓練</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/media/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;管理影片</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/module/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;使用媒體模組</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/module/getting-started-media-module.html">開始使用媒體模組</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/module/how-search-videos-and-playlists-media-module.html">如何搜尋影片和播放清單</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/manage/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;管理視訊檔案</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/uploading-videos-using-upload-module.html">上傳視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/replacing-video-source-file.html">取代視訊來源檔</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/retranscoding-videos-using-media-module.html">重新轉碼影片</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/downloading-videos-video-cloud.html">從視訊雲端下載視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/uploading-videos-remote-urls.html">上傳視訊遠端網址</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/working-remote-asset-videos.html">使用遠端資產視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/manage/exporting-video-data.html">匯出視訊資料</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/properties/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;視訊屬性</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/editing-video-properties-using-media-module.html">編輯視訊屬性</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/editing-video-properties-using-quick-edit.html">使用「快速編輯」編輯性質</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/capturing-poster-and-thumbnail-images.html">擷取海報和縮圖影像</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/uploading-poster-and-thumbnail-images.html">上傳海報和縮圖影像</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/properties/configuring-video-availability.html">設定視訊可用性</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/organize/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;組織影片</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/organize/introduction-playlists.html">播放清單簡介</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/organize/creating-and-managing-playlists.html">建立和管理播放清單</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/organize/organizing-videos-using-folders.html">使用資料夾組織視訊</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/captions/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;字幕和音訊檔案</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/overview-adding-captions-video.html">概述：在影片中新增字幕</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/adding-captions-videos-using-media-module.html">新增字幕至視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/adding-audio-tracks-videos-using-media-module.html">新增音軌至視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/adding-chapters-video.html">新增章節至視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/generating-captions-videos.html">為視頻生成字幕</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/styling-captions.html">樣式註解</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/captions/using-the-caption-editor.html">使用字幕編輯器</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/media/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;一般資訊</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/increasing-quality-poster-and-thumbnail-images.html">提高海報影像的品質</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/media-sharing-using-media-module.html">媒體分享</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/setting-required-fields-videos.html">設定必要欄位</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/working-cue-points-media-module.html">使用提示點</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/media/general/working-multi-lingual-metadata.html">使用多語言中繼資料</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/players/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;管理玩家</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/players/module/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;使用播放器模組</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/module/getting-started-players-module.html">開始使用玩家模組</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/general/step-step-using-players-module-create-and-publish-player.html">逐步：建立和發佈播放程式</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/players/properties/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;播放器屬性</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/properties/setting-player-properties.html">設定播放程式屬性</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/properties/setting-player-information-properties.html">設定播放程式資訊屬性</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/properties/configuring-player-content-restrictions.html">設定播放程式內容限制</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/properties/configuring-player-playback-properties.html">設定播放程式播放內容</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/properties/setting-player-update-mode-and-version.html">設定播放器更新模式</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/players/appearance/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;外觀和控制</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/adding-thumbnail-seeking-player.html">添加縮略圖搜索</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-player-overlay-using-overlay-plugin.html">設定播放器覆蓋</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-playlist-endscreen-using-plugin.html">配置播放列表結束屏幕</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-player-controls.html">設定播放程式控制</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-player-endscreen.html">設定播放程式端螢幕</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-player-localization.html">設定播放程式本地化</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/configuring-social-properties-player.html">設定社交屬性</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/appearance/styling-players.html">造型播放器</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/players/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;一般資訊</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/configuring-adobe-analytics-event-tracking.html">設定 Adobe 分析事件追蹤</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/configuring-google-analytics-event-tracking.html">配置谷歌分析事件跟踪</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/configuring-player-advertising-using-players-module.html">設定播放器廣告</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/configuring-player-plugins.html">設定播放程式外掛</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/generating-player-embed-code.html">產生播放器內嵌程式碼</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/players/general/v5-players-support.html">支持 Brightcove Player 5</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/publish/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;發佈影片與播放器</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publish/publishing/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;出版</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/publishing/adding-application-id-player-embed-code.html">將應用程式識別碼新增至內嵌程式碼</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/publishing/changing-video-player-without-changing-embed-code.html">變更播放器中的視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/publishing/choosing-correct-embed-code.html">選擇正確的內嵌程式碼</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/publishing/publishing-video-email.html">將視訊發佈至電子郵件</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/publishing/publishing-videos-and-playlists-media-module.html">發佈影片和播放清單</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/publishing/publishing-videos-page-experience.html">將視訊發佈至頁面內體驗</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publish/third-party/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;發佈至第三方 App</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/third-party/adding-brightcove-player-facebook-fan-page.html">新增玩家至臉書粉絲專頁</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/third-party/embedding-brightcove-player-google-sites-page.html">將播放程式嵌入 Google 協作平台網頁</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/third-party/publishing-brightcove-player-wordpress-page.html">在 WordPress 頁面中發布播放器</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/third-party/publishing-brightcove-players-facebook-instant-articles.html">在臉書即時文章中發布玩家</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/third-party/publishing-brightcove-players-joomla.html">在 Joomla 中出版玩家</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/publish/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;一般資訊</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/general/adding-3play-media-interactive-transcript-video.html">新增 3Play 媒體互動式成績單</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/general/deep-linking.html">深層連結</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/general/driving-video-views-through-email.html">透過電子郵件推動視訊觀看</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/general/dynamically-assigning-videos-player.html">動態指派視訊給播放器</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/general/step-step-using-players-module-create-and-publish-player.html">逐步：建立和發佈播放程式</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/general/creating-and-publishing-high-quality-screencasts.html">建立與發佈高品質螢幕錄影</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/general/using-multiple-players-one-page.html">在一個頁面上使用多個玩家</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/publish/general/using-reference-ids.html">使用參照 ID</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/analytics/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;檢閱分析</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/analytics/module/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;使用分析模組</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/module/getting-started-analytics-module.html">開始使用分析模組</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/module/analytics-module-ui-glossary.html">分析模組使用者介面詞彙</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/module/how-search-videos-analytics-module.html">如何搜尋影片</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/module/faq-analytics-module.html">常見問題集：分析模組</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/module/insights-glossary.html">見解詞彙表</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/analytics/reports/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;分析報告</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/analytics-report-reference.html">分析報表參考</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/creating-custom-analytics-reports.html">建立自訂分析報表</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/engagement-report-reference.html">業務開發報表參考</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/insights.html">見解參考</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/managing-scheduled-reports.html">管理預約報告</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/reports/performance-report-reference.html">績效報告參考</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/analytics/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;一般資訊</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/general/calculating-video-engagement-score.html">計算影片參與分數</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/general/exporting-data-analytics-module.html">匯出資料</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/general/reviewing-player-event-data-google-analytics.html">在谷歌分析中審查玩家活動</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/analytics/general/ssai-performance-data.html">SSAI 性能分析</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/social/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;社會共享</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/social/module/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;開始使用</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/module/getting-started-brightcove-social.html">社交入門</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/module/creating-social-media-publishing-destinations.html">建立發佈目的地</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/social/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;一般資訊</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/adding-facebook-button-brightcove-player.html">向玩家添加臉書的讚好按鈕</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/creating-video-clip-using-brightcove-social.html">建立視訊片段</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/enabling-longer-videos-youtube.html">在 YouTube 上啟用較長的影片</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item section-doc"><a class="nav-link" href="/social/general/publishing-videos-social-media-platforms.html" aria-current="page">將影片發佈至社交媒體</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/publishing-live-event-facebook.html">發佈直播活動至臉書</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/publishing-live-event-youtube.html">將現場直播活動發佈到 YouTube</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/setting-privacy-status-video.html">設定影片的隱私權狀態</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/sharing-videos-twitter-player-cards.html">分享視頻到推特玩家卡</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/using-auto-sync-synchronize-videos-social-media-accounts.html">使用自動同步</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/general/viewing-videos-published-social-media.html">查看發布的視頻</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/social/analytics/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;檢閱分析</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/analytics/reviewing-social-analytics.html">檢閱社交分析</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/analytics/reviewing-social-engagement-analytics.html">檢閱社交參與分析</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/social/analytics/reviewing-social-views-analytics.html">檢閱社交檢視分析</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/social/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;开发者</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/social/getting-started/quick-start-social-api.html">快速入門：社交API</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/social/references/reference.html">社交 API 參考</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/social/references/social-api-error-reference.html">社交 API：錯誤參考</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/live/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;直播</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/live/get-started/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;開始使用</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/delivering-live-streams.html">提供即時串流</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/live-module-guidelines-and-best-practices.html">光明灣直播：最佳實務</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/step-step-live-srt.html">逐步：SRT 現場直播活動</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/step-step-using-live-module-open-broadcaster-software-obs.html">逐步：與 OBS 搭配使用即時模組</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/get-started/step-step-using-live-module-telestream-wirecast.html">逐步：使用直播模組與線控</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/live/live-module/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;使用即時模組</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/client-side-preroll-with-live-ssai.html">使用即時 SSAI 的客戶端預先廣告</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/creating-and-managing-live-events-using-live-module.html">建立與管理即時事件</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/creating-video-clip-using-live-module.html">建立視訊片段</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/implementing-server-side-ads-live-module.html">實作伺服器端廣告</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/live-redundancy.html">即時備援</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/multi-language-audio.html">多語言音頻</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/playback-restrictions-live-module.html">直播活動的播放限制</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/reviewing-live-analytics.html">檢閱即時分析</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/scheduling-clips.html">安排剪輯</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/scheduling-live-event.html">安排現場活動</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/using-live-rtmp-outputs-stream-facebook-and-youtube.html">流式傳輸到 Facebook 和 YouTube</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/live-module/zoom-live-integration.html">Brightcove Live - 縮放集成</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/live/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;一般資訊</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/captions-with-live-streams.html">帶直播的字幕</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/live-drm.html">直播 DRM</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/live-video-glossary.html">即時視訊詞彙</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/reducing-latency-live-streams.html">減少即時串流的延遲</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/general/supported-encoders-live-events.html">直播活動支援編碼器</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/live/web-conferencing/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;網絡會議</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/web-conferencing/host-avaya-conference-brightcove-live.html">主持 Avaya 會議</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/web-conferencing/host-cisco-webex-conference-brightcove-live.html">主持 Cisco Webex 會議</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/web-conferencing/host-inxpo-live.html">舉辦 INXPO 活動</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/live/web-conferencing/host-zoom-conference-brightcove-live.html">主持 Zoom 會議</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/interactivity/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;交互性</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/platform/getting-started/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;開始使用</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/getting-started/configuring-player-plugin.html">使用 HapYak 插件配置播放器</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/getting-started/getting-started-interactivity.html">交互入門</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/getting-started/interactive-video-types.html">交互式視頻類型</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/getting-started/terminology.html">術語</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/platform/annotations/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;註釋</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/adding-chapters-video.html">向視頻添加交互式章節</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/adding-quiz-annotation.html">添加測驗註釋</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/adding-image-overlay.html">添加圖像覆蓋</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/adding-text-overlay.html">添加文本疊加</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/adding-time-triggered-action.html">添加時間觸發操作</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/adding-transparent-overlay.html">添加透明覆蓋</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/annotation-options.html">註釋選項</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/bulk-annotation-edit.html">批量編輯註釋</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/configuring-annotation-links.html">配置註釋鏈接</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/looping-back-in-a-video.html">在視頻中循環返回</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/reviewing-annotations.html">檢查註釋</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/annotations/using-custom-transitions-with-animate-css.html">將自定義過渡與 Animate.css 結合使用</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/platform/custom-annotations/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;自訂註釋</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/custom-annotations/adding-display-rule.html">為視頻添加顯示規則</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/custom-annotations/adding-poll-video.html">向視頻添加投票</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/custom-annotations/adding-sign-in-video.html">將登錄表單添加到視頻</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/custom-annotations/adding-sentiment-video.html">將用戶情緒添加到視頻中</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/custom-annotations/embedding-form-video.html">在視頻中嵌入表單</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/custom-annotations/using-custom-widget-library.html">使用自定義小部件庫</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/platform/projects/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;项目</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/projects/branching-overview.html">分支概述</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/projects/configuring-project-settings.html">配置項目設置</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/projects/in-video-branching.html">創建視頻內分支項目</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/projects/creating-and-managing-projects.html">創建和管理項目</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/platform/templates/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;模板</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/templates/applying-templates-projects.html">將模板應用於項目</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/templates/creating-and-managing-templates.html">創建和管理模板</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/interactivity/platform/experiences/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;體驗</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/experiences/creating-branching-experience.html">創建分支體驗</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/experiences/creating-slide-sync-experience.html">創建幻燈片同步體驗</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/interactivity/platform/experiences/experiences-overview.html">體驗概覽</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/channels/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;管理頻道</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/channels/cloud-playout/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;管理雲端播放頻道</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/channels/cloud-playout/getting-started/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i><span>&nbsp;開始使用</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/getting-started/cloud-playout-overview.html">概述：雲播出</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/getting-started/cloud-playout-stream-vod.html">創建雲播出頻道</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/channels/cloud-playout/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i><span>&nbsp;一般資訊</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/general/configuring-s3-buckets.html">配置 S3 存儲桶</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/general/managing-slates.html">管理板岩</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/general/searching-for-channels.html">搜索頻道</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/general/channel-live-redundancy.html">對通道使用實時冗餘</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/channels/cloud-playout/managing-content/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i><span>&nbsp;管理頻道內容</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/cloud-playout-add-content.html">管理渠道計劃</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/managing-programs.html">管理程序</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/static-image-overlays.html">添加靜態圖像覆蓋</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/dynamic-overlays.html">添加動態覆蓋</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/import-captions.html">導入字幕</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/managing-content/adding-bumpers-to-vod.html">為雲播放添加緩衝</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/channels/cloud-playout/monetization/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i><span>&nbsp;營利渠道</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/monetization/enabling-server-side-ads.html">通過雲播放獲利</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/monetization/mid-roll-ad-insertion.html">向頻道添加中貼片廣告</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/channels/cloud-playout/publishing/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i><span>&nbsp;出版渠道</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/publishing/using-channel-actions.html">使用頻道動作</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/publishing/hard-start.html">為頻道設置硬啟動</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/publishing/generating-channel-embed-code.html">生成通道嵌入代碼</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/channels/cloud-playout/publishing/viewing-channel-output-and-analytics.html">查看頻道輸出和分析</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/campaign/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;行銷自動化</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/campaign/get-started/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;開始使用</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/get-started/getting-started-campaign-module.html">廣告系列入門</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/creating-campaign-enabled-player.html">創建啟用廣告系列的播放器</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/get-started/overview-video-content-types.html">視訊內容類型概觀</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/get-started/using-hud.html">使用Chrome擴展程序</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/campaign/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;一般資訊</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/campaign-faq.html">活動常見問題解答</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/campaign-fields-and-data-definitions.html">活動字段和數據定義</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/campaign-plugin-faq.html">活動插件常見問題解答</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/configuring-campaign-settings.html">配置活動設置</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/creating-campaign-enabled-player.html">創建啟用廣告系列的播放器</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/creating-campaign-lead-form.html">創建活動潛在客戶表格</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/how-campaign-module-identifies-viewers.html">Campaign 如何識別觀眾</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/how-vbs-calculated.html">如何計算影片基準分數</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/publishing-video-email-using-campaign-module.html">將視訊發佈至電子郵件</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/using-custom-metrics-and-events.html">使用自訂度量和事件</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/viewing-player-events-campaign-module.html">檢視播放器事件</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/viewing-video-activity.html">檢視視訊活動</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/viewing-viewer-profile-information.html">檢視檢視器設定檔資訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/general/working-utm-fields-campaign-module.html">使用 UTM 欄位</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/campaign/integrations/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;整合</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/campaign/integrations/eloqua/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i><span>&nbsp;埃洛夸</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/eloqua/creating-custom-lead-forms-oracle-eloqua.html">建立自訂商機表單</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/eloqua/eloqua-integration-testing-guide.html">Eloqua 集成測試指南</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/eloqua/embedding-video-cloud-video-eloqua-landing-page.html">在登陸頁面上嵌入視訊</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/eloqua/integrating-video-cloud-oracle-eloqua.html">與 Oracle 生態系統整合</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/campaign/integrations/hubspot/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i><span>&nbsp; HubSpot</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/hubspot/creating-custom-lead-forms-hubspot.html">建立自訂商機表單</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/hubspot/hubspot-rest-api-integration-testing-guide.html">應用程式介面測試指南</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-client-side-apis.html">與 HubSpot（客戶端 API）集成</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/hubspot/integrating-video-cloud-hubspot-using-rest-apis.html">與集成</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/campaign/integrations/marketo/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i><span>&nbsp;市場</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/marketo/creating-custom-lead-forms-marketo.html">建立自訂商機表單</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-munchkin.html">與馬克托（蒙奇金）整合</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/marketo/integrating-video-cloud-marketo-using-rest-apis.html">與集成（其餘 API）</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/marketo/marketo-rest-integration-testing-guide.html">市場 REST 集成測試指南</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/campaign/integrations/non-map/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i><span>&nbsp;非地圖</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/non-map/creating-custom-integrations-campaign-module.html">建立自訂整合</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/non-map/integrating-campaign-single-sign.html">與單一登入整合</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/non-map/using-campaign-module-track-viewers.html">使用活動來跟踪觀眾</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                  
+
+                  <li class="nav-item section-title">
+                    
+                    <a class="nav-link" href="/campaign/integrations/salesforce/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i><span>&nbsp;銷售人員</a>
+                    
+                    
+                    <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/salesforce/creating-custom-lead-forms-salesforce.html">建立自訂商機表單</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/salesforce/creating-salesforce-object-pardot.html">為帕朵創建對象</a>
+                      </li>
+                      
+                      
+                      
+                      <li class="nav-item subsection-doc">
+                        <a class="nav-link" href="/campaign/integrations/salesforce/integrating-video-cloud-salesforce.html">與銷售團隊整合</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </li>
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/campaign/admin/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;管理行銷活動</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/admin/exporting-campaign-data-campaign-module.html">從活動中導出數據</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/admin/exporting-gallery-lead-data.html">匯出主機庫商機資料</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/admin/managing-viewer-data.html">管理檢視器資料</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/campaign/admin/troubleshooting-campaign-issues.html">排查活動問題</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://apis.support.brightcove.com/audience/index.html">開發人員（受眾 API）</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/admin/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;管理帳戶</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/admin/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;一般資訊</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/authenticating-studio-users-using-single-sign.html">使用 SSO 驗證工作室使用者</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/configuring-language-settings.html">設定語言設定</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/configuring-server-side-ad-settings.html">設定伺服器端廣告設定</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/creating-custom-metadata-fields.html">建立自訂中繼資料欄位</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-account-information.html">管理帳戶資訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-account-settings.html">管理帳戶設定</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-api-authentication-credentials.html">管理 API 身份驗證憑證</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-media-sharing-settings.html">管理媒體共用設定</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-live-settings.html">管理即時設定</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-playback-rights.html">管理播放權限</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-profile-information.html">管理設定檔資訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/managing-users.html">管理使用者</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/using-directed-migration-tool-migrate-brightcove-smart-players.html">使用導向移轉工具</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/general/viewing-billing-information.html">檢視帳單資訊</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/admin/ingest-profiles/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;管理內嵌設定檔</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/creating-custom-live-ingest-profiles.html">建立自訂即時內嵌設定檔</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/creating-ingest-profiles-context-aware-encoding.html">創建用於上下文感知編碼的攝取配置文件</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/creating-ingest-profiles-dynamic-delivery.html">創建用於動態投放的提取配置文件</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/fields-custom-live-ingest-profiles.html">實時攝取配置文件的字段</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/ingest-profiles-best-practices.html">內嵌設定檔的最佳作法</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/managing-ingest-profiles.html">管理內嵌設定檔</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html">標準擷取設定檔 (DD 和 CAE)</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/admin/ingest-profiles/standard-live-ingest-profiles.html">標準即時擷取設定檔</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/general/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;一般資訊</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/general/content-protection/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;內容保護</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/content-protection/drm-output-protection-settings.html">DRM 輸出保護設定</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/content-protection/overview-digital-rights-management-drm-video-cloud.html">概述：數位版權管理</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/content-protection/protecting-videos-hls-encryption.html">使用 HLS 加密保護視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/content-protection/tls-media-player-and-api-urls.html">適用於媒體、播放器和 API 網址的 TLS</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/general/references/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;參考</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/best-practices-video-creating-transcoding-and-uploading-workflow.html">最佳實務：轉碼和上傳</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/china-delivery-overview.html">中國配送概覽</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/creating-audio-only-renditions-low-bandwidth-delivery.html">建立僅音訊轉譯</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/making-your-video-content-indexable.html">將您的影片內容設為索引</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/optimal-video-dimensions.html">最佳視訊尺寸</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/resetting-your-studio-password.html">重設您的工作室密碼</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/studio-system-requirements.html">錄音室系統需求</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/supported-video-and-audio-formats-codecs-and-containers.html">支援的視訊和音訊格式</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/video-source-file-specifications-and-recommendations.html">視訊來源檔規格與建議</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/working-360deg-videos.html">使用 360 度視訊</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/working-audio-content.html">使用僅限音訊的內容</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/references/working-multiple-video-cloud-accounts.html">使用多個帳戶</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              
+
+              <li class="nav-item subsection-title">
+                
+                <a class="nav-link" href="/general/architecture/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-minus"></i></span>&nbsp;建築</a>
+                
+
+                <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/content-delivery-options.html">內容傳遞選項</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/domains-and-ports-must-be-accessible-video-cloud.html">必須可存取的網域和連接埠</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/overview-context-aware-encoding.html">上下文感知編碼概述</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/overview-dynamic-delivery.html">動態傳遞概觀</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/migration-dynamic-delivery.html">靜態視頻向動態交付的遷移</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/video-cloud-architecture-overview.html">視訊雲端架構概觀</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="nav-item"><a class="nav-link" href="/general/architecture/video-cloud-studio-cookies.html">視頻雲端工作室曲奇</a></li>
+                  
+                  
+                  
+                </ul>
+              </li>
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/release-notes/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;版本說明</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="https://support.brightcove.com/product-updates.html#video_cloud">影片雲端工作室發行紀錄</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+            
+            <li class="nav-item section-title"><a class="nav-link" href="/support/index.html"><span class="theme-icon-holder me-2"><i class="fa-solid fa-plus"></i></span>&nbsp;支持</a>
+              <ul role="list" class="section-items list-unstyled nav flex-column pb-3" style="display:none;">
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/contact-sales.html">聯絡銷售人員</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/viewing-brightcove-system-status-page.html">檢視布萊特灣系統狀態頁面</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/known-issues-studio-brightcove-player-and-apis.html">已知問題</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/opening-case-with-brightcove-support.html">開啟支援案例</a></li>
+              
+              
+              
+              
+              
+              <li class="nav-item"><a class="nav-link" href="/support/reset-support-portal-password.html">重置您的支持門戶密碼</a></li>
+              
+              
+              
+            </ul>
+            </li>
+            
+            
+          </ul>
+          </nav>
+        </div>
+      </div>
+    </div><!--//docs-sidebar-->
+  </div>
+</div>
+
+<div style="margin-top: 20px;">
+  <div class="docs-content" style="padding-bottom: 0px;">
+    <div class="container">
+      <div class="docs-overview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/">首頁</a></li>
+            
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/social/">社交</a></li>
+            
+            
+            
+            <li class="breadcrumb-item"><a class="theme-link" href="/social/general/">一般</a></li>
+            
+            
+            
+            <li class="breadcrumb-item active" aria-current="page">將視頻發佈到社交媒體平台</li>
+            
+            
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="docs-content">
+  <div class="container">
+    <div class="docs-overview py-5">
+      
+      <div class="centered-inpage-nav" id="centered_inpage_nav">
+        <nav id="centered_toc">
+          <select id="centered_in_page_toc" class="form-select select-focus"></select>
+        </nav>
+      </div>
+      <br/>
+      
+      
+<article class="bcls-article">
+  <h1>將視頻發佈到社交媒體平台</h1>
+  <summary>在本主題中，您將學習如何使用 Brightcove Social 將視頻發佈到社交媒體。</summary>
+  <section class="bcls-section"> 
+    <div class="training-video-player-ipx" data-experience="5a73630f7afd7a00101bc1b5" data-video-ids="5018055033001">&nbsp;</div>
+    <script src="https://players.brightcove.net/20318290001/experience_5a73630f7afd7a00101bc1b5/live.js"></script> 
+    
+    <p>布萊特灣社會允許您輕鬆地將視頻發佈在您的視頻雲帳戶到 YouTube，臉書和推特。您必須先建立要發佈視訊的社交帳戶的發佈目的地，才能發佈視訊。如需建立發佈目的地的資訊，請參閱<a href="/social/module/creating-social-media-publishing-destinations.html">建立社交媒體發佈目的地</a>。</p>
+    <p>請注意，使用「自動同步」和使用 Social 模組手動發佈視訊是獨立的作業。自動同步不知道哪些視訊已使用 Social 模組手動發佈。如果影片的標記方式會導致自動同步發佈至您的其中一個社交目的地，無論該視訊之前是否已使用 Social 模組手動發佈，都會這麼做。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="rules">決定要發佈的節目</h2>
+    <p>若要將視訊發佈至社交平台，影片應至少要有一個 MP4 轉譯或視訊主機可用。使用提供的其中一個 Brightcove 上傳的影片，標準內嵌描述檔會預設儲存主版。如需有關封存主版的詳細資訊，請參閱<a href="https://apis.support.brightcove.com/ingest-profiles/guides/archiving-masters.html">封存主物</a>件文件。</p>
+    <p>將視頻分發到社交平台時，Brightcove Social 將嘗試分發符合各個社交平台應用規則的最高質量再現（基於比特率）。如果傳送至社交平台的轉譯遭到拒絕，則不會嘗試傳送另一個轉譯。</p>
+    <p>影片排名規則如下：</p>
+    <ul>
+      <li>MP4 資產比任何其他視訊容器都好。不會嘗試排序其他類型的視訊容器。</li>
+      <li>如果視頻容器的質量相同，則認為分辨率（像素寬度 x 高度）更高的視頻更好。</li>
+      <li>如果編碼率具有同等質量，則認為具有較高分辨率（像素寬度 x 高度）的視頻更好。請注意，由於影片的所有節目並非必須具有相同的外觀比例，因此我們會使用各自影片的高度和寬度的乘積來比較影片，以取得解析度的「複合」代理。</li>
+    </ul>
+    <p>請注意，如果其中一個視訊資產缺乏上述比較所需的任何資訊，則該視訊會比擁有所有必要資訊的影片更糟糕。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="publish">將影片發佈至社交媒體</h2>
+    <p><a href="/social/module/creating-social-media-publishing-destinations.html">建立發佈目的地後</a>，請按照下列步驟將影片發佈到社交媒體。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開<strong>社交</strong>模塊。</li>
+      <li>點擊<strong>影片</strong>在左側導航中。您的視訊雲端帳戶中的影片清單將會顯示出來。尚未發佈到社交媒體帳戶的視頻將顯示<strong>地位</strong>的<strong>從未發表</strong> .已發佈的影片會顯示「<strong>檢查狀態」</strong>。按一下連結，即可查看社交媒體目的地上影片的發佈狀態。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-video-list.png"/></figure>
+      </li>
+      <li>按一下要發佈的影片，然後按一下「<span class="button-blue">發佈」</span>。
+        <aside class="bcls-aside bcls-aside--information">注意：啟用 DRM 的影片會在影片縮圖中顯示鎖定圖示。您可以發佈使用動態傳送內嵌描述檔擷取的 DRM 視訊，但是無法下載或建立剪輯片段。選取 DRM 啟用的視訊時，這些按鈕將會停用。</aside>
+      </li>
+      <li>選取要發佈視訊的目的地。您也可以按一下「新<strong>增目的地」</strong>來<a href="/social/module/creating-social-media-publishing-destinations.html">建立新的目的地</a>。
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-publish-preview.png"/></figure>
+        <aside class="bcls-aside bcls-aside--information">注意：發生錯誤的目的地將顯示錯誤圖標（<img alt="" src="/assets/images/s-social-img/general/node16344-error-icon.png"/>）旁邊的名稱。選取目的地，然後按一下 [ <strong>重新</strong>連線] 以解決問題。</aside>
+      </li>
+      <li>檢閱每個目的地的視訊中繼資料屬性。視訊屬性會根據您要發佈的社交媒體平台而有所不同。如需詳細資訊，請參閱各社交媒體平台的章節：
+        <ul>
+          <li><a href="#youtube"></a></li>
+          <li><a href="#facebook">臉書</a></li>
+          <li><a href="#twitter">推特</a></li>
+          <li><a href="#linkedin">領英</a></li>
+        </ul>
+      </li>
+      <li>點擊發<span class="button-blue">布到目的地</span>按鈕以發布視頻。通過單擊監控分發狀態<strong>發表</strong>在左側導航中。如需檢視發佈串流狀態的相關資訊，請參閱<a href="/social/general/viewing-videos-published-social-media.html">檢視您的社交媒體發佈串流</a>。</li>
+    </ol>
+    <p>使用「發佈」按鈕發佈視訊是一次性發佈作業。使用此方法發佈的視訊在初始上傳之後，將不會從 Social 模組收到任何中繼資料更新。</p>
+  </section>
+<!-- 
+  <section class="bcls-section">
+    <h2 id="multiple">Publishing to multiple destinations</h2>
+    <p>To choose multiple destinations for the videos published, follow these steps.</p>
+    <ol class="bcls-tasklist-restart">
+    <li>Open the <strong>Social</strong> Module.</li>
+    <li>Click <strong>Videos</strong> in the left navigation. A list of videos in your Video Cloud account displays. Videos that haven't been published to a social media account display a <strong>Status</strong> of <strong>Never Published</strong>. Videos that have been published display <strong>Check Status</strong>. Click the link to see the publishing status of the video on the social media destinations.</li>
+    <li>Select the video you want to publish. Then, click <span class="button-blue">Publish</span>. 
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/multiple-choose-video.webp" /></figure>
+    </li>
+    <li>Note that multiple destinations appear. To add a new one, see <a href="/social/module/creating-social-media-publishing-destinations.html"> Create a new destination</a>. </li>
+    <li>To publish to multiple destinations, click on the link.
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/multiple-dest.webp" /></figure>
+    </li>
+    <li></li>
+    -->
+  
+  </ol>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="youtube">設定影片屬性</h2>
+    <p>根據預設，長度長達 15 分鐘的影片可以上傳到 YouTube。如需上傳較長影片的相關資訊，請參閱在 YouTube 中<a href="/social/general/enabling-longer-videos-youtube.html">啟用較長的影片</a>。在影片發佈到 YouTube 之後，在 Studio 中對來源視頻的任何更新將不會在 YouTube 方面更新。</p>
+    <p>選擇 YouTube 目的地時，您可以設定下列影片屬性：</p>
+    <ul>
+      <li><a href="#ytthumb">縮圖來源</a></li>
+      <li><a href="#ytpostinfo">貼文資訊</a></li>
+      <li><a href="#ytschedule">排程</a></li>
+      <li><a href="#ytcaptions">標題</a></li>
+      <li><a href="#ytvisibility">可見性</a></li>
+      <li><a href="#ytlicense">授權</a></li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information"> 注意事項：
+      <ul>
+        <li><a href="../module/creating-social-media-publishing-destinations.html#youtube_defaults"></a>可以通過編輯目的地來設置 YouTube 的默認視頻屬性。</li>
+        <li>YouTube API 不支援透過目前的 API 停用留言，因此無法在社交使用者介面中停用留言的選項。</li>
+        <li>請避免在影片名稱和描述中使用特殊字元：使用「」已知會導致失敗，但其他特殊字元也可能會造成問題。</li>
+      </ul>
+    </aside>
+    <div id="ytthumb" class="BCL-subsection">
+      <h3>設定縮圖來源</h3>
+      <p>發佈至 YouTube 時，影片縮圖來源可以設定為：</p>
+      <ul>
+        <li><strong>的YouTube</strong> -YouTube將選擇一個縮略圖</li>
+        <li><strong>視頻雲</strong> -使用視頻雲縮略圖作為YouTube縮略圖</li>
+        <li><strong>自訂影像</strong> -瀏覽並選取要使用的自訂縮圖影像</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-yt-thumb.png"/></figure>
+      <p>勾選「<strong>用於所有目的地」</strong>會將此縮圖用於目前發佈至的所有目的地。</p>
+      <aside class="bcls-aside bcls-aside--information">注意：您必須先驗證您的 YouTube 帳戶，才能將 Brightcove 社交媒體中的自訂影片縮圖發佈至 YouTube。如需驗證 YouTube 帳戶的相關資訊，請參閱<a href="https://www.youtube.com/verify">此連結</a>。</aside>
+      <aside class="bcls-aside bcls-aside--information">注意：在 Studio 中更新縮圖圖片將不會更新 YouTube 側的縮圖圖片。</aside>
+    </div>
+    <div id="ytpostinfo" class="BCL-subsection">
+      <h3>設定貼文資訊屬性</h3>
+      <p>按一下「<strong>貼文資訊」</strong>連結。您可以設定下列 YouTube 影片屬性：</p>
+      <ul>
+        <li><strong>標題</strong> -視頻標題（默認為視頻雲標題）。最多可支援 100 個字元。</li>
+        <li><strong>描述</strong> -視頻說明（默認為視頻雲簡短說明）。最多可支援 5000 個字元。</li>
+        <li><strong>影片類別</strong> -影片的內容類別</li>
+        <li><strong>標籤</strong> -視頻標籤（默認為視頻雲標籤）。沒有特定的標籤數限制；每個標籤最多可以使用 30 個字元，文字欄位最多可接受 500 個字元。</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">關於標籤字元限制的幾點要注意事項：
+        <ol>
+          <li>屬性值為清單，清單中項目之間的逗號會計為 500 個字元的限制。</li>
+          <li>如果標籤包含空格，則 API 伺服器會處理標籤值，就像是用引號括起來一樣，引號會計入字元限制。因此，如果您有一個標籤<code translate="No">late news</code>，則將其視為<code translate="No">"late news"</code> 11 個字符（包括引號）。</li>
+          <li>如果超過標籤的字元限制，Social 模組不會報告任何錯誤。要驗證視頻是否已成功共享，請單擊<strong>發表</strong>在左側導航中，查看 YouTube 或使用<a href="https://apis.support.brightcove.com/social/getting-started/overview-social-api.html">社交API</a> .</li>
+        </ol>
+      </aside>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-yt-post-info.png"/></figure>
+    </div>
+    <div id="ytschedule" class="BCL-subsection">
+      <h3>設定排程屬性</h3>
+      <p>按一下「<strong>排程」</strong>連結並選取排程設定：</p>
+      <ul>
+        <li><strong>立即發布</strong> -要立即發布視頻</li>
+        <li><strong>計劃發布日期</strong> -選擇視頻的發布日期和時間。</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-yt-schedule-info.png"/></figure>
+      <aside class="bcls-aside bcls-aside--information">注意：當影片傳送至 YouTube 時，排程日期和時間只會傳送至 YouTube 一次。如果需要變更排程日期和/或時間，則必須在 YouTube 中變更。Social 模組在初次同步至 YouTube 後，不會更新任何排程日期或時間。</aside>
+      <aside class="bcls-aside bcls-aside--information">注意：若要將<a href="#ytvisibility">視訊可見度</a>設定為「<strong>不公開」</strong>或「<strong>私人」</strong>，請將「<strong>排程</strong>」選項設為「立即<strong>發佈」，</strong>並將「<strong>可見度</strong>」選項設為「<strong>不公開」</strong>或<strong>私人</strong>。</aside>
+    </div>
+    <div id="ytcaptions" class="BCL-subsection">
+      <h3>設定註解屬性</h3>
+      <p>按一下「<strong>說明」</strong>連結。選取註解的來源：</p>
+      <ul>
+        <li><strong>使用視訊雲端字幕</strong> -使用與影片相關聯的字幕。有關使用字幕的信息，請參閱 <a href="/media/captions/overview-adding-captions-video.html">概述：在影片中加入字幕</a>。</li>
+        <li><strong>沒有字幕</strong> -不會將字幕傳送到 YouTube</li>
+        <li><strong>上傳字幕</strong> -按一下「<strong>上傳字幕</strong>」，然後瀏覽並選取字幕檔案。字幕檔案應為 .VTT 或 .SRT 格式。選擇標題<strong>語言</strong>，添加標<strong>籤，</strong>然後選擇<strong>格式</strong>。按一下「<strong>新增標題檔案</strong>」。</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-yt-captions-info.png"/></figure>
+    </div>
+    <aside class="bcls-aside bcls-aside--information">具有隱藏式輔助字幕的影片可以透過 Social 剪輯，但產生的剪輯影片不會有字幕。您必須將新的字幕上傳至剪輯影片，Social 會在發佈時使用這些字幕。</aside>
+    <div id="ytvisibility" class="BCL-subsection">
+      <h3>規劃可見性性質</h3>
+      <p>單擊<strong>可見性</strong>鏈接，然後為視頻選擇隱私設置。以下是可用的隱私權設定：</p>
+      <ul>
+        <li><strong>公開</strong> -任何人都可以觀看影片</li>
+        <li><strong>未公開</strong> -任何擁有影片連結的人都可以觀看</li>
+        <li><strong>私人</strong> -只有您和您選擇的使用者才能看到影片</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">注意：透過 YouTube 目的地，您可以使用與影片相關聯的自訂欄位，動態指派隱私權設定。如需詳細資訊，請參閱<a href="/social/general/setting-privacy-status-video.html">設定影片的隱私權狀態</a>。</aside>
+      <p>此外，您也可以在影片張貼到 YouTube 時<strong>通知訂閱者</strong>。如果勾選此選項，訂閱者就會在他們的訂閱項目動態消息中看到您的影片，並可能會收到影片已上傳的通知。</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-yt-privacy-info.png"/></figure>
+      <aside class="bcls-aside bcls-aside--information">注意：如需 YouTube 隱私權設定的詳細資訊，請參閱<a href="https://support.google.com/youtube/answer/157177"> YouTube 說明文件</a>。</aside>
+    </div>
+    <div id="ytlicense" class="BCL-subsection">
+      <h3>配置授權屬性</h3>
+      <p>按一下 [ <strong>授權]</strong>連結，然後選取影片的 [授權和權利擁有權] 設定。您可以使用下列設定：</p>
+      <ul>
+        <li>標準版 YouTube 授權</li>
+        <li>創用 CC-姓名標示</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-yt-license-info.png"/></figure>
+      <aside class="bcls-aside bcls-aside--information">注意：如需 YouTube 授權和版權擁有權的詳細資訊，請參閱<a href="https://support.google.com/youtube/answer/2797468"> YouTube 說明文件</a>。</aside>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="facebook">設定臉書的視訊屬性</h2>
+    <p>選擇 Facebook 目的地時，可以設定下列視訊屬性：</p>
+    <ul>
+      <li><a href="#fbthumb">縮圖</a></li>
+      <li><a href="#fbpostinfo">貼文資訊</a></li>
+      <li><a href="#fbschedule">排程</a></li>
+      <li><a href="#fbcaptions">標題</a></li>
+      <li><a href="#fbtarget">目標</a></li>
+      <li><a href="#fbmonetize">營利</a></li>
+      <li><a href="#fbrights">權利</a></li>
+      <li><a href="#fbdistribution">分佈</a></li>
+      <li><a href="#fbtracking">追蹤</a></li>
+    </ul>
+    <p>視頻發佈到 Facebook 後，Studio 中的源視頻的任何更新將不會在 Facebook 方面更新。</p>
+    <aside class="bcls-aside bcls-aside--information">注意：<a href="../module/creating-social-media-publishing-destinations.html#facebook_defaults"></a>可以通過編輯目標來設置 Facebook 的默認視頻屬性。</aside>
+    <aside class="bcls-aside bcls-aside--information">注意：臉書不允許 .gif 圖片。如果您的視頻使用 .gif 作為縮略圖，則發布到 Facebook 將失敗。</aside>
+    <div id="fbthumb" class="BCL-subsection">
+      <h3>設定縮圖來源</h3>
+      <p>張貼至 Facebook 時，影片縮圖來源可以設定為：</p>
+      <ul>
+        <li><strong>臉書</strong> -Facebook將選擇一個縮略圖</li>
+        <li><strong>視頻雲</strong> -使用視頻雲縮略圖作為Facebook縮略圖</li>
+        <li><strong>自訂影像</strong> -瀏覽並選取要使用的自訂縮圖影像</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-fb-thumb.png"/></figure>
+      <p>勾選「<strong>用於所有目的地」</strong>會將此縮圖用於目前發佈至的所有目的地。</p>
+      <aside class="bcls-aside bcls-aside--information">注意：在 Studio 中更新縮略圖圖像不會更新 Facebook 側的縮略圖圖像。</aside>
+    </div>
+    <div id="fbpostinfo" class="BCL-subsection">
+      <h3>設定貼文資訊屬性</h3>
+      <p>按一下「<strong>貼文資訊」</strong>連結。您可以設定下列臉書視訊屬性：</p>
+      <ul>
+        <li><strong>標題</strong> -視頻標題（默認為視頻雲標題）。臉書將在 65 個字符後截斷</li>
+        <li><strong>狀態消息</strong> -視頻說明（默認為視頻雲簡短說明）。請注意，Facebook 已禁用他們的搜索 API，因此，我們無法自動完成 Facebook 提及。</li>
+        <li><strong>標籤</strong> -從列表中選擇一個Facebook標籤。請注意，臉書管理標籤。Social 模塊必須遵守它們，以便 Social 在輸入時檢查列表<strong>標籤</strong>場地。</li>
+        <li><strong>臉書類別</strong> -影片內容類別</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-fb-post-info.png"/></figure>
+    </div>
+    <div id="fbschedule" class="BCL-subsection">
+      <h3>設定排程屬性</h3>
+      <p>按一下「<strong>排程」</strong>連結。選取「立即<strong>發佈」</strong>以立即發佈視訊，或選取「<strong>排程發佈日期」，</strong>然後選取「<strong>發佈日期和時間」</strong>。您也可以設定「<strong>貼文永不過期」，</strong>或選取「<strong>排程到期日」，</strong>然後選取「<strong>到期日期」和「時間」</strong>。A <strong>時區</strong>也可以選擇。</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-fb-schedule-info.png"/></figure>
+      <aside class="bcls-aside bcls-aside--information">注意：當視頻發送到 Facebook 時，計劃日期和時間只發送到 Facebook 一次。如果需要更改排程日期和/或時間，則必須在 Facebook 中更改它們。Social 模組不會在初始同步至 Facebook 後更新任何排程日期或時間。</aside>
+    </div>
+    <div id="fbcaptions" class="BCL-subsection">
+      <h3>設定註解屬性</h3>
+      <p>按一下「<strong>說明」</strong>連結。選取註解的來源：</p>
+      <ul>
+        <li><strong>使用視訊雲端字幕</strong> -使用與影片相關聯的字幕。有關使用字幕的信息，請參閱 <a href="/media/captions/overview-adding-captions-video.html">概述：在影片中加入字幕</a>。
+          <p>對於字幕 Facebook 需要<code translate="No">language</code> , 其中社會填充從文本軌道<code translate="No">language</code>上, 和<code translate="No">name</code> , 其中社會填充從文本軌道<code translate="No">label</code>上.</p>
+          <p>請注意，Facebook 播放器中的觀眾可以通過「設置」菜單和「隱藏字幕」菜單看到該內容。<code translate="No">name</code>建議您將文字軌標籤設定為對觀眾有意義的項目。（例如，在這些語言中標記不同語言的字幕。）</p>
+        </li>
+        <li><strong>沒有字幕</strong> -不會將字幕傳送到 YouTube</li>
+        <li><strong>上傳字幕</strong> -按一下「<strong>上傳字幕</strong>」，然後瀏覽並選取字幕檔案。字幕檔案應為 .VTT 或 .SRT 格式。選擇標題<strong>語言</strong>和<strong>格式</strong>。按一下「<strong>新增標題檔案</strong>」。</li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">注意：Facebook 要求標題語言除了語言之外還包含一個國家/地區。例如，en-US 或 en-UK。同步時，只有一個國家代碼（即 '我們'）的語言代碼將失敗。</aside>
+      <aside class="bcls-aside bcls-aside--information">具有隱藏式輔助字幕的影片可以透過 Social 剪輯，但產生的剪輯影片不會有字幕。您必須將新的字幕上傳至剪輯影片，Social 會在發佈時使用這些字幕。</aside>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-fb-captions-info.png"/></figure>
+    </div>
+    <div id="fbtarget" class="BCL-subsection">
+      <h3>設定目標特性</h3>
+      <p>單擊 <strong>“目標”</strong> 鏈接以設置可以看到視頻的位置。提供以下選項：</p>
+      <ul>
+        <li><strong>觀眾優化興趣</strong> -添加標籤來描述最有可能喜歡您的帖子的人的興趣。如需詳細資訊，請參閱<a href="https://www.facebook.com/facebookmedia/get-started/interest-targeting">臉書文件</a>。</li>
+        <li><strong>位置限制</strong> -新增要包含或排除在看到貼文的國家/地區</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-fb-targeting-info.png"/></figure>
+    </div>
+    <div id="fbmonetize" class="BCL-subsection">
+      <h3>設定營利屬性</h3>
+      <p>點擊<strong>營利</strong>鏈接。可以設定下列屬性：</p>
+      <ul>
+        <li><strong>誰是您的業務合作夥伴來發佈到這個目的地？</strong> -為品牌內容貼文新增商業合作夥伴。當您輸入時，會出現符合的商家清單。如需臉書品牌內容的相關資訊，請參閱<a href="https://www.facebook.com/facebookmedia/solutions/branded-content">臉書文件</a>。</li>
+        <li><strong>允許商業合作夥伴提升貼文</strong></li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-fb-monetize-info.png"/></figure>
+    </div>
+    <div id="fbrights" class="BCL-subsection">
+      <h3>配置權限屬性</h3>
+      <aside class="bcls-aside bcls-aside--information">注意：您的 Facebook 帳戶必須能夠存取 Facebook 版權管理員，才能顯示 [權限] 選項。</aside>
+      <p>按一下「<strong>權限」</strong>連結。可以設定下列屬性：</p>
+      <ul>
+        <li><strong>偵測符合的內容</strong> -勾選以啟用 Facebook 版權管理。如需相關資訊，請參閱<a href="https://rightsmanager.fb.com">臉書文件</a>。</li>
+        <li><strong>指定所有權</strong> -指定視訊、音訊或兩者的版權擁有權</li>
+        <li><strong>國家選擇</strong> -選擇<strong>全球</strong>，<strong>包括國家</strong>或<strong>排除國家/地區</strong>。如果選取了「包含」或「排除」，則新增「<strong>位置限制</strong>」。</li>
+        <li><strong>套用比對規則</strong> -選取規則。「<strong>比對規則</strong>」會決定使用者上傳符合的影片時，自動執行的動作。比賽規則在臉書內部進行管理。</li>
+        <li>授<strong>予權限</strong> -授權特定使用者或頁面或 Instagram 帳戶，以允許張貼符合您內容的影片。</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-fb-rights-info.png"/></figure>
+    </div>
+    <div id="fbdistribution" class="BCL-subsection">
+      <h3>設定發佈屬性</h3>
+      <p>單擊<strong>分發</strong>鏈接以設置可以看到視頻的位置。以下是可用的「<strong>自訂發佈」和「協調」</strong>選項：</p>
+      <ul>
+        <li><strong>在新聞摘要中顯示</strong> -在新聞摘要中顯示視訊</li>
+        <li><strong>允許內嵌</strong> -允許在第三方網站上嵌入視訊</li>
+        <li><strong>添加為秘密視頻</strong> -視頻將只能通過直接網址訪問，並且不能在 Facebook 上搜索到的人
+          <ul>
+            <li><strong>關閉反應、評論和分享</strong> -不允許喜歡和評論</li>
+          </ul>
+        </li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-fb-distribution.png"/></figure>
+    </div>
+    <div id="fbtracking" class="BCL-subsection">
+      <h3>設定追蹤屬性</h3>
+      <p>按一下「<strong>追蹤」</strong>連結以指派通用 ID，以跨系統追蹤視訊。以下是可用的<strong>通用 ID</strong>選項：</p>
+      <ul>
+        <li>保留空白</li>
+        <li>使用 Video Cloud 的視訊 ID</li>
+        <li>使用 Video Cloud 的參考 ID (如有)</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-fb-tracking.png"/></figure>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="twitter">設定推特的視訊屬性</h2>
+    <p>選擇 Twitter 目的地時，可以設定下列屬性：</p>
+    <ul>
+      <li><a href="#twpostinfo">貼文資訊</a></li>
+    </ul>
+    <p class="BCL-aside">一個視頻發布到 Twitter 後，在 Studio 中源視頻的任何更新將不會在 Twitter 端更新。</p>
+    <aside class="bcls-aside bcls-aside--information">注意：<a href="../module/creating-social-media-publishing-destinations.html#twitter_defaults"></a>您可以透過編輯目的地來設定 Twitter 的預設視訊屬性。</aside>
+    <div id="twpostinfo" class="BCL-subsection">
+      <h3>設定貼文資訊屬性</h3>
+      <p>單擊 <strong>“發布信息”</strong> 鏈接並輸入 <strong>推文</strong> 內容。請注意，當被發送到推特時，@mentions 將被轉換為 #hashtags。如需詳細資訊，請參閱部落格文章「在布萊奇灣社交網站中<a href="https://www.brightcove.com/en/resources/blog/deprecation-twitter-mentions-brightcove-social">淘汰 Twitter @mentions」</a>。</p>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-twitter-tweet.png"/></figure>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <h2 id="linkedin">為 LinkedIn 設置視頻屬性</h2>
+    <p>最長 15 分鐘的視頻可以上傳到 LinkedIn。有關 LinkedIn 視頻要求的信息，請參閱 <a href="https://www.linkedin.com/help/linkedin/answer/a527229/share-photos-or-videos?lang=en">LinkedIn 文檔</a>。選擇 LinkedIn 目的地時，可以配置以下視頻屬性：</p>
+    <ul>
+      <li><a href="#ytthumb">縮圖來源</a></li>
+      <li><a href="#ytpostinfo">貼文資訊</a></li>
+      <li><a href="#ytcaptions">標題</a></li>
+      <li><a href="#ytvisibility">可見性</a></li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information"> 注意事項：
+      <ul>
+        <li>可以通過編輯目的地來設置<a href="../module/creating-social-media-publishing-destinations.html#linkedin_defaults">LinkedIn 的默認視頻屬性</a> 。</li>
+        <li>請避免在影片名稱和描述中使用特殊字元：使用「」已知會導致失敗，但其他特殊字元也可能會造成問題。</li>
+      </ul>
+    </aside>
+    <div id="linkedinthumb" class="BCL-subsection">
+      <h3>設定縮圖來源</h3>
+      <p>發佈到 LinkedIn 時，視頻縮略圖來源可以設置為：</p>
+      <ul>
+        <li><strong>視頻雲</strong> -使用視頻雲縮略圖作為YouTube縮略圖</li>
+        <li><strong>LinkedIn</strong> - LinkedIn 將選擇一個縮略圖</li>
+        <li><strong>自訂影像</strong> -瀏覽並選取要使用的自訂縮圖影像</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-linkedin-thumb.png"/></figure>
+      <p>勾選「<strong>用於所有目的地」</strong>會將此縮圖用於目前發佈至的所有目的地。</p>
+      <aside class="bcls-aside bcls-aside--information">注意：在 Studio 中更新縮略圖不會更新 LinkedIn 端的縮略圖。</aside>
+    </div>
+    <div id="linkedinpostinfo" class="BCL-subsection">
+      <h3>設定貼文資訊屬性</h3>
+      <p>按一下「<strong>貼文資訊」</strong>連結。可以設置以下 LinkedIn 視頻屬性：</p>
+      <ul>
+        <li><strong>標題</strong> -視頻標題（默認為視頻雲標題）。最多可支援 100 個字元。</li>
+        <li><strong>描述</strong> -視頻說明（默認為視頻雲簡短說明）。最多可支援 5000 個字元。</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-linkedin-post-info.png"/></figure>
+    </div>
+    <div id="linkedincaptions" class="BCL-subsection">
+      <h3>設定註解屬性</h3>
+      <p>按一下「<strong>說明」</strong>連結。選取註解的來源：</p>
+      <ul>
+        <li><strong>使用視訊雲端字幕</strong> -使用與影片相關聯的字幕。有關使用字幕的信息，請參閱 <a href="/media/captions/overview-adding-captions-video.html">概述：在影片中加入字幕</a>。</li>
+        <li><strong>無字幕</strong> - 不會向 LinkedIn 發送字幕</li>
+        <li><strong>上傳字幕</strong> -按一下「<strong>上傳字幕</strong>」，然後瀏覽並選取字幕檔案。字幕檔案應為 .VTT 或 .SRT 格式。選擇標題<strong>語言</strong>，添加標<strong>籤，</strong>然後選擇<strong>格式</strong>。按一下「<strong>新增標題檔案</strong>」。</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-linkedin-captions-info.png"/></figure>
+    </div>
+    <aside class="bcls-aside bcls-aside--information">具有隱藏式輔助字幕的影片可以透過 Social 剪輯，但產生的剪輯影片不會有字幕。您必須將新的字幕上傳至剪輯影片，Social 會在發佈時使用這些字幕。</aside>
+    <div id="linkedinvisibility" class="BCL-subsection">
+      <h3>規劃可見性性質</h3>
+      <p>單擊 <strong>可見性</strong> 鏈接並為視頻選擇可見性設置。您可以使用下列設定：</p>
+      <ul>
+        <li><strong>民眾</strong> - 任何人都可以觀看視頻</li>
+        <li><strong>登錄</strong> - 任何登錄的人都可以觀看視頻</li>
+      </ul>
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-linkedin-visibility-info.png"/></figure>
+    </div>
+  </section>
+  <section class="bcls-section">
+    <!-- <h2 id="instagram">Setting video properties for Instagram</h2>
+  <p>When choosing an Instagram destination, the following video details can be entered:</p>
+  <ul>
+    <li><strong>Caption</strong> - Write a caption for the image, video, or carousel: maximum of 2200 characters, 30 hashtags, and 20 tags.</li>
+    <li><strong>Share to feed</strong> - Choose if you want your post to appear in the feed and reels tabs or only in the reels tab.</li>
+    <li><strong>Comments</strong> - Comments can be hidden or shown on the post.
+      <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/choose-dest-instagram.webp" /></figure>
+     </li> -->
+
+  <section class="bcls-section">
+    <h2 id="clip">建立剪輯片段</h2>
+    <p>Brightcove 社交提供了從您的視頻雲帳戶中的現有視頻創建視頻剪輯的能力。Clips 可用作簡短的預告影片，並可張貼至社交媒體。若要建立片段，請按一下「<strong>建立剪輯片段</strong>」如需有關建立剪輯片段的資訊，請參閱使用 Brightcove 社交媒體<a href="/social/general/creating-video-clip-using-brightcove-social.html">建立視訊片段</a>。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="download">下載視訊</h2>
+    <p>Brightcove Social 提供了複製視頻 URL 或下載視頻源文件的能力。下載時，會下載最高品質的 MP4 轉譯。如果沒有 MP4 轉譯，則會停用「<strong>下載</strong>」連結。</p>
+    <p>請務必瞭解轉譯和影像的 URL 並不固定。Brightcove 會不時重新設定媒體資產的儲存，當發生這種情況時，特定資產的 URL 將會變更。如果您依靠這些資源的硬編碼URL，則鏈接可能會在某些時候斷開。防止媒體鏈接中斷的最佳方法是在運行時使用CMS API。</p>
+    <aside class="bcls-aside bcls-aside--information">注意：您無法下載已啟用 DRM 的影片 (視訊縮圖中會出現鎖定)。如果您選取啟用 DRM 的視訊，則會停用 [ <strong>下載]</strong>按鈕。</aside>
+    <p>請依照下列步驟下載影片。</p>
+    <ol class="bcls-tasklist-restart">
+      <li>打開<strong>社交</strong>模塊。</li>
+      <li>點擊<strong>影片</strong>在左側導航中。您的視訊雲端帳戶中的影片清單將會顯示出來。</li>
+      <li>點擊視頻下載，然後點擊 <span class="button-blue-text-bordered"><i data-feather="download"></i> 下載</span>。</li>
+      <li>複製影片 URL 或按一下連結，在瀏覽器中開啟影片。在<span class="bcl-aside">視訊上按一下滑鼠右鍵，將來源檔案儲存在本機。</span>
+        <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-download-info1.png"/></figure>
+      </li>
+      <li>按一下「<span class="button-blue">關閉</span>」。</li>
+    </ol>
+    <p>下載連結的目的是允許您下載檔案或使用 URL 作為可提供給社交平台上傳模組的值 (適用於支援從 URL 上傳的平台)。此 URL 不是要成為長期且可公開存取的 URL，您可以貼到公共社交平台貼文中。</p>
+  </section>
+  <section class="bcls-section">
+    <h2 id="viewvc">在媒體模組中檢視視訊</h2>
+    <p>按一下影片，然後按一下「在媒體中檢視」，即可在「媒體」模組中<span class="button-blue-text-bordered">檢視「視訊」頁面上的視訊</span>。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-view-in-vc.png"/></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="status">檢視已發佈的位置</h2>
+    <p>已嘗試發佈到社交媒體的視頻將顯示<strong>檢查狀態</strong>在狀態列中。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-status.png"/></figure>
+    <p>按一下「<strong>檢查狀態」</strong>連結會顯示影片發佈目的地的社交目標清單，以及發佈狀態。</p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="" src="/assets/images/s-social-img/general/node16344-published-locations.png"/></figure>
+  </section>
+  <section class="bcls-section">
+    <h2 id="360">發佈 360° 視訊</h2>
+    <p>YouTube、臉書和布萊特灣播放器都支援 360° 影片播放。當 360° 影片發佈至 YouTube 或臉書時，影片將會以 360° 模式播放。請注意，處理 360° 效果時可能會有延遲。將 360° 影片上傳至雲端影片之前，您必須先執行一些動作。如需有關使用 360° 視訊的詳細資訊，請參閱<a href="/general/references/working-360deg-videos.html">使用 360° 視訊</a>。上傳您的影片後，發佈 360° 影片的程序與一般影片相同。</p>
+    <aside class="bcls-aside bcls-aside--information">注意：360° 影片僅限於某些瀏覽器播放。</aside>
+    <aside class="bcls-aside bcls-aside--information">注意：使用 Social 模組同步 360° 視訊時，必須將用來內嵌視訊的內嵌描述檔設定為儲存主檔案，否則視訊將無法在 360 中同步。</aside>
+  </section>
+</article>
+
+<!-- <div class="col-sm-2 right-side-bar" style="display: inline-block;max-width: 20%;"> -->
+  
+  <nav class="right-side-nav" id="right_side_nav">
+    <h6 class="toc">頁面內容</h6>
+    <ul id="in_page_nav" class="list-none"></ul>
+  </nav>
+  
+<!-- </div> -->
+</div>
+</div>
+</div>
+<div class="page-content" style="background-color: rgb(1, 5, 14);">
+  <div class="container" style="width: 50%;">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md">
+          <h5 class="h5-text">布萊特灣支援</h5>
+          <ul class="list-unstyled text-small" style="color: white ;">
+            <li><a class="a-text" href="https://status.brightcove.com">系統狀態</a></li>
+            <li><a class="a-text" href="https://supportportal.brightcove.com">聯絡支援</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/search.html">搜索所有文檔</a></li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md">
+          <h5 class="h5-text">訓練</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/online-training-courses.html">在線課程</a></li>
+            <li><a class="a-text" href="https://studio.support.brightcove.com/get-started/training/register-training.html">註冊課程</a></li>
+            <li><a class="a-text" href="https://academy.brightcove.com/">光明灣學院</a></li>
+          </ul>
+        </div>
+      
+        <div class="col-6 col-md">
+          <h5 class="h5-text">Brightcove</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="a-text" href="https://www.brightcove.com">亮麗</a></li>
+            <li><a class="a-text" href="https://community.brightcove.com/s/">亮點社區論壇</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/product-updates.html">產品發布說明</a></li>
+            <li><a class="a-text" href="https://support.brightcove.com/doc-updates.html">文檔更新</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© Brightcove Inc. 保留所有權利。</p>
+      <a class="a-text" href="https://www.brightcove.com/en/legal/privacy">隱私</a> <a class="a-text" href="https://www.brightcove.com/en/terms-and-conditions">條款 &amp; 狀況</a>
+
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a href="https://www.linkedin.com/company/16439" title="LinkedIn" target="_blank" class="gf-social-linkedin" style="margin-right: 1rem;"><i data-feather="linkedin" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+
+        <li class="ms-3"><a href="https://twitter.com/brightcove" title="Twitter" target="_blank" class="gf-social-twitter" style="margin-right: 1rem;"><i data-feather="twitter" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+
+        <li class="ms-3"><a href="https://www.facebook.com/Brightcove" title="Facebook" target="_blank" class="gf-social-facebook"><i data-feather="facebook" style="color:#8E9093;height: 1.25rem;"></i></a></li>
+      </ul>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<script translate="no">
+  var searchBox = sajari.init({
+    mode: "search-box",
+    project: "1588255093746585379", // Set this to your project.
+    collection: "brightcove-documentation", // Set this to your collection.
+    instantPipeline: "autocomplete", // Pipeline used as you type
+    inputPlaceholder: "Search", // Input element placeholder,
+    styling: {
+      components: {
+        
+        input: {
+          container: {
+          backgroundColor: 'white',
+          }
+        
+        }
+      }
+    },
+    maxSuggestions: 5, // Maximum number of suggestions to show
+      attachSearchBox: document.getElementById("nav-search-box") // DOM element to attach to
+  });
+
+  
+
+
+    searchBox("sub", "pipeline.search-sent", function (_, query) {
+    window.location = "/search.html?q=" + encodeURIComponent(query.q);
+    });
+  
+  </script>
+  
+  <!-- Javascript -->          
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/popper.min.js"></script>
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/bootstrap/js/bootstrap.min.js"></script>  
+
+
+  <!-- Page Specific JS -->
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/smoothscroll.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script> -->
+  <!-- <script src="/assets/s-site-assets-template-stylesheets/js/highlight-custom.js"></script>  -->
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/simplelightbox/simple-lightbox.min.js"></script>      
+  <script src="/assets/s-site-assets-template-stylesheets/plugins/gumshoe/gumshoe.polyfills.min.js"></script> 
+  <script src="/assets/s-site-assets-template-stylesheets/js/docs.js"></script> 
+
+  <!-- original footer components -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <script src="/assets/s-site-assets-scripts/https-fix.js"></script>
+  <script src="/assets/s-site-assets-scripts/setDate.js"></script>
+  <script src="/assets/s-site-assets-scripts/selector.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/prism.js"></script>
+  <script src="/assets/s-site-assets-scripts/prism-normalize.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/site.js"></script>
+  <script src="https://support.brightcove.com/site-assets/js/learning-paths/learning-paths.js"></script>
+  <!-- <script src="/assets/s-site-assets-scripts/site.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/tabs.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/toc-new-template.js"></script>
+  
+  <script src="/assets/js/sites_nav.js"></script>
+  <script src="/assets/s-site-assets-scripts/bcls-utils.js"></script>
+  <script src="/assets/s-site-assets-scripts/local-link-fix.js"></script>
+  <script src="/assets/s-site-assets-scripts/sajari-reindex.js"></script>
+  <script src="/assets/js/feedback.js"></script>
+  
+  <script src="/assets/s-site-assets-scripts/sajari-search-foot.js"></script>
+  
+  <script translate="no">
+    feather.replace()
+  </script>
+  <!-- <script src="/assets/js/sajari-index.js"></script> -->
+  <script src="/assets/s-site-assets-scripts/in-app.js"></script>
+  <style translate="no">
+    a.sj-paginator__page-number.sj-paginator__page-number--current.css-so0ov7 {
+      background-color: lightblue;
+    }
+    div.sj-tabs__tab {
+      margin-top: 3rem;
+      margin-left: .3rem;
+      border-top-left-radius: .4rem;
+      border-top-right-radius: .4rem;
+      background-color:#e8e8e8;
+    }
+
+    div.sj-tabs__tab.sj-tabs__tab--selected {
+      border-bottom-color: crimson;
+      background-color: #f8f8f8;
+    }
+
+    p.sj-results__result__description.css-p9jvyt {
+      font-size: 1rem;
+    }
+
+    .sj-result__text.css-31l7gp h3 {
+      color: navy;
+      font-size: 1.4rem;
+    }
+    </style>
+
+  </body>
+</html> 
