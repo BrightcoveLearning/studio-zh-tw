@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /audience/
-
-Sitemap: https://studio.support.brightcove.com/sitemap.xml
